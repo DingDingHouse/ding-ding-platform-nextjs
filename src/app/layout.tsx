@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import { Montserrat } from "next/font/google";
-
-const tomoBossa = localFont({
-  src: "./fonts/TOMOBossaBlack.ttf",
-  variable: "--font-tomobossa",
-  weight: "100 900",
-});
+import { Toaster } from "react-hot-toast";
 
 const montserrat = Montserrat({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -44,6 +38,18 @@ export default function RootLayout({
         <div className="relative sm:w-[100dvw] h-100vh w-100vw cursor-custom">
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-full h-full">
             {children}
+            <Toaster
+              containerClassName="m-0 flex items-center justify-center"
+              containerStyle={{
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+              }}
+              toastOptions={{
+                duration: 3,
+              }}
+            />
             <div id="modal"></div>
           </div>
         </div>
