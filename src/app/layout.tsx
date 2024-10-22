@@ -1,13 +1,6 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import { Montserrat } from "next/font/google";
-
-const tomoBossa = localFont({
-  src: "./fonts/TOMOBossaBlack.ttf",
-  variable: "--font-tomobossa",
-  weight: "100 900",
-});
 
 const montserrat = Montserrat({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
