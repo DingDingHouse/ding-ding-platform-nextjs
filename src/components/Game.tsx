@@ -1,65 +1,38 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import GameCard from "./GameCard";
 import LeftButton from "./svg/LeftButton";
 import RightButton from "./svg/RightButton";
 
 const Game = ({ games }: any) => {
   const { others } = games;
-  const scrollRef = useRef<HTMLDivElement | null>(null);
-
-  const displayedGames = [...(others?.length > 0 ? others : [])];
-  const chunkArray = (array: any[], size: number) => {
-    return Array.from({ length: Math.ceil(array.length / size) }, (_, i) => ({
-      games: array.slice(i * size, i * size + size),
-    }));
-  };
-  const gameChunks = chunkArray(displayedGames, 5);
+  const displayedGames = others?.length > 0 ? others : [];
   const [currentIndex, setCurrentIndex] = useState(0);
+  const totalCards = displayedGames.length;
 
   const handleLeftClick = () => {
     setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
   };
 
   const handleRightClick = () => {
-    setCurrentIndex((prevIndex) =>
-      Math.min(prevIndex + 1, gameChunks.length - 1)
-    );
+    setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, totalCards - 5));
   };
 
   useEffect(() => {
-    const element = scrollRef.current;
     const handleScroll = (event: WheelEvent) => {
       event.preventDefault();
-      if (element) {
-        const newIndex =
-          event.deltaY < 0
-            ? Math.max(currentIndex - 1, 0)
-            : Math.min(currentIndex + 1, gameChunks.length - 1);
-        setCurrentIndex(newIndex);
-      }
+      setCurrentIndex((prevIndex) =>
+        event.deltaY < 0
+          ? Math.max(prevIndex - 1, 0)
+          : Math.min(prevIndex + 1, totalCards - 5)
+      );
     };
 
-    if (element) {
-      element.addEventListener("wheel", handleScroll);
-    }
-
+    window.addEventListener("wheel", handleScroll);
     return () => {
-      if (element) {
-        element.removeEventListener("wheel", handleScroll);
-      }
+      window.removeEventListener("wheel", handleScroll);
     };
-  }, [currentIndex, gameChunks.length]);
-
-  useEffect(() => {
-    if (scrollRef.current) {
-      const scrollAmount = scrollRef.current.clientWidth;
-      scrollRef.current.scrollTo({
-        left: scrollAmount * currentIndex,
-        behavior: "smooth",
-      });
-    }
-  }, [currentIndex]);
+  }, [totalCards]);
 
   return (
     <div className="h-[40vh] sm:h-[40vw] overflow-hidden flex w-100vw relative">
@@ -71,26 +44,43 @@ const Game = ({ games }: any) => {
         >
           <LeftButton />
         </button>
-        <div ref={scrollRef} className="flex overflow-x-auto w-[90%]">
-          <div className="flex w-auto hideScrollBar">
-            {gameChunks.map(
-              (chunk, index) =>
-                index === currentIndex && (
-                  <div
-                    key={index}
-                    className="grid grid-cols-5 place-content-center justify-items-center w-[90vh] sm:w-[90vw]"
-                  >
-                    {chunk.games.map((game: any, index: number) => (
-                      <GameCard data={game} key={index} />
-                    ))}
-                  </div>
-                )
-            )}
+        <div className="relative w-[90%] overflow-hidden">
+          <div
+            className="flex transition-transform duration-300"
+            style={{ transform: `translateX(-${currentIndex * (100 / 5)}%)` }}
+          >
+            {displayedGames.map((game: any, index: number) => {
+              const position = index - currentIndex;
+
+              // Determine the scale based on the position
+              let scaleY = 1; // Default scale
+              if (position === 2) {
+                scaleY = 1; // Middle card
+              } else if (position === 1 || position === 3) {
+                scaleY = 1.1; // Adjacent cards
+              } else if (position <= 0 || position >= 4) {
+                scaleY = 1.2; // Corner cards
+              }
+
+              return (
+                <div
+                  key={index}
+                  className={`flex-none w-[20%] transition-opacity duration-300 ${
+                    index < currentIndex || index >= currentIndex + 5
+                      ? "opacity-0"
+                      : "opacity-100"
+                  }`}
+                  style={{ transform: `scaleY(${scaleY})` }} // Apply the vertical scaling
+                >
+                  <GameCard data={game} />
+                </div>
+              );
+            })}
           </div>
         </div>
         <button
           onClick={handleRightClick}
-          disabled={currentIndex === gameChunks.length - 1}
+          disabled={currentIndex >= totalCards - 5}
           className="disabled:opacity-30"
         >
           <RightButton />
