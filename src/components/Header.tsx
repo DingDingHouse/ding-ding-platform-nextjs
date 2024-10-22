@@ -5,6 +5,7 @@ import { getUserDetails } from "@/utils/action";
 import Password from "./svg/Password";
 import Settings from "./svg/Settings";
 import { redirect } from "next/navigation";
+import LogoutButton from "./LogoutButton";
 
 const Header = async () => {
   const user = await getUserDetails();
@@ -21,6 +22,7 @@ const Header = async () => {
             <div className="flex gap-[0.5vw] items-center">
               <Password />
               <Settings />
+              <LogoutButton />
             </div>
           </div>
         </div>

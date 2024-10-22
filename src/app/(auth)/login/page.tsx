@@ -10,6 +10,8 @@ import React, { useState } from "react";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 import { jwtDecode } from "jwt-decode";
+import toast from "react-hot-toast";
+import Notification from "@/components/Notification";
 
 const page = () => {
   //user data
@@ -33,27 +35,65 @@ const page = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (data.name === "" || data.password === "") {
-      return alert("Both email and password are required");
+      return toast.custom((t) => (
+        <Notification
+          visible={t.visible}
+          message="Username and password are required"
+        />
+      ));
     }
     if (data.password.length < 6) {
-      return alert("Minimun length for password is 6");
+      return toast.custom((t) => (
+        <Notification
+          visible={t.visible}
+          message="Minimun length for password is 6"
+        />
+      ));
     }
+    toast.custom((t) => (
+      <Notification visible={t.visible} message="Loggin In..." />
+    ));
     const response = await login(data);
+    if (response?.isUnderMaintenance) {
+      toast.remove();
+      return toast.custom((t) => (
+        <Notification
+          className="-rotate-90 sm:rotate-0"
+          visible={t.visible}
+          message={response.message}
+        />
+      ));
+    }
     if (response?.error) {
-      return alert(response?.error || "Login failed");
+      toast.remove();
+      return toast.custom((t) => (
+        <Notification
+          visible={t.visible}
+          message={response?.error || "Login failed"}
+        />
+      ));
     }
     const token = response?.token;
     if (token) {
       const decodedToken = jwtDecode<DecodedToken>(token);
       if (decodedToken?.role === "player") {
-        alert("Login successfull!!");
+        toast.remove();
+        toast.custom((t) => (
+          <Notification visible={t.visible} message="Login successfull!!" />
+        ));
         Cookies.set("token", token);
         router.push("/");
       } else {
-        return alert("Access denied!");
+        toast.remove();
+        return toast.custom((t) => (
+          <Notification visible={t.visible} message="Access Denied" />
+        ));
       }
     } else {
-      return alert("Token not found");
+      toast.remove();
+      return toast.custom((t) => (
+        <Notification visible={t.visible} message="Token not found" />
+      ));
     }
   };
 

@@ -46,31 +46,33 @@ const Game = ({ games }: any) => {
         </button>
         <div className="relative w-[90%] overflow-hidden">
           <div
-            className="flex transition-transform duration-300"
+            className="flex transition-transform duration-300 perspective transform-3d"
             style={{ transform: `translateX(-${currentIndex * (100 / 5)}%)` }}
           >
             {displayedGames.map((game: any, index: number) => {
               const position = index - currentIndex;
 
               // Determine the scale based on the position
-              let scaleY = 1; // Default scale
+              let scale = 1;
               if (position === 2) {
-                scaleY = 1; // Middle card
+                scale = 0.99;
               } else if (position === 1 || position === 3) {
-                scaleY = 1.1; // Adjacent cards
+                scale = 1.09;
               } else if (position <= 0 || position >= 4) {
-                scaleY = 1.2; // Corner cards
+                scale = 1.15;
               }
 
               return (
                 <div
                   key={index}
-                  className={`flex-none w-[20%] transition-opacity duration-300 ${
+                  className={`flex-none card w-[20%] transition-opacity duration-300 ${
                     index < currentIndex || index >= currentIndex + 5
                       ? "opacity-0"
                       : "opacity-100"
                   }`}
-                  style={{ transform: `scaleY(${scaleY})` }} // Apply the vertical scaling
+                  style={{
+                    transform: `scaleY(${scale})`,
+                  }}
                 >
                   <GameCard data={game} />
                 </div>

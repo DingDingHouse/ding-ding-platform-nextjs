@@ -280,3 +280,13 @@ svg.clippy {
     stroke-dashoffset: -125px;
   }
 }
+
+.transform-3d {
+  transform-style: preserve-3d;
+}
+.perspective {
+  perspective: 900px;
+}
+.stroke {
+  -webkit-text-stroke: 0.1vw #90510f;
+}
