@@ -2,14 +2,34 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import GameBorder from "./svg/GameBorder";
+import GameBorder4 from "./svg/GameBorder4";
+import GameBorder5 from "./svg/GameBorder5";
+import GameBorder2 from "./svg/GameBorder2";
+import GameBorder1 from "./svg/GameBorder1";
 
-const GameCard = ({ data }: any) => {
+const GameCard = ({ position, data }: any) => {
+  const renderContent = () => {
+    switch (position) {
+      case 0:
+        return <GameBorder1 />;
+      case 1:
+        return <GameBorder2 />; // Replace with actual component
+      case 2:
+        return <GameBorder />; // Replace with actual component
+      case 3:
+        return <GameBorder4 />; // Replace with actual component
+      case 4:
+        return <GameBorder5 />;
+      default:
+        return null; // Or another component
+    }
+  };
   return (
-    <div className="w-full h-full relative flex items-center justify-center">
-      <GameBorder />
+    <div className="w-full h-full relative flex items-center justify-center perspective">
+      {renderContent()}
       <Link
         href={`/game/${data?.slug}`}
-        className="absolute top-auto left-auto w-[86%] h-[92%]  rounded-rectangle"
+        className="absolute top-auto left-auto w-[86%] h-[92%] transform-3d"
       >
         <Image
           alt={data?.name}

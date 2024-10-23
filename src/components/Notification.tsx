@@ -29,7 +29,7 @@ const Notification = ({
         onClick={(e) => {
           e.stopPropagation();
         }}
-        className={`${className} h-[50%] w-[50%] z-[100] flex items-center justify-center relative ${
+        className={`${className} h-[50%] w-[36%] z-[100] flex items-center justify-center relative ${
           visible ? "animate-enter" : "animate-leave"
         }`}
       >
@@ -63,7 +63,7 @@ const Notification = ({
         </div>
         {showButton && (
           <button onClick={onClose}>
-            <CloseButton className="absolute top-0 sm:right-[6vw] right-[7vh]" />
+            <CloseButton className="absolute top-0 right-0" />
           </button>
         )}
       </div>

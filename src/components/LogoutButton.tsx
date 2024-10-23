@@ -29,11 +29,11 @@ const LogoutButton = () => {
   };
 
   const handleLogout = () => {
-    router.push("/logout");
     toast.remove();
     toast.custom((t) => (
       <Notification visible={t.visible} message="Logout Successfully" />
     ));
+    router.push("/logout");
   };
 
   return (

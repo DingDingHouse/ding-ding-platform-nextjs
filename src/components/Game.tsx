@@ -63,16 +63,16 @@ const Game = ({ games }: any) => {
   return (
     <div className="h-[40vh] sm:h-[40vw] overflow-hidden flex w-100vw relative">
       <div className="flex justify-evenly items-center w-full relative h-full">
-        <button
+        {/* <button
           onClick={handleLeftClick}
           disabled={currentIndex === 0}
           className="disabled:opacity-30"
         >
           <LeftButton />
-        </button>
+        </button> */}
         {/* Game Grid */}
         <div
-          className="relative w-[90%] overflow-hidden h-full flex"
+          className="relative w-[98%] overflow-hidden h-full flex"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
@@ -87,11 +87,11 @@ const Game = ({ games }: any) => {
               // Determine the scale based on the position
               let scale = 1;
               if (position === 2) {
-                scale = 0.99;
+                scale = 0.85;
               } else if (position === 1 || position === 3) {
-                scale = 1.09;
+                scale = 0.9;
               } else if (position <= 0 || position >= 4) {
-                scale = 1.15;
+                scale = 1.1;
               }
 
               return (
@@ -106,19 +106,19 @@ const Game = ({ games }: any) => {
                     transform: `scaleY(${scale})`,
                   }}
                 >
-                  <GameCard data={game} />
+                  <GameCard position={position} data={game} />
                 </div>
               );
             })}
           </div>
         </div>
-        <button
+        {/* <button
           onClick={handleRightClick}
           disabled={currentIndex >= totalCards - 5}
           className="disabled:opacity-30"
         >
           <RightButton />
-        </button>
+        </button> */}
       </div>
     </div>
   );
