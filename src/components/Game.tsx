@@ -9,6 +9,32 @@ const Game = ({ games }: any) => {
   const displayedGames = others?.length > 0 ? others : [];
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalCards = displayedGames.length;
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
+  const handleTouchStart = (event: React.TouchEvent) => {
+    window.innerWidth < 640
+      ? setTouchStart(event.touches[0].clientY)
+      : setTouchStart(event.touches[0].clientX);
+  };
+
+  const handleTouchMove = (event: React.TouchEvent) => {
+    window.innerWidth < 640
+      ? setTouchEnd(event.touches[0].clientY)
+      : setTouchEnd(event.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    const distanceMoved = touchStart - touchEnd;
+    const swipePercentage =
+      distanceMoved /
+      (window.innerWidth < 640 ? window.innerHeight : window.innerWidth);
+
+    const newIndex = Math.round(
+      currentIndex + swipePercentage * displayedGames.length * 0.4
+    );
+    setCurrentIndex(Math.max(0, Math.min(newIndex, displayedGames.length - 5)));
+  };
 
   const handleLeftClick = () => {
     setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
@@ -20,7 +46,7 @@ const Game = ({ games }: any) => {
 
   useEffect(() => {
     const handleScroll = (event: WheelEvent) => {
-      event.preventDefault();
+      // event.preventDefault();
       setCurrentIndex((prevIndex) =>
         event.deltaY < 0
           ? Math.max(prevIndex - 1, 0)
@@ -36,7 +62,7 @@ const Game = ({ games }: any) => {
 
   return (
     <div className="h-[40vh] sm:h-[40vw] overflow-hidden flex w-100vw relative">
-      <div className="flex justify-evenly items-center w-full relative">
+      <div className="flex justify-evenly items-center w-full relative h-full">
         <button
           onClick={handleLeftClick}
           disabled={currentIndex === 0}
@@ -44,9 +70,15 @@ const Game = ({ games }: any) => {
         >
           <LeftButton />
         </button>
-        <div className="relative w-[90%] overflow-hidden">
+        {/* Game Grid */}
+        <div
+          className="relative w-[90%] overflow-hidden h-full flex"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           <div
-            className="flex transition-transform duration-300 perspective transform-3d"
+            className="flex items-center transition-transform duration-500 ease-in-out perspective transform-3d"
             style={{ transform: `translateX(-${currentIndex * (100 / 5)}%)` }}
           >
             {displayedGames.map((game: any, index: number) => {
@@ -65,7 +97,7 @@ const Game = ({ games }: any) => {
               return (
                 <div
                   key={index}
-                  className={`flex-none card w-[20%] transition-opacity duration-300 ${
+                  className={`flex-none card w-[20%] transition-all duration-500 ${
                     index < currentIndex || index >= currentIndex + 5
                       ? "opacity-0"
                       : "opacity-100"

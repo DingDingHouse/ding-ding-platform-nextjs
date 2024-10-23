@@ -47,7 +47,7 @@ export default function RootLayout({
                 bottom: 0,
               }}
               toastOptions={{
-                duration: 3,
+                duration: 1,
               }}
             />
             <div id="modal"></div>

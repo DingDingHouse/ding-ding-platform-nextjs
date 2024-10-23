@@ -42,6 +42,7 @@ export default async function RootLayout({
         <Image
           src="/home/coin.gif"
           fill
+          unoptimized
           sizes={"100%"}
           alt="coin-animation"
           priority={true}
