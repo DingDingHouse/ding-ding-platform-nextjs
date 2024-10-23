@@ -29,32 +29,32 @@ const Notification = ({
         onClick={(e) => {
           e.stopPropagation();
         }}
-        className={`${className} h-[60%] w-[60%] z-[100] flex items-center justify-center relative ${
+        className={`${className} h-[50%] w-[50%] z-[100] flex items-center justify-center relative ${
           visible ? "animate-enter" : "animate-leave"
         }`}
       >
         <NotificationBg />
         <div
-          className={`absolute top-auto left-auto w-[65%] ${rubik.className}`}
+          className={`absolute flex flex-col gap-3vw top-auto left-auto w-[60%] sm:w-[65%] ${rubik.className}`}
         >
-          <p className="sm:text-[2.5vw] text-[2.5vh] text-white font-[700] text-center stroke uppercase ">
+          <p className="sm:text-[2.5vw] text-[2.5vh] text-white font-[800] text-center stroke uppercase ">
             {message}
           </p>
           {showButton && (
-            <div className="flex gap-x-3vw items-center justify-center my-[1vw]">
+            <div className="flex gap-x-3vw items-center justify-center">
               <button
                 onClick={onYesClick}
-                className="pb-0-18vw bg-[#C44C10] rounded-full shadow-sm hover:pb-0 hover:shadow-none transition-all"
+                className="pb-0-5vw  bg-[#C44C10] rounded-full shadow-sm hover:pb-0 hover:shadow-none transition-all"
               >
-                <span className="px-2-5vw .py-0-8vw bg-gradient-to-b from-[#00C00D] uppercase font-[700] to-[#016808] border-[0.2vw] border-[#FEEF6C] text-2vw rounded-full">
+                <span className="px-1-2vw py-0-3vw bg-gradient-to-b from-[#00C00D] uppercase font-[700] to-[#016808] border-[0.2vw] border-[#FEEF6C] text-2vw rounded-full">
                   Yes
                 </span>
               </button>
               <button
                 onClick={onClose}
-                className="pb-0-18vw bg-[#C44C10] rounded-full shadow-sm hover:pb-0 transition-all"
+                className="pb-0-5vw bg-[#C44C10] rounded-full shadow-sm hover:pb-0 transition-all"
               >
-                <span className="px-2-5vw .py-0-8vw bg-gradient-to-b from-[#C00003] uppercase font-[700] to-[#680103] border-[0.2vw] border-[#FEEF6C] text-2vw rounded-full">
+                <span className="px-1-2vw py-0-3vw bg-gradient-to-b from-[#C00003] uppercase font-[700] to-[#680103] border-[0.2vw] border-[#FEEF6C] text-2vw rounded-full">
                   No
                 </span>
               </button>
@@ -63,7 +63,7 @@ const Notification = ({
         </div>
         {showButton && (
           <button onClick={onClose}>
-            <CloseButton className="absolute top-0 right-[8vw]" />
+            <CloseButton className="absolute top-0 sm:right-[6vw] right-[7vh]" />
           </button>
         )}
       </div>
