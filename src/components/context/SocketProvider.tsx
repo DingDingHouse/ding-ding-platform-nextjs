@@ -35,13 +35,9 @@ export const SocketProvider: React.FC<{
         console.log("Connected with socket id:", socketInstance.id);
       });
 
-      socketInstance.on(
-        "data",
-        (data: any) => {
-          console.log("data", data);
-        }
-        //
-      );
+      socketInstance.on("data", (data: any) => {
+        console.log("data", data);
+      });
 
       return () => {
         socketInstance.disconnect();
