@@ -13,8 +13,7 @@ const GameCard = ({ data }: any) => {
       >
         <Image
           alt={data?.name}
-          // src={data?.thumbnail}
-          src="/chi.png"
+          src={data?.thumbnail}
           fill
           quality={100}
           priority
