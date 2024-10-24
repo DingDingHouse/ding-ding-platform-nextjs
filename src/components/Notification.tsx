@@ -37,6 +37,11 @@ const Notification = ({
         <div
           className={`absolute flex flex-col gap-3vw top-auto left-auto w-[60%] sm:w-[65%] ${rubik.className}`}
         >
+          {showButton && (
+            <button onClick={onClose}>
+              <CloseButton className="absolute top-[-13%] right-[-30%]" />
+            </button>
+          )}
           <p className="sm:text-[2.5vw] text-[2.5vh] text-white font-[800] text-center stroke uppercase ">
             {message}
           </p>
@@ -61,11 +66,6 @@ const Notification = ({
             </div>
           )}
         </div>
-        {showButton && (
-          <button onClick={onClose}>
-            <CloseButton className="absolute top-0 right-0" />
-          </button>
-        )}
       </div>
     </div>
   );

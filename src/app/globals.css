@@ -315,7 +315,7 @@ svg.clippy {
   transform-style: preserve-3d;
 }
 .perspective {
-  perspective: 900px;
+  perspective: 1000px;
 }
 .stroke {
   -webkit-text-stroke: 0.1vw #90510f;

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import GameCard from "./GameCard";
 import LeftButton from "./svg/LeftButton";
 import RightButton from "./svg/RightButton";
+import GameContainer from "./GameContainer";
 
 const Game = ({ games }: any) => {
   const { others } = games;
@@ -11,6 +12,8 @@ const Game = ({ games }: any) => {
   const totalCards = displayedGames.length;
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
+  const [startPosition, setStartPosition] = useState(0);
+  const [endPosition, setEndPosition] = useState(0);
 
   const handleTouchStart = (event: React.TouchEvent) => {
     window.innerWidth < 640
@@ -36,17 +39,28 @@ const Game = ({ games }: any) => {
     setCurrentIndex(Math.max(0, Math.min(newIndex, displayedGames.length - 5)));
   };
 
-  const handleLeftClick = () => {
-    setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
+  const handleDragStart = (event: React.DragEvent) => {
+    setStartPosition(event.clientX);
   };
 
-  const handleRightClick = () => {
-    setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, totalCards - 5));
+  const handleDrag = (event: React.DragEvent) => {
+    setEndPosition(event.clientX);
+  };
+
+  const handleDragEnd = () => {
+    const distanceMoved = startPosition - endPosition;
+    const dragPercentage =
+      distanceMoved /
+      (window.innerWidth < 640 ? window.innerHeight : window.innerWidth);
+
+    const newIndex = Math.round(
+      currentIndex + dragPercentage * displayedGames.length * 0.8
+    );
+    setCurrentIndex(Math.max(0, Math.min(newIndex, displayedGames.length - 5)));
   };
 
   useEffect(() => {
     const handleScroll = (event: WheelEvent) => {
-      // event.preventDefault();
       setCurrentIndex((prevIndex) =>
         event.deltaY < 0
           ? Math.max(prevIndex - 1, 0)
@@ -60,6 +74,14 @@ const Game = ({ games }: any) => {
     };
   }, [totalCards]);
 
+  const handleLeftClick = () => {
+    setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
+  };
+
+  const handleRightClick = () => {
+    setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, totalCards - 5));
+  };
+
   return (
     <div className="h-[40vh] sm:h-[40vw] overflow-hidden flex w-100vw relative">
       <div className="flex justify-evenly items-center w-full relative h-full">
@@ -70,48 +92,20 @@ const Game = ({ games }: any) => {
         >
           <LeftButton />
         </button> */}
+
         {/* Game Grid */}
-        <div
-          className="relative w-[98%] overflow-hidden h-full flex"
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
-          <div
-            className="flex items-center transition-transform duration-500 ease-in-out perspective transform-3d"
-            style={{ transform: `translateX(-${currentIndex * (100 / 5)}%)` }}
-          >
-            {displayedGames.map((game: any, index: number) => {
-              const position = index - currentIndex;
+        <GameContainer
+          draggable="true"
+          displayedGames={displayedGames}
+          handleTouchStart={handleTouchStart}
+          handleTouchEnd={handleTouchEnd}
+          handleTouchMove={handleTouchMove}
+          currentIndex={currentIndex}
+          handleDragStart={handleDragStart}
+          handleDragEnd={handleDragEnd}
+          handleDrag={handleDrag}
+        />
 
-              // Determine the scale based on the position
-              let scale = 1;
-              if (position === 2) {
-                scale = 0.85;
-              } else if (position === 1 || position === 3) {
-                scale = 0.9;
-              } else if (position <= 0 || position >= 4) {
-                scale = 1.1;
-              }
-
-              return (
-                <div
-                  key={index}
-                  className={`flex-none card w-[20%] transition-all duration-500 ${
-                    index < currentIndex || index >= currentIndex + 5
-                      ? "opacity-0"
-                      : "opacity-100"
-                  }`}
-                  style={{
-                    transform: `scaleY(${scale})`,
-                  }}
-                >
-                  <GameCard position={position} data={game} />
-                </div>
-              );
-            })}
-          </div>
-        </div>
         {/* <button
           onClick={handleRightClick}
           disabled={currentIndex >= totalCards - 5}

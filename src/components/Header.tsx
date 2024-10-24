@@ -6,6 +6,7 @@ import Password from "./svg/Password";
 import Settings from "./svg/Settings";
 import { redirect } from "next/navigation";
 import LogoutButton from "./LogoutButton";
+import FullScreenButton from "./FullScreenButton";
 
 const Header = async () => {
   const user = await getUserDetails();
@@ -20,7 +21,7 @@ const Header = async () => {
             <UserData data={user} />
             <Logo className="absolute left-[calc(50%-9.5vh)] sm:left-[calc(50%-9.5vw)] top-[-1.1vw] h-10vw w-auto z-[100]" />
             <div className="flex gap-[0.5vw] items-center">
-              <Password />
+              <FullScreenButton />
               <Settings />
               <LogoutButton />
             </div>
