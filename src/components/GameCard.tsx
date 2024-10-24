@@ -5,15 +5,17 @@ import GameBorder from "./svg/GameBorder";
 
 const GameCard = ({ data }: any) => {
   return (
-    <div className="sm:w-[18vw] w-[18vh] h-[59vh] sm:h-[59vw] relative flex items-center justify-center">
-      <GameBorder />
+    <div className="w-full h-full relative flex items-center justify-center perspective">
+      <GameBorder className="h-full w-full mx-auto" />
       <Link
         href={`/game/${data?.slug}`}
-        className="absolute top-auto left-auto w-[87%] h-[46%]  rounded-rectangle"
+        className="absolute top-auto left-auto w-[85%] h-[92%] transform-3d"
       >
         <Image
           alt={data?.name}
+          draggable="false"
           src={data?.thumbnail}
+          // src="/maf.png"
           fill
           quality={100}
           priority

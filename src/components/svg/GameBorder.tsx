@@ -1,13 +1,13 @@
 import React from "react";
 
-const GameBorder = () => {
+const GameBorder = ({ className }: any) => {
   return (
     <svg
       width="357"
       height="588"
       viewBox="0 0 357 588"
       fill="none"
-      className="h-full w-full"
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
     >
       <g filter="url(#filter0_f_80_973)">

@@ -44,8 +44,10 @@ const Navigation = ({ params }: any) => {
             </div>
           </div>
           <p
-            className={`text-1-2vw uppercase transition-all duration-1000 ${
-              pathname === item.link ? "font-[800]" : "font-medium"
+            className={`text-1-4vw uppercase transition-all duration-300 bg-gradient-to-b bg-clip-text text-transparent ${
+              pathname === item.link
+                ? "font-[800] from-[#C79F28] via-[#FFE650] to-[#FFE650]"
+                : "font-medium  from-[#A98E44] via-[#F9F2DB] to-[#D7BF7C] "
             }`}
           >
             {item.name}

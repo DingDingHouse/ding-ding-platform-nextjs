@@ -18,6 +18,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
 }
 
 @layer utilities {
@@ -66,7 +67,8 @@ body {
   padding: 0 1vw;
 }
 .py-0-3vw {
-  padding: 0.3vw 0;
+  padding-top: 0.3vw;
+  padding-bottom: 0.3vw;
 }
 .w-4vw {
   width: 4vw;
@@ -79,6 +81,9 @@ body {
 }
 .pb-0-18vw {
   padding-bottom: 0.18vw;
+}
+.pb-0-5vw {
+  padding-bottom: 0.5vw;
 }
 .pb-0-15vw {
   padding-bottom: 0.15vw;
@@ -109,8 +114,8 @@ body {
 .text-1vw {
   font-size: 1vw;
 }
-.text-1-2vw {
-  font-size: 1.2vw;
+.text-1-4vw {
+  font-size: 1.4vw;
 }
 .h-10vw {
   height: 10vw;
@@ -121,9 +126,30 @@ body {
 .w-3vw {
   width: 3vw;
 }
+.px-1-2vw {
+  padding-right: 1.3vw;
+  padding-left: 1.3vw;
+}
+.w-15vw {
+  width: 15vw;
+}
+.bottom-2vw {
+  bottom: 2vw;
+}
 
 @media (max-width: 640px) {
   /* Adjust the breakpoint as needed */
+
+  .h-10vw {
+    height: 10vh;
+  }
+  .px-1-2vw {
+    padding-right: 1.3vh;
+    padding-left: 1.3vh;
+  }
+  .pb-0-5vw {
+    padding-bottom: 0.5vh;
+  }
   .h-100vh {
     height: 100dvw;
   }
@@ -158,7 +184,8 @@ body {
     padding: 0.2vh;
   }
   .py-0-3vw {
-    padding: 0.3vh 0;
+    padding-top: 0.3vh;
+    padding-bottom: 0.3vh;
   }
   .px-1vw {
     padding: 0 1vh;
@@ -166,8 +193,8 @@ body {
   .text-2vw {
     font-size: 2vh;
   }
-  .text-1-2vw {
-    font-size: 1.2vh;
+  .text-1-4vw {
+    font-size: 1.4vh;
   }
   .w-4vw {
     width: 4vh;
@@ -210,14 +237,17 @@ body {
   .text-1vw {
     font-size: 1vh;
   }
-  .h-10vw {
-    height: 10vh;
-  }
   .h-3vw {
     height: 3vh;
   }
   .w-3vw {
     width: 3vh;
+  }
+  .w-15vw {
+    width: 15vh;
+  }
+  .bottom-2vw {
+    bottom: 2vh;
   }
 }
 
@@ -285,7 +315,7 @@ svg.clippy {
   transform-style: preserve-3d;
 }
 .perspective {
-  perspective: 900px;
+  perspective: 1000px;
 }
 .stroke {
   -webkit-text-stroke: 0.1vw #90510f;
