@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const NormalScreen = () => {
   return (
@@ -18,7 +18,7 @@ const NormalScreen = () => {
           fill="#FFF717"
         />
       </g>
-      <g clip-path="url(#clip0_207_2582)">
+      <g clipPath="url(#clip0_207_2582)">
         <path d="M90.84 7.20996H8.70996V13.75H90.84V7.20996Z" fill="#E7995B" />
         <path
           d="M48.3753 76.9792L48.2801 76.9607L48.1848 76.9792L16.5801 83.1136V18.7031C24.6688 19.2004 32.9448 18.7852 41.2057 18.3707C43.6261 18.2493 46.0452 18.1279 48.4579 18.0296C59.1745 17.5928 69.7889 17.608 79.9801 20.0434V83.1136L48.3753 76.9792Z"
@@ -89,8 +89,8 @@ const NormalScreen = () => {
           y2="76.57"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#340000" />
-          <stop offset="1" stop-color="#C00000" />
+          <stop stopColor="#340000" />
+          <stop offset="1" stopColor="#C00000" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_207_2582"
@@ -100,8 +100,8 @@ const NormalScreen = () => {
           y2="47.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.415278" stop-color="#770002" />
-          <stop offset="1" stop-color="#F51E21" />
+          <stop offset="0.415278" stopColor="#770002" />
+          <stop offset="1" stopColor="#F51E21" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_207_2582"
@@ -111,8 +111,8 @@ const NormalScreen = () => {
           y2="33.0411"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#C8080C" />
-          <stop offset="1" stop-color="#820000" />
+          <stop stopColor="#C8080C" />
+          <stop offset="1" stopColor="#820000" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_207_2582"
@@ -122,8 +122,8 @@ const NormalScreen = () => {
           y2="9.55995"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#ED9B5A" />
-          <stop offset="1" stop-color="#F1CE5B" />
+          <stop stopColor="#ED9B5A" />
+          <stop offset="1" stopColor="#F1CE5B" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_207_2582"
@@ -133,8 +133,8 @@ const NormalScreen = () => {
           y2="18.7499"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFA761" />
-          <stop offset="1" stop-color="#C45F33" />
+          <stop stopColor="#FFA761" />
+          <stop offset="1" stopColor="#C45F33" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_207_2582"
@@ -144,8 +144,8 @@ const NormalScreen = () => {
           y2="4.00001"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#ED9B5A" />
-          <stop offset="1" stop-color="#F1CE5B" />
+          <stop stopColor="#ED9B5A" />
+          <stop offset="1" stopColor="#F1CE5B" />
         </linearGradient>
         <linearGradient
           id="paint6_linear_207_2582"
@@ -155,8 +155,8 @@ const NormalScreen = () => {
           y2="6.46004"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFA761" />
-          <stop offset="1" stop-color="#C45F33" />
+          <stop stopColor="#FFA761" />
+          <stop offset="1" stopColor="#C45F33" />
         </linearGradient>
         <linearGradient
           id="paint7_linear_207_2582"
@@ -166,8 +166,8 @@ const NormalScreen = () => {
           y2="71.125"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFAA00" />
-          <stop offset="1" stop-color="#FFFB21" />
+          <stop stopColor="#FFAA00" />
+          <stop offset="1" stopColor="#FFFB21" />
         </linearGradient>
         <clipPath id="clip0_207_2582">
           <rect
@@ -180,6 +180,6 @@ const NormalScreen = () => {
       </defs>
     </svg>
   );
-}
+};
 
-export default NormalScreen
+export default NormalScreen;

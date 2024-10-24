@@ -15,7 +15,7 @@ const GameCard = ({ data }: any) => {
           alt={data?.name}
           draggable="false"
           src={data?.thumbnail}
-          // src="/chi.png"
+          // src="/maf.png"
           fill
           quality={100}
           priority

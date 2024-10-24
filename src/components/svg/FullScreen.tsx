@@ -10,7 +10,7 @@ const FullScreen = () => {
       className="w-4vw h-4vw"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_207_2975)">
+      <g clipPath="url(#clip0_207_2975)">
         <path
           d="M86.84 3.20996H4.70996V9.74996H86.84V3.20996Z"
           fill="#E7995B"
@@ -63,8 +63,8 @@ const FullScreen = () => {
           y2="72.57"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#340000" />
-          <stop offset="1" stop-color="#C00000" />
+          <stop stopColor="#340000" />
+          <stop offset="1" stopColor="#C00000" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_207_2975"
@@ -74,8 +74,8 @@ const FullScreen = () => {
           y2="43.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.415278" stop-color="#770002" />
-          <stop offset="1" stop-color="#F51E21" />
+          <stop offset="0.415278" stopColor="#770002" />
+          <stop offset="1" stopColor="#F51E21" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_207_2975"
@@ -85,8 +85,8 @@ const FullScreen = () => {
           y2="29.0411"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#C8080C" />
-          <stop offset="1" stop-color="#820000" />
+          <stop stopColor="#C8080C" />
+          <stop offset="1" stopColor="#820000" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_207_2975"
@@ -96,8 +96,8 @@ const FullScreen = () => {
           y2="5.55995"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#ED9B5A" />
-          <stop offset="1" stop-color="#F1CE5B" />
+          <stop stopColor="#ED9B5A" />
+          <stop offset="1" stopColor="#F1CE5B" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_207_2975"
@@ -107,8 +107,8 @@ const FullScreen = () => {
           y2="14.7499"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFA761" />
-          <stop offset="1" stop-color="#C45F33" />
+          <stop stopColor="#FFA761" />
+          <stop offset="1" stopColor="#C45F33" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_207_2975"
@@ -118,8 +118,8 @@ const FullScreen = () => {
           y2="9.92082e-06"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#ED9B5A" />
-          <stop offset="1" stop-color="#F1CE5B" />
+          <stop stopColor="#ED9B5A" />
+          <stop offset="1" stopColor="#F1CE5B" />
         </linearGradient>
         <linearGradient
           id="paint6_linear_207_2975"
@@ -129,8 +129,8 @@ const FullScreen = () => {
           y2="2.46004"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFA761" />
-          <stop offset="1" stop-color="#C45F33" />
+          <stop stopColor="#FFA761" />
+          <stop offset="1" stopColor="#C45F33" />
         </linearGradient>
         <linearGradient
           id="paint7_linear_207_2975"
@@ -140,8 +140,8 @@ const FullScreen = () => {
           y2="62.8125"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFAA00" />
-          <stop offset="1" stop-color="#FFFB21" />
+          <stop stopColor="#FFAA00" />
+          <stop offset="1" stopColor="#FFFB21" />
         </linearGradient>
         <clipPath id="clip0_207_2975">
           <rect width="89.74" height="79.72" fill="white" />
