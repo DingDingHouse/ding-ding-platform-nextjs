@@ -7,7 +7,7 @@ const GameBorder4 = ({ className }: any) => {
       height="674"
       viewBox="0 0 394 674"
       fill="none"
-      className="h-[90%] w-full"
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
     >
       <g filter="url(#filter0_f_194_5526)">

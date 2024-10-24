@@ -11,15 +11,15 @@ const GameCard = ({ position, data }: any) => {
   const renderContent = () => {
     switch (position) {
       case 0:
-        return <GameBorder1 />;
+        return <GameBorder1 className="w-[95%] h-full" />;
       case 1:
-        return <GameBorder2 />; // Replace with actual component
+        return <GameBorder2 className="w-[90%] h-full" />; // Replace with actual component
       case 2:
-        return <GameBorder />; // Replace with actual component
+        return <GameBorder className="w-[85%] h-full" />; // Replace with actual component
       case 3:
-        return <GameBorder4 />; // Replace with actual component
+        return <GameBorder4 className="w-[90%] h-full" />; // Replace with actual component
       case 4:
-        return <GameBorder5 />;
+        return <GameBorder5 className="w-[95%] h-full" />;
       default:
         return null; // Or another component
     }
@@ -29,7 +29,7 @@ const GameCard = ({ position, data }: any) => {
       {renderContent()}
       <Link
         href={`/game/${data?.slug}`}
-        className="absolute top-auto left-auto w-[86%] h-[92%] transform-3d"
+        className="absolute top-auto left-auto w-[75%] h-[92%] transform-3d"
       >
         <Image
           alt={data?.name}
