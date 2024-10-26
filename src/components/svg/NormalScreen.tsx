@@ -7,13 +7,13 @@ const NormalScreen = () => {
       height="88"
       viewBox="0 0 98 88"
       fill="none"
-      className="w-4vw h-4vw"
+      className="h-4vw w-4vw"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g filter="url(#filter0_f_207_2582)">
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M13.13 4H85.49C86.0423 4 86.49 4.44772 86.49 5V7.21H88.19V6.58C88.19 5.16 89.22 4.01 90.48 4.01H91.71C92.98 4.01 94 5.16 94 6.58V6.79V13.65C94 15.07 92.97 16.22 91.71 16.22H90.48C89.71 16.22 89.03 15.79 88.62 15.13H88.61C88.3658 14.7356 88.2099 14.2618 88.1918 13.75H86.49V17.51C86.49 18.0623 86.0423 18.51 85.49 18.51H80.73V20.6475L80.74 20.65V22.65V83.72L48.54 77.47L16.34 83.72V21.17V19.17V18.51H13.13C12.5777 18.51 12.13 18.0623 12.13 17.51V13.75H10.0583C10.0113 15.1236 9.0003 16.22 7.77001 16.22H6.54001C5.77001 16.22 5.09001 15.79 4.68001 15.13H4.67001C5.54817 14.7115 6.34643 14.1351 7.04459 13.4358C6.34881 14.1306 5.55398 14.7035 4.68001 15.12C4.42001 14.7 4.26001 14.19 4.26001 13.64V6.57C4.26001 5.15 5.28001 4 6.55001 4.01H7.78001C9.05001 4.01 10.07 5.16 10.07 6.58V6.78C10.0668 6.81355 10.0635 6.84707 10.06 6.88055V7.21H12.13V5C12.13 4.44771 12.5777 4 13.13 4Z"
           fill="#FFF717"
         />
@@ -67,9 +67,9 @@ const NormalScreen = () => {
           width="97.74"
           height="87.72"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"

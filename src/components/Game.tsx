@@ -84,7 +84,7 @@ const Game = ({ games }: any) => {
 
   return (
     <div className="h-[40vh] sm:h-[40vw] overflow-hidden flex w-100vw relative">
-      <div className="flex justify-evenly items-center w-full relative h-full">
+      <div className="flex justify-evenly items-center w-full relative h-full overflow-hidden">
         {/* <button
           onClick={handleLeftClick}
           disabled={currentIndex === 0}

@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en" className="">
       <VolumeProvider>
         <body
-          className={`${montserrat.className} antialiased rotate-90 sm:rotate-0`}
+          className={`${montserrat.className} antialiased rotate-90 sm:rotate-0 overflow-hidden`}
         >
           {/* game shape */}
           <svg className="clippy">

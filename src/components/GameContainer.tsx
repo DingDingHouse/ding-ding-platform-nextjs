@@ -60,7 +60,7 @@ const GameContainer = ({
           return (
             <div
               key={index}
-              className={`flex-none card w-[20%] transition-all duration-500 ${
+              className={`flex-none w-[20%] transition-all duration-500 ${
                 index < currentIndex || index >= currentIndex + 5
                   ? "opacity-0"
                   : "opacity-100"

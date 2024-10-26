@@ -2,11 +2,10 @@ import React from "react";
 import Logo from "./svg/Logo";
 import UserData from "./UserData";
 import { getUserDetails } from "@/utils/action";
-import Password from "./svg/Password";
-import Settings from "./svg/Settings";
 import { redirect } from "next/navigation";
 import LogoutButton from "./LogoutButton";
 import FullScreenButton from "./FullScreenButton";
+import SettingsButton from "./SettingsButton";
 
 const Header = async () => {
   const user = await getUserDetails();
@@ -20,9 +19,9 @@ const Header = async () => {
           <div className="w-full bg-gradient-to-b from-[#2B2B2B] via-[#212121] to-[#101010] flex items-center justify-between px-2-5vw py-0-8vw">
             <UserData data={user} />
             <Logo className="absolute left-[calc(50%-9.5vh)] sm:left-[calc(50%-9.5vw)] top-[-1.1vw] h-10vw w-auto z-[100]" />
-            <div className="flex gap-[0.5vw] items-center">
+            <div className="flex gap-[1vw] items-center">
               <FullScreenButton />
-              <Settings />
+              <SettingsButton />
               <LogoutButton />
             </div>
           </div>

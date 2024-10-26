@@ -16,6 +16,7 @@ const LogoutButton = () => {
           visible={t.visible}
           message={"Are you sure you want to logout?"}
           showButton={true}
+          showCloseButton={true}
           onYesClick={handleLogout}
           onClose={() => {
             toast.remove();
