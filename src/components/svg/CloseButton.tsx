@@ -29,21 +29,21 @@ const CloseButton = ({ className }: any) => {
           cy="59.8419"
           r="40.7093"
           stroke="#75133C"
-          stroke-width="3.7348"
+          strokeWidth="3.7348"
         />
         <circle
           cx="59.8419"
           cy="59.8419"
           r="36.9745"
           stroke="#49121C"
-          stroke-width="3.7348"
+          strokeWidth="3.7348"
         />
         <circle
           cx="59.8419"
           cy="59.8419"
           r="38.0949"
           stroke="#E05531"
-          stroke-width="1.49392"
+          strokeWidth="1.49392"
         />
         <g clipPath="url(#clip0_159_2060)">
           <path
@@ -315,9 +315,9 @@ const CloseButton = ({ className }: any) => {
           width="117.808"
           height="117.808"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -419,11 +419,11 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(59.3684 53.3739) scale(3.94069 3.89633)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.23" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.1369" />
-          <stop offset="0.59" stopColor="#F2D2C2" stop-opacity="0.0289" />
-          <stop offset="0.71" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.78" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.23" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.1369" />
+          <stop offset="0.59" stopColor="#F2D2C2" stopOpacity="0.0289" />
+          <stop offset="0.71" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.78" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint5_radial_159_2060"
@@ -434,15 +434,15 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(59.3686 53.5775) scale(2.0947 2.07112)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.04" stopColor="#F2D2C2" stop-opacity="0.7225" />
-          <stop offset="0.09" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.15" stopColor="#F2D2C2" stop-opacity="0.2209" />
-          <stop offset="0.22" stopColor="#F2D2C2" stop-opacity="0.1089" />
-          <stop offset="0.28" stopColor="#F2D2C2" stop-opacity="0.0441" />
-          <stop offset="0.35" stopColor="#F2D2C2" stop-opacity="0.0144" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.51" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.63" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.04" stopColor="#F2D2C2" stopOpacity="0.7225" />
+          <stop offset="0.09" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.15" stopColor="#F2D2C2" stopOpacity="0.2209" />
+          <stop offset="0.22" stopColor="#F2D2C2" stopOpacity="0.1089" />
+          <stop offset="0.28" stopColor="#F2D2C2" stopOpacity="0.0441" />
+          <stop offset="0.35" stopColor="#F2D2C2" stopOpacity="0.0144" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.51" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.63" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint6_radial_159_2060"
@@ -453,11 +453,11 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(73.6247 40.7912) scale(2.02976 2.00691)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.23" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.1369" />
-          <stop offset="0.59" stopColor="#F2D2C2" stop-opacity="0.0289" />
-          <stop offset="0.71" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.78" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.23" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.1369" />
+          <stop offset="0.59" stopColor="#F2D2C2" stopOpacity="0.0289" />
+          <stop offset="0.71" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.78" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint7_radial_159_2060"
@@ -468,15 +468,15 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(73.6272 40.8935) scale(1.07913 1.06698)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.04" stopColor="#F2D2C2" stop-opacity="0.7225" />
-          <stop offset="0.09" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.15" stopColor="#F2D2C2" stop-opacity="0.2209" />
-          <stop offset="0.22" stopColor="#F2D2C2" stop-opacity="0.1089" />
-          <stop offset="0.28" stopColor="#F2D2C2" stop-opacity="0.0441" />
-          <stop offset="0.35" stopColor="#F2D2C2" stop-opacity="0.0144" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.51" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.63" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.04" stopColor="#F2D2C2" stopOpacity="0.7225" />
+          <stop offset="0.09" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.15" stopColor="#F2D2C2" stopOpacity="0.2209" />
+          <stop offset="0.22" stopColor="#F2D2C2" stopOpacity="0.1089" />
+          <stop offset="0.28" stopColor="#F2D2C2" stopOpacity="0.0441" />
+          <stop offset="0.35" stopColor="#F2D2C2" stopOpacity="0.0144" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.51" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.63" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint8_radial_159_2060"
@@ -487,11 +487,11 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(45.2055 40.8939) scale(2.02976 2.00691)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.23" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.1369" />
-          <stop offset="0.59" stopColor="#F2D2C2" stop-opacity="0.0289" />
-          <stop offset="0.71" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.78" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.23" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.1369" />
+          <stop offset="0.59" stopColor="#F2D2C2" stopOpacity="0.0289" />
+          <stop offset="0.71" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.78" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint9_radial_159_2060"
@@ -502,15 +502,15 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(45.2039 40.9986) scale(1.07913 1.06698)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.04" stopColor="#F2D2C2" stop-opacity="0.7225" />
-          <stop offset="0.09" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.15" stopColor="#F2D2C2" stop-opacity="0.2209" />
-          <stop offset="0.22" stopColor="#F2D2C2" stop-opacity="0.1089" />
-          <stop offset="0.28" stopColor="#F2D2C2" stop-opacity="0.0441" />
-          <stop offset="0.35" stopColor="#F2D2C2" stop-opacity="0.0144" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.51" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.63" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.04" stopColor="#F2D2C2" stopOpacity="0.7225" />
+          <stop offset="0.09" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.15" stopColor="#F2D2C2" stopOpacity="0.2209" />
+          <stop offset="0.22" stopColor="#F2D2C2" stopOpacity="0.1089" />
+          <stop offset="0.28" stopColor="#F2D2C2" stopOpacity="0.0441" />
+          <stop offset="0.35" stopColor="#F2D2C2" stopOpacity="0.0144" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.51" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.63" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint10_radial_159_2060"
@@ -521,11 +521,11 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(79.8086 74.6834) scale(2.02976 2.00691)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.23" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.1369" />
-          <stop offset="0.59" stopColor="#F2D2C2" stop-opacity="0.0289" />
-          <stop offset="0.71" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.78" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.23" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.1369" />
+          <stop offset="0.59" stopColor="#F2D2C2" stopOpacity="0.0289" />
+          <stop offset="0.71" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.78" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint11_radial_159_2060"
@@ -536,15 +536,15 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(79.8085 74.7892) scale(1.07913 1.06698)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.04" stopColor="#F2D2C2" stop-opacity="0.7225" />
-          <stop offset="0.09" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.15" stopColor="#F2D2C2" stop-opacity="0.2209" />
-          <stop offset="0.22" stopColor="#F2D2C2" stop-opacity="0.1089" />
-          <stop offset="0.28" stopColor="#F2D2C2" stop-opacity="0.0441" />
-          <stop offset="0.35" stopColor="#F2D2C2" stop-opacity="0.0144" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.51" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.63" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.04" stopColor="#F2D2C2" stopOpacity="0.7225" />
+          <stop offset="0.09" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.15" stopColor="#F2D2C2" stopOpacity="0.2209" />
+          <stop offset="0.22" stopColor="#F2D2C2" stopOpacity="0.1089" />
+          <stop offset="0.28" stopColor="#F2D2C2" stopOpacity="0.0441" />
+          <stop offset="0.35" stopColor="#F2D2C2" stopOpacity="0.0144" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.51" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.63" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint12_radial_159_2060"
@@ -555,11 +555,11 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(38.9409 74.7884) scale(2.02976 2.00691)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.23" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.1369" />
-          <stop offset="0.59" stopColor="#F2D2C2" stop-opacity="0.0289" />
-          <stop offset="0.71" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.78" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.23" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.1369" />
+          <stop offset="0.59" stopColor="#F2D2C2" stopOpacity="0.0289" />
+          <stop offset="0.71" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.78" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint13_radial_159_2060"
@@ -570,15 +570,15 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(38.9421 74.8907) scale(1.07913 1.06698)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.04" stopColor="#F2D2C2" stop-opacity="0.7225" />
-          <stop offset="0.09" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.15" stopColor="#F2D2C2" stop-opacity="0.2209" />
-          <stop offset="0.22" stopColor="#F2D2C2" stop-opacity="0.1089" />
-          <stop offset="0.28" stopColor="#F2D2C2" stop-opacity="0.0441" />
-          <stop offset="0.35" stopColor="#F2D2C2" stop-opacity="0.0144" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.51" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.63" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.04" stopColor="#F2D2C2" stopOpacity="0.7225" />
+          <stop offset="0.09" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.15" stopColor="#F2D2C2" stopOpacity="0.2209" />
+          <stop offset="0.22" stopColor="#F2D2C2" stopOpacity="0.1089" />
+          <stop offset="0.28" stopColor="#F2D2C2" stopOpacity="0.0441" />
+          <stop offset="0.35" stopColor="#F2D2C2" stopOpacity="0.0144" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.51" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.63" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint14_radial_159_2060"
@@ -589,10 +589,10 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(79.3782 47.6389) rotate(14.3039) scale(0.796701 1.49878)"
         >
           <stop stopColor="#71008C" />
-          <stop offset="0.23" stopColor="#71008C" stop-opacity="0.3969" />
-          <stop offset="0.48" stopColor="#71008C" stop-opacity="0.0841" />
-          <stop offset="0.67" stopColor="#71008C" stop-opacity="0.01" />
-          <stop offset="0.78" stopColor="#71008C" stop-opacity="0" />
+          <stop offset="0.23" stopColor="#71008C" stopOpacity="0.3969" />
+          <stop offset="0.48" stopColor="#71008C" stopOpacity="0.0841" />
+          <stop offset="0.67" stopColor="#71008C" stopOpacity="0.01" />
+          <stop offset="0.78" stopColor="#71008C" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint15_radial_159_2060"
@@ -603,13 +603,13 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(79.4204 47.7143) rotate(14.3039) scale(0.423895 0.797447)"
         >
           <stop stopColor="#71008C" />
-          <stop offset="0.05" stopColor="#71008C" stop-opacity="0.6724" />
-          <stop offset="0.12" stopColor="#71008C" stop-opacity="0.3249" />
-          <stop offset="0.2" stopColor="#71008C" stop-opacity="0.1296" />
-          <stop offset="0.29" stopColor="#71008C" stop-opacity="0.04" />
-          <stop offset="0.38" stopColor="#71008C" stop-opacity="0.01" />
-          <stop offset="0.48" stopColor="#71008C" stop-opacity="0.01" />
-          <stop offset="0.63" stopColor="#71008C" stop-opacity="0" />
+          <stop offset="0.05" stopColor="#71008C" stopOpacity="0.6724" />
+          <stop offset="0.12" stopColor="#71008C" stopOpacity="0.3249" />
+          <stop offset="0.2" stopColor="#71008C" stopOpacity="0.1296" />
+          <stop offset="0.29" stopColor="#71008C" stopOpacity="0.04" />
+          <stop offset="0.38" stopColor="#71008C" stopOpacity="0.01" />
+          <stop offset="0.48" stopColor="#71008C" stopOpacity="0.01" />
+          <stop offset="0.63" stopColor="#71008C" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint16_radial_159_2060"
@@ -620,10 +620,10 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(39.3541 47.6207) rotate(165.696) scale(0.796701 1.49878)"
         >
           <stop stopColor="#71008C" />
-          <stop offset="0.23" stopColor="#71008C" stop-opacity="0.3969" />
-          <stop offset="0.48" stopColor="#71008C" stop-opacity="0.0841" />
-          <stop offset="0.67" stopColor="#71008C" stop-opacity="0.01" />
-          <stop offset="0.78" stopColor="#71008C" stop-opacity="0" />
+          <stop offset="0.23" stopColor="#71008C" stopOpacity="0.3969" />
+          <stop offset="0.48" stopColor="#71008C" stopOpacity="0.0841" />
+          <stop offset="0.67" stopColor="#71008C" stopOpacity="0.01" />
+          <stop offset="0.78" stopColor="#71008C" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint17_radial_159_2060"
@@ -634,13 +634,13 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(39.3098 47.6965) rotate(165.696) scale(0.423895 0.797447)"
         >
           <stop stopColor="#71008C" />
-          <stop offset="0.05" stopColor="#71008C" stop-opacity="0.6724" />
-          <stop offset="0.12" stopColor="#71008C" stop-opacity="0.3249" />
-          <stop offset="0.2" stopColor="#71008C" stop-opacity="0.1296" />
-          <stop offset="0.29" stopColor="#71008C" stop-opacity="0.04" />
-          <stop offset="0.38" stopColor="#71008C" stop-opacity="0.01" />
-          <stop offset="0.48" stopColor="#71008C" stop-opacity="0.01" />
-          <stop offset="0.63" stopColor="#71008C" stop-opacity="0" />
+          <stop offset="0.05" stopColor="#71008C" stopOpacity="0.6724" />
+          <stop offset="0.12" stopColor="#71008C" stopOpacity="0.3249" />
+          <stop offset="0.2" stopColor="#71008C" stopOpacity="0.1296" />
+          <stop offset="0.29" stopColor="#71008C" stopOpacity="0.04" />
+          <stop offset="0.38" stopColor="#71008C" stopOpacity="0.01" />
+          <stop offset="0.48" stopColor="#71008C" stopOpacity="0.01" />
+          <stop offset="0.63" stopColor="#71008C" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint18_radial_159_2060"
@@ -651,10 +651,10 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(73.0231 80.9863) rotate(104.618) scale(0.788845 1.51371)"
         >
           <stop stopColor="#71008C" />
-          <stop offset="0.23" stopColor="#71008C" stop-opacity="0.3969" />
-          <stop offset="0.48" stopColor="#71008C" stop-opacity="0.0841" />
-          <stop offset="0.67" stopColor="#71008C" stop-opacity="0.01" />
-          <stop offset="0.78" stopColor="#71008C" stop-opacity="0" />
+          <stop offset="0.23" stopColor="#71008C" stopOpacity="0.3969" />
+          <stop offset="0.48" stopColor="#71008C" stopOpacity="0.0841" />
+          <stop offset="0.67" stopColor="#71008C" stopOpacity="0.01" />
+          <stop offset="0.78" stopColor="#71008C" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint19_radial_159_2060"
@@ -665,13 +665,13 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(72.9444 81.0266) rotate(104.618) scale(0.419715 0.805388)"
         >
           <stop stopColor="#71008C" />
-          <stop offset="0.05" stopColor="#71008C" stop-opacity="0.6724" />
-          <stop offset="0.12" stopColor="#71008C" stop-opacity="0.3249" />
-          <stop offset="0.2" stopColor="#71008C" stop-opacity="0.1296" />
-          <stop offset="0.29" stopColor="#71008C" stop-opacity="0.04" />
-          <stop offset="0.38" stopColor="#71008C" stop-opacity="0.01" />
-          <stop offset="0.48" stopColor="#71008C" stop-opacity="0.01" />
-          <stop offset="0.63" stopColor="#71008C" stop-opacity="0" />
+          <stop offset="0.05" stopColor="#71008C" stopOpacity="0.6724" />
+          <stop offset="0.12" stopColor="#71008C" stopOpacity="0.3249" />
+          <stop offset="0.2" stopColor="#71008C" stopOpacity="0.1296" />
+          <stop offset="0.29" stopColor="#71008C" stopOpacity="0.04" />
+          <stop offset="0.38" stopColor="#71008C" stopOpacity="0.01" />
+          <stop offset="0.48" stopColor="#71008C" stopOpacity="0.01" />
+          <stop offset="0.63" stopColor="#71008C" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint20_radial_159_2060"
@@ -682,10 +682,10 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(45.6765 80.9909) rotate(75.3824) scale(0.788846 1.51371)"
         >
           <stop stopColor="#71008C" />
-          <stop offset="0.23" stopColor="#71008C" stop-opacity="0.3969" />
-          <stop offset="0.48" stopColor="#71008C" stop-opacity="0.0841" />
-          <stop offset="0.67" stopColor="#71008C" stop-opacity="0.01" />
-          <stop offset="0.78" stopColor="#71008C" stop-opacity="0" />
+          <stop offset="0.23" stopColor="#71008C" stopOpacity="0.3969" />
+          <stop offset="0.48" stopColor="#71008C" stopOpacity="0.0841" />
+          <stop offset="0.67" stopColor="#71008C" stopOpacity="0.01" />
+          <stop offset="0.78" stopColor="#71008C" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint21_radial_159_2060"
@@ -696,13 +696,13 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(45.7526 81.0334) rotate(75.3824) scale(0.419715 0.805388)"
         >
           <stop stopColor="#71008C" />
-          <stop offset="0.05" stopColor="#71008C" stop-opacity="0.6724" />
-          <stop offset="0.12" stopColor="#71008C" stop-opacity="0.3249" />
-          <stop offset="0.2" stopColor="#71008C" stop-opacity="0.1296" />
-          <stop offset="0.29" stopColor="#71008C" stop-opacity="0.04" />
-          <stop offset="0.38" stopColor="#71008C" stop-opacity="0.01" />
-          <stop offset="0.48" stopColor="#71008C" stop-opacity="0.01" />
-          <stop offset="0.63" stopColor="#71008C" stop-opacity="0" />
+          <stop offset="0.05" stopColor="#71008C" stopOpacity="0.6724" />
+          <stop offset="0.12" stopColor="#71008C" stopOpacity="0.3249" />
+          <stop offset="0.2" stopColor="#71008C" stopOpacity="0.1296" />
+          <stop offset="0.29" stopColor="#71008C" stopOpacity="0.04" />
+          <stop offset="0.38" stopColor="#71008C" stopOpacity="0.01" />
+          <stop offset="0.48" stopColor="#71008C" stopOpacity="0.01" />
+          <stop offset="0.63" stopColor="#71008C" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint22_radial_159_2060"
@@ -713,10 +713,10 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(77.1203 78.5307) rotate(-44.6757) scale(4.15501 0.463879)"
         >
           <stop stopColor="#71008C" />
-          <stop offset="0.23" stopColor="#71008C" stop-opacity="0.3969" />
-          <stop offset="0.48" stopColor="#71008C" stop-opacity="0.0841" />
-          <stop offset="0.67" stopColor="#71008C" stop-opacity="0.01" />
-          <stop offset="0.78" stopColor="#71008C" stop-opacity="0" />
+          <stop offset="0.23" stopColor="#71008C" stopOpacity="0.3969" />
+          <stop offset="0.48" stopColor="#71008C" stopOpacity="0.0841" />
+          <stop offset="0.67" stopColor="#71008C" stopOpacity="0.01" />
+          <stop offset="0.78" stopColor="#71008C" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint23_radial_159_2060"
@@ -727,13 +727,13 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(77.1373 78.5475) rotate(-44.6757) scale(2.21053 0.246791)"
         >
           <stop stopColor="#71008C" />
-          <stop offset="0.05" stopColor="#71008C" stop-opacity="0.6724" />
-          <stop offset="0.12" stopColor="#71008C" stop-opacity="0.3249" />
-          <stop offset="0.2" stopColor="#71008C" stop-opacity="0.1296" />
-          <stop offset="0.29" stopColor="#71008C" stop-opacity="0.04" />
-          <stop offset="0.38" stopColor="#71008C" stop-opacity="0.01" />
-          <stop offset="0.48" stopColor="#71008C" stop-opacity="0.01" />
-          <stop offset="0.63" stopColor="#71008C" stop-opacity="0" />
+          <stop offset="0.05" stopColor="#71008C" stopOpacity="0.6724" />
+          <stop offset="0.12" stopColor="#71008C" stopOpacity="0.3249" />
+          <stop offset="0.2" stopColor="#71008C" stopOpacity="0.1296" />
+          <stop offset="0.29" stopColor="#71008C" stopOpacity="0.04" />
+          <stop offset="0.38" stopColor="#71008C" stopOpacity="0.01" />
+          <stop offset="0.48" stopColor="#71008C" stopOpacity="0.01" />
+          <stop offset="0.63" stopColor="#71008C" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint24_radial_159_2060"
@@ -744,10 +744,10 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(72.9738 54.706) rotate(-44.6757) scale(9.258 0.44371)"
         >
           <stop stopColor="#71008C" />
-          <stop offset="0.23" stopColor="#71008C" stop-opacity="0.3969" />
-          <stop offset="0.48" stopColor="#71008C" stop-opacity="0.0841" />
-          <stop offset="0.67" stopColor="#71008C" stop-opacity="0.01" />
-          <stop offset="0.78" stopColor="#71008C" stop-opacity="0" />
+          <stop offset="0.23" stopColor="#71008C" stopOpacity="0.3969" />
+          <stop offset="0.48" stopColor="#71008C" stopOpacity="0.0841" />
+          <stop offset="0.67" stopColor="#71008C" stopOpacity="0.01" />
+          <stop offset="0.78" stopColor="#71008C" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint25_radial_159_2060"
@@ -758,13 +758,13 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(72.9908 54.7223) rotate(-44.6757) scale(4.92541 0.236061)"
         >
           <stop stopColor="#71008C" />
-          <stop offset="0.05" stopColor="#71008C" stop-opacity="0.6724" />
-          <stop offset="0.12" stopColor="#71008C" stop-opacity="0.3249" />
-          <stop offset="0.2" stopColor="#71008C" stop-opacity="0.1296" />
-          <stop offset="0.29" stopColor="#71008C" stop-opacity="0.04" />
-          <stop offset="0.38" stopColor="#71008C" stop-opacity="0.01" />
-          <stop offset="0.48" stopColor="#71008C" stop-opacity="0.01" />
-          <stop offset="0.63" stopColor="#71008C" stop-opacity="0" />
+          <stop offset="0.05" stopColor="#71008C" stopOpacity="0.6724" />
+          <stop offset="0.12" stopColor="#71008C" stopOpacity="0.3249" />
+          <stop offset="0.2" stopColor="#71008C" stopOpacity="0.1296" />
+          <stop offset="0.29" stopColor="#71008C" stopOpacity="0.04" />
+          <stop offset="0.38" stopColor="#71008C" stopOpacity="0.01" />
+          <stop offset="0.48" stopColor="#71008C" stopOpacity="0.01" />
+          <stop offset="0.63" stopColor="#71008C" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint26_radial_159_2060"
@@ -775,10 +775,10 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(45.8882 54.5349) rotate(-135.324) scale(9.258 0.44371)"
         >
           <stop stopColor="#71008C" />
-          <stop offset="0.23" stopColor="#71008C" stop-opacity="0.3969" />
-          <stop offset="0.48" stopColor="#71008C" stop-opacity="0.0841" />
-          <stop offset="0.67" stopColor="#71008C" stop-opacity="0.01" />
-          <stop offset="0.78" stopColor="#71008C" stop-opacity="0" />
+          <stop offset="0.23" stopColor="#71008C" stopOpacity="0.3969" />
+          <stop offset="0.48" stopColor="#71008C" stopOpacity="0.0841" />
+          <stop offset="0.67" stopColor="#71008C" stopOpacity="0.01" />
+          <stop offset="0.78" stopColor="#71008C" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint27_radial_159_2060"
@@ -789,13 +789,13 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(45.872 54.551) rotate(-135.324) scale(4.92541 0.236061)"
         >
           <stop stopColor="#71008C" />
-          <stop offset="0.05" stopColor="#71008C" stop-opacity="0.6724" />
-          <stop offset="0.12" stopColor="#71008C" stop-opacity="0.3249" />
-          <stop offset="0.2" stopColor="#71008C" stop-opacity="0.1296" />
-          <stop offset="0.29" stopColor="#71008C" stop-opacity="0.04" />
-          <stop offset="0.38" stopColor="#71008C" stop-opacity="0.01" />
-          <stop offset="0.48" stopColor="#71008C" stop-opacity="0.01" />
-          <stop offset="0.63" stopColor="#71008C" stop-opacity="0" />
+          <stop offset="0.05" stopColor="#71008C" stopOpacity="0.6724" />
+          <stop offset="0.12" stopColor="#71008C" stopOpacity="0.3249" />
+          <stop offset="0.2" stopColor="#71008C" stopOpacity="0.1296" />
+          <stop offset="0.29" stopColor="#71008C" stopOpacity="0.04" />
+          <stop offset="0.38" stopColor="#71008C" stopOpacity="0.01" />
+          <stop offset="0.48" stopColor="#71008C" stopOpacity="0.01" />
+          <stop offset="0.63" stopColor="#71008C" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint28_radial_159_2060"
@@ -806,10 +806,10 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(41.5876 78.5897) rotate(-135.324) scale(4.15501 0.463879)"
         >
           <stop stopColor="#71008C" />
-          <stop offset="0.23" stopColor="#71008C" stop-opacity="0.3969" />
-          <stop offset="0.48" stopColor="#71008C" stop-opacity="0.0841" />
-          <stop offset="0.67" stopColor="#71008C" stop-opacity="0.01" />
-          <stop offset="0.78" stopColor="#71008C" stop-opacity="0" />
+          <stop offset="0.23" stopColor="#71008C" stopOpacity="0.3969" />
+          <stop offset="0.48" stopColor="#71008C" stopOpacity="0.0841" />
+          <stop offset="0.67" stopColor="#71008C" stopOpacity="0.01" />
+          <stop offset="0.78" stopColor="#71008C" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint29_radial_159_2060"
@@ -820,13 +820,13 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(41.5706 78.6068) rotate(-135.324) scale(2.21053 0.246791)"
         >
           <stop stopColor="#71008C" />
-          <stop offset="0.05" stopColor="#71008C" stop-opacity="0.6724" />
-          <stop offset="0.12" stopColor="#71008C" stop-opacity="0.3249" />
-          <stop offset="0.2" stopColor="#71008C" stop-opacity="0.1296" />
-          <stop offset="0.29" stopColor="#71008C" stop-opacity="0.04" />
-          <stop offset="0.38" stopColor="#71008C" stop-opacity="0.01" />
-          <stop offset="0.48" stopColor="#71008C" stop-opacity="0.01" />
-          <stop offset="0.63" stopColor="#71008C" stop-opacity="0" />
+          <stop offset="0.05" stopColor="#71008C" stopOpacity="0.6724" />
+          <stop offset="0.12" stopColor="#71008C" stopOpacity="0.3249" />
+          <stop offset="0.2" stopColor="#71008C" stopOpacity="0.1296" />
+          <stop offset="0.29" stopColor="#71008C" stopOpacity="0.04" />
+          <stop offset="0.38" stopColor="#71008C" stopOpacity="0.01" />
+          <stop offset="0.48" stopColor="#71008C" stopOpacity="0.01" />
+          <stop offset="0.63" stopColor="#71008C" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint30_radial_159_2060"
@@ -837,11 +837,11 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(50.6805 45.3149) rotate(44.6757) scale(8.81679 1.01876)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.23" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.1369" />
-          <stop offset="0.59" stopColor="#F2D2C2" stop-opacity="0.0289" />
-          <stop offset="0.71" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.78" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.23" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.1369" />
+          <stop offset="0.59" stopColor="#F2D2C2" stopOpacity="0.0289" />
+          <stop offset="0.71" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.78" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint31_radial_159_2060"
@@ -852,15 +852,15 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(50.6425 45.3524) rotate(44.6757) scale(4.68663 0.541531)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.04" stopColor="#F2D2C2" stop-opacity="0.7225" />
-          <stop offset="0.09" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.15" stopColor="#F2D2C2" stop-opacity="0.2209" />
-          <stop offset="0.22" stopColor="#F2D2C2" stop-opacity="0.1089" />
-          <stop offset="0.28" stopColor="#F2D2C2" stop-opacity="0.0441" />
-          <stop offset="0.35" stopColor="#F2D2C2" stop-opacity="0.0144" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.51" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.63" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.04" stopColor="#F2D2C2" stopOpacity="0.7225" />
+          <stop offset="0.09" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.15" stopColor="#F2D2C2" stopOpacity="0.2209" />
+          <stop offset="0.22" stopColor="#F2D2C2" stopOpacity="0.1089" />
+          <stop offset="0.28" stopColor="#F2D2C2" stopOpacity="0.0441" />
+          <stop offset="0.35" stopColor="#F2D2C2" stopOpacity="0.0144" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.51" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.63" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint32_radial_159_2060"
@@ -871,11 +871,11 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(45.306 53.585) rotate(44.6757) scale(8.81679 1.01876)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.23" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.1369" />
-          <stop offset="0.59" stopColor="#F2D2C2" stop-opacity="0.0289" />
-          <stop offset="0.71" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.78" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.23" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.1369" />
+          <stop offset="0.59" stopColor="#F2D2C2" stopOpacity="0.0289" />
+          <stop offset="0.71" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.78" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint33_radial_159_2060"
@@ -886,15 +886,15 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(45.2685 53.6222) rotate(44.6757) scale(4.68663 0.541531)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.04" stopColor="#F2D2C2" stop-opacity="0.7225" />
-          <stop offset="0.09" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.15" stopColor="#F2D2C2" stop-opacity="0.2209" />
-          <stop offset="0.22" stopColor="#F2D2C2" stop-opacity="0.1089" />
-          <stop offset="0.28" stopColor="#F2D2C2" stop-opacity="0.0441" />
-          <stop offset="0.35" stopColor="#F2D2C2" stop-opacity="0.0144" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.51" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.63" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.04" stopColor="#F2D2C2" stopOpacity="0.7225" />
+          <stop offset="0.09" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.15" stopColor="#F2D2C2" stopOpacity="0.2209" />
+          <stop offset="0.22" stopColor="#F2D2C2" stopOpacity="0.1089" />
+          <stop offset="0.28" stopColor="#F2D2C2" stopOpacity="0.0441" />
+          <stop offset="0.35" stopColor="#F2D2C2" stopOpacity="0.0144" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.51" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.63" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint34_radial_159_2060"
@@ -905,11 +905,11 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(67.213 46.1239) rotate(135.324) scale(8.81679 1.01876)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.23" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.1369" />
-          <stop offset="0.59" stopColor="#F2D2C2" stop-opacity="0.0289" />
-          <stop offset="0.71" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.78" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.23" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.1369" />
+          <stop offset="0.59" stopColor="#F2D2C2" stopOpacity="0.0289" />
+          <stop offset="0.71" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.78" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint35_radial_159_2060"
@@ -920,15 +920,15 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(67.2509 46.1612) rotate(135.324) scale(4.68663 0.541531)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.04" stopColor="#F2D2C2" stop-opacity="0.7225" />
-          <stop offset="0.09" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.15" stopColor="#F2D2C2" stop-opacity="0.2209" />
-          <stop offset="0.22" stopColor="#F2D2C2" stop-opacity="0.1089" />
-          <stop offset="0.28" stopColor="#F2D2C2" stop-opacity="0.0441" />
-          <stop offset="0.35" stopColor="#F2D2C2" stop-opacity="0.0144" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.51" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.63" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.04" stopColor="#F2D2C2" stopOpacity="0.7225" />
+          <stop offset="0.09" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.15" stopColor="#F2D2C2" stopOpacity="0.2209" />
+          <stop offset="0.22" stopColor="#F2D2C2" stopOpacity="0.1089" />
+          <stop offset="0.28" stopColor="#F2D2C2" stopOpacity="0.0441" />
+          <stop offset="0.35" stopColor="#F2D2C2" stopOpacity="0.0144" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.51" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.63" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint36_radial_159_2060"
@@ -939,11 +939,11 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(72.5899 54.3918) rotate(135.324) scale(8.81679 1.01876)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.23" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.1369" />
-          <stop offset="0.59" stopColor="#F2D2C2" stop-opacity="0.0289" />
-          <stop offset="0.71" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.78" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.23" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.1369" />
+          <stop offset="0.59" stopColor="#F2D2C2" stopOpacity="0.0289" />
+          <stop offset="0.71" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.78" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint37_radial_159_2060"
@@ -954,15 +954,15 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(72.6273 54.4291) rotate(135.324) scale(4.68663 0.541531)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.04" stopColor="#F2D2C2" stop-opacity="0.7225" />
-          <stop offset="0.09" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.15" stopColor="#F2D2C2" stop-opacity="0.2209" />
-          <stop offset="0.22" stopColor="#F2D2C2" stop-opacity="0.1089" />
-          <stop offset="0.28" stopColor="#F2D2C2" stop-opacity="0.0441" />
-          <stop offset="0.35" stopColor="#F2D2C2" stop-opacity="0.0144" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.51" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.63" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.04" stopColor="#F2D2C2" stopOpacity="0.7225" />
+          <stop offset="0.09" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.15" stopColor="#F2D2C2" stopOpacity="0.2209" />
+          <stop offset="0.22" stopColor="#F2D2C2" stopOpacity="0.1089" />
+          <stop offset="0.28" stopColor="#F2D2C2" stopOpacity="0.0441" />
+          <stop offset="0.35" stopColor="#F2D2C2" stopOpacity="0.0144" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.51" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.63" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint38_radial_159_2060"
@@ -973,11 +973,11 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(45.078 67.9433) rotate(135.324) scale(8.81679 1.01876)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.23" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.1369" />
-          <stop offset="0.59" stopColor="#F2D2C2" stop-opacity="0.0289" />
-          <stop offset="0.71" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.78" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.23" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.1369" />
+          <stop offset="0.59" stopColor="#F2D2C2" stopOpacity="0.0289" />
+          <stop offset="0.71" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.78" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint39_radial_159_2060"
@@ -988,15 +988,15 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(45.0404 67.9058) rotate(135.324) scale(4.68663 0.541531)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.04" stopColor="#F2D2C2" stop-opacity="0.7225" />
-          <stop offset="0.09" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.15" stopColor="#F2D2C2" stop-opacity="0.2209" />
-          <stop offset="0.22" stopColor="#F2D2C2" stop-opacity="0.1089" />
-          <stop offset="0.28" stopColor="#F2D2C2" stop-opacity="0.0441" />
-          <stop offset="0.35" stopColor="#F2D2C2" stop-opacity="0.0144" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.51" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.63" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.04" stopColor="#F2D2C2" stopOpacity="0.7225" />
+          <stop offset="0.09" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.15" stopColor="#F2D2C2" stopOpacity="0.2209" />
+          <stop offset="0.22" stopColor="#F2D2C2" stopOpacity="0.1089" />
+          <stop offset="0.28" stopColor="#F2D2C2" stopOpacity="0.0441" />
+          <stop offset="0.35" stopColor="#F2D2C2" stopOpacity="0.0144" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.51" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.63" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint40_radial_159_2060"
@@ -1007,11 +1007,11 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(53.1106 73.551) rotate(135.324) scale(8.81679 1.01876)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.23" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.1369" />
-          <stop offset="0.59" stopColor="#F2D2C2" stop-opacity="0.0289" />
-          <stop offset="0.71" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.78" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.23" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.1369" />
+          <stop offset="0.59" stopColor="#F2D2C2" stopOpacity="0.0289" />
+          <stop offset="0.71" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.78" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint41_radial_159_2060"
@@ -1022,15 +1022,15 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(53.0729 73.5136) rotate(135.324) scale(4.68663 0.541531)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.04" stopColor="#F2D2C2" stop-opacity="0.7225" />
-          <stop offset="0.09" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.15" stopColor="#F2D2C2" stop-opacity="0.2209" />
-          <stop offset="0.22" stopColor="#F2D2C2" stop-opacity="0.1089" />
-          <stop offset="0.28" stopColor="#F2D2C2" stop-opacity="0.0441" />
-          <stop offset="0.35" stopColor="#F2D2C2" stop-opacity="0.0144" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.51" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.63" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.04" stopColor="#F2D2C2" stopOpacity="0.7225" />
+          <stop offset="0.09" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.15" stopColor="#F2D2C2" stopOpacity="0.2209" />
+          <stop offset="0.22" stopColor="#F2D2C2" stopOpacity="0.1089" />
+          <stop offset="0.28" stopColor="#F2D2C2" stopOpacity="0.0441" />
+          <stop offset="0.35" stopColor="#F2D2C2" stopOpacity="0.0144" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.51" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.63" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint42_radial_159_2060"
@@ -1041,11 +1041,11 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(72.2986 66.7431) rotate(-135.324) scale(8.81679 1.01876)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.23" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.1369" />
-          <stop offset="0.59" stopColor="#F2D2C2" stop-opacity="0.0289" />
-          <stop offset="0.71" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.78" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.23" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.1369" />
+          <stop offset="0.59" stopColor="#F2D2C2" stopOpacity="0.0289" />
+          <stop offset="0.71" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.78" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint43_radial_159_2060"
@@ -1056,15 +1056,15 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(72.3367 66.7056) rotate(-135.324) scale(4.68663 0.541531)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.04" stopColor="#F2D2C2" stop-opacity="0.7225" />
-          <stop offset="0.09" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.15" stopColor="#F2D2C2" stop-opacity="0.2209" />
-          <stop offset="0.22" stopColor="#F2D2C2" stop-opacity="0.1089" />
-          <stop offset="0.28" stopColor="#F2D2C2" stop-opacity="0.0441" />
-          <stop offset="0.35" stopColor="#F2D2C2" stop-opacity="0.0144" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.51" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.63" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.04" stopColor="#F2D2C2" stopOpacity="0.7225" />
+          <stop offset="0.09" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.15" stopColor="#F2D2C2" stopOpacity="0.2209" />
+          <stop offset="0.22" stopColor="#F2D2C2" stopOpacity="0.1089" />
+          <stop offset="0.28" stopColor="#F2D2C2" stopOpacity="0.0441" />
+          <stop offset="0.35" stopColor="#F2D2C2" stopOpacity="0.0144" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.51" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.63" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint44_radial_159_2060"
@@ -1075,11 +1075,11 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(66.6296 74.6872) rotate(-135.324) scale(8.81679 1.01876)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.23" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.1369" />
-          <stop offset="0.59" stopColor="#F2D2C2" stop-opacity="0.0289" />
-          <stop offset="0.71" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.78" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.23" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.1369" />
+          <stop offset="0.59" stopColor="#F2D2C2" stopOpacity="0.0289" />
+          <stop offset="0.71" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.78" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint45_radial_159_2060"
@@ -1090,15 +1090,15 @@ const CloseButton = ({ className }: any) => {
           gradientTransform="translate(66.6669 74.6502) rotate(-135.324) scale(4.68663 0.541531)"
         >
           <stop stopColor="#F2D2C2" />
-          <stop offset="0.04" stopColor="#F2D2C2" stop-opacity="0.7225" />
-          <stop offset="0.09" stopColor="#F2D2C2" stop-opacity="0.4225" />
-          <stop offset="0.15" stopColor="#F2D2C2" stop-opacity="0.2209" />
-          <stop offset="0.22" stopColor="#F2D2C2" stop-opacity="0.1089" />
-          <stop offset="0.28" stopColor="#F2D2C2" stop-opacity="0.0441" />
-          <stop offset="0.35" stopColor="#F2D2C2" stop-opacity="0.0144" />
-          <stop offset="0.42" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.51" stopColor="#F2D2C2" stop-opacity="0.01" />
-          <stop offset="0.63" stopColor="#F2D2C2" stop-opacity="0" />
+          <stop offset="0.04" stopColor="#F2D2C2" stopOpacity="0.7225" />
+          <stop offset="0.09" stopColor="#F2D2C2" stopOpacity="0.4225" />
+          <stop offset="0.15" stopColor="#F2D2C2" stopOpacity="0.2209" />
+          <stop offset="0.22" stopColor="#F2D2C2" stopOpacity="0.1089" />
+          <stop offset="0.28" stopColor="#F2D2C2" stopOpacity="0.0441" />
+          <stop offset="0.35" stopColor="#F2D2C2" stopOpacity="0.0144" />
+          <stop offset="0.42" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.51" stopColor="#F2D2C2" stopOpacity="0.01" />
+          <stop offset="0.63" stopColor="#F2D2C2" stopOpacity="0" />
         </radialGradient>
         <clipPath id="clip0_159_2060">
           <rect

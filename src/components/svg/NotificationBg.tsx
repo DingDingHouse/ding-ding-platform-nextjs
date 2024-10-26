@@ -7,7 +7,7 @@ const NotificationBg = () => {
       height="563"
       viewBox="0 0 812 563"
       fill="none"
-      className="h-full w-full absolute"
+      className="sm:h-[52vw] sm:w-[38vw] h-[52vh] w-[38vh] absolute"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

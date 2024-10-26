@@ -13,8 +13,11 @@ const rubik = Rubik({
 const Notification = ({
   visible,
   message,
+  title,
+  element,
   className,
   showButton,
+  showCloseButton,
   onYesClick,
   onClose,
 }: any) => {
@@ -26,27 +29,42 @@ const Notification = ({
       className={` w-100vw h-100vh z-[99] bg-black bg-opacity-50 flex items-center justify-center fixed top-0 left-0`}
     >
       <div
-        onClick={(e) => {
-          e.stopPropagation();
-        }}
-        className={`${className} h-[50%] w-[36%] z-[100] flex items-center justify-center relative ${
+        className={`${className} sm:h-[52vw] h-[52vh] sm:w-[38vw] w-[38vh] z-[100] flex items-center justify-center relative ${
           visible ? "animate-enter" : "animate-leave"
         }`}
       >
         <NotificationBg />
         <div
-          className={`absolute flex flex-col gap-3vw top-auto left-auto w-[60%] sm:w-[65%] ${rubik.className}`}
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+          className={`absolute flex flex-col h-[20vh] items-center justify-center sm:h-[20vw] top-auto left-auto w-full ${rubik.className}`}
         >
-          {showButton && (
+          {/* title text  */}
+          {title && (
+            <div className="absolute top-[-25%] w-full h-[22%]">{title}</div>
+          )}
+          {/* close button  */}
+          {showCloseButton && (
             <button onClick={onClose}>
-              <CloseButton className="absolute top-[-13%] right-[-30%]" />
+              <CloseButton className="absolute top-[-15%] right-0" />
             </button>
           )}
-          <p className="sm:text-[2.5vw] text-[2.5vh] text-white font-[800] text-center stroke uppercase ">
-            {message}
-          </p>
+          <div>
+            {/* message or title  */}
+            <p className="sm:text-[2.5vw] text-[2.5vh] text-white font-[800] text-center stroke uppercase ">
+              {message}
+            </p>
+            {/* element to render in settings button */}
+            {element && (
+              <div className="h-[16vh] w-full sm:h-[16vw] flex items-center justify-center">
+                {element}
+              </div>
+            )}
+          </div>
+          {/* confirm button */}
           {showButton && (
-            <div className="flex gap-x-3vw items-center justify-center">
+            <div className="flex gap-x-3vw items-center justify-center my-[1vw]">
               <button
                 onClick={onYesClick}
                 className="pb-0-5vw  bg-[#C44C10] rounded-full shadow-sm hover:pb-0 hover:shadow-none transition-all"

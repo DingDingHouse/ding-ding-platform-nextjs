@@ -7,7 +7,7 @@ const Password = () => {
       height="88"
       viewBox="0 0 98 88"
       fill="none"
-      className="w-4vw h-4vw"
+      className="w-full h-full"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g filter="url(#filter0_f_1_736)">
