@@ -7,4 +7,5 @@ interface ModalProps {
   setOpen: (isOpen: boolean) => void;
   modalType: string;
   setModalType: (type: string) => void;
+  disableClose: boolean;
 }

@@ -22,7 +22,7 @@ const GameContainer = ({
       onDrag={handleDrag}
     >
       <div
-        className="flex items-center justify-between duration-500 ease-in-out transition-all transform-3d"
+        className="flex items-center justify-between duration-500 ease-in-out transition-all transform-3d w-full"
         style={{ transform: `translateX(-${currentIndex * (100 / 5)}%)` }}
       >
         {displayedGames.map((game: any, index: number) => {
@@ -57,6 +57,7 @@ const GameContainer = ({
             zIndex = 1;
             scale = 1.2;
           }
+
           return (
             <div
               key={index}
