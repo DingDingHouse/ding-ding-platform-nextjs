@@ -94,7 +94,7 @@ const Game = ({ games }: any) => {
   }, [games]);
 
   return (
-    <div className="h-[40dvh] sm:h-[40dvw] overflow-hidden flex w-100vw relative">
+    <div className="h-[45dvh] sm:h-[40dvw] overflow-hidden flex w-100vw relative">
       {!open ? (
         <div className="flex justify-evenly items-center w-full relative h-full overflow-hidden">
           {/* <button

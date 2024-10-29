@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Logout from "./svg/Logout";
+import LogoutIcon from "./svg/icons/LogoutIcon";
 import toast from "react-hot-toast";
 import Notification from "./Notification";
 import { useRouter } from "next/navigation";
@@ -39,7 +39,7 @@ const LogoutButton = () => {
 
   return (
     <button onClick={handleClick}>
-      <Logout />
+      <LogoutIcon />
     </button>
   );
 };

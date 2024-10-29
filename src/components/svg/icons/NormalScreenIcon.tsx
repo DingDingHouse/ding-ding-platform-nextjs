@@ -1,6 +1,6 @@
 import React from "react";
 
-const NormalScreen = () => {
+const NormalScreenIcon = () => {
   return (
     <svg
       width="98"
@@ -182,4 +182,4 @@ const NormalScreen = () => {
   );
 };
 
-export default NormalScreen;
+export default NormalScreenIcon;
