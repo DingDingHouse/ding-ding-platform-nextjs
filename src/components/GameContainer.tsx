@@ -71,7 +71,7 @@ const GameContainer = ({
                 zIndex: zIndex,
               }}
             >
-              <GameCard data={game} />
+              <GameCard position={position} data={game} />
             </div>
           );
         })}
