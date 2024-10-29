@@ -30,32 +30,38 @@ const GameContainer = ({
 
           let rotateY = 0;
           let zIndex = 0;
-          let scale = 1.3;
+          let scaleY = 1.3;
+          let scaleX = 1;
 
           if (position === 2) {
             rotateY = 0;
             zIndex = 2;
-            scale = 1;
+            scaleY = 1;
+            scaleX = 1;
           }
           if (position === 1) {
             rotateY = 15;
             zIndex = 1;
-            scale = 1.1;
+            scaleY = 1.05;
+            scaleX = 0.89;
           }
           if (position === 3) {
             rotateY = -15;
             zIndex = 1;
-            scale = 1.1;
+            scaleY = 1.05;
+            scaleX = 0.89;
           }
           if (position === 0) {
             rotateY = 25;
             zIndex = 1;
-            scale = 1.2;
+            scaleY = 1.15;
+            scaleX = 0.8;
           }
           if (position === 4) {
             rotateY = -25;
             zIndex = 1;
-            scale = 1.2;
+            scaleY = 1.15;
+            scaleX = 0.8;
           }
 
           return (
@@ -67,11 +73,11 @@ const GameContainer = ({
                   : "opacity-100"
               }`}
               style={{
-                transform: `rotateY(${rotateY}deg) scaleY(${scale})`,
+                transform: `rotateY(${rotateY}deg) scaleY(${scaleY}) scaleX(${scaleX})`,
                 zIndex: zIndex,
               }}
             >
-              <GameCard data={game} />
+              <GameCard position={position} data={game} />
             </div>
           );
         })}
