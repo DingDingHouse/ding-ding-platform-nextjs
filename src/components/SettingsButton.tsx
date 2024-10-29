@@ -1,15 +1,14 @@
 "use client";
 import React, { useState } from "react";
-import Settings from "./svg/Settings";
+import SettingsIcon from "./svg/icons/SettingsIcon";
 import Modal from "./Modal";
-import ShareIcon from "./svg/ShareIcon";
-import AnnouncementIcon from "./svg/AnnouncementIcon";
-import Password from "./svg/Password";
-import SoundIcon from "./svg/SoundIcon";
+import ShareIcon from "./svg/icons/ShareIcon";
+import AnnouncementIcon from "./svg/icons/AnnouncementIcon";
+import PasswordIcon from "./svg/icons/PasswordIcon";
+import SoundIcon from "./svg/icons/SoundIcon";
 import Notification from "./Notification";
 import toast from "react-hot-toast";
 import QRcode from "./QRcode";
-import { Rubik } from "next/font/google";
 import ShareTitle from "./svg/title/ShareTitle";
 import AnnouncementTitle from "./svg/title/AnnouncementTitle";
 import PasswordTitle from "./svg/title/PasswordTitle";
@@ -38,7 +37,7 @@ const SettingsButton = () => {
   return (
     <>
       <button onClick={() => handleModalOpen("SETTINGS")}>
-        <Settings />
+        <SettingsIcon />
       </button>
       <Modal
         isOpen={open}
@@ -70,7 +69,7 @@ const SettingContainer = () => {
     {
       name: "Password",
       title: <PasswordTitle />,
-      icon: <Password />,
+      icon: <PasswordIcon />,
       element: (
         <p className="text-1-5vw font-[600] text-center">
           Contact your agent to change password

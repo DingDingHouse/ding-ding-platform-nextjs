@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import FullScreen from "./svg/FullScreen";
-import NormalScreen from "./svg/NormalScreen";
+import FullScreenIcon from "./svg/icons/FullScreenIcon";
+import NormalScreenIcon from "./svg/icons/NormalScreenIcon";
 
 const FullScreenButton = () => {
   const [fullScreen, setFullScreen] = useState(false);
@@ -31,7 +31,7 @@ const FullScreenButton = () => {
 
   return (
     <button onClick={fullScreenHandler} className="transition-all">
-      {!fullScreen ? <FullScreen /> : <NormalScreen />}
+      {!fullScreen ? <FullScreenIcon /> : <NormalScreenIcon />}
     </button>
   );
 };
