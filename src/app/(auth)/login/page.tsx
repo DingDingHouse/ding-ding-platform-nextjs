@@ -14,6 +14,7 @@ import toast from "react-hot-toast";
 import Notification from "@/components/Notification";
 
 const page = () => {
+  const [number, setNumber] = useState(Math.floor(Math.random() * 5) + 1);
   //user data
   const [data, setData] = useState({
     name: "",
@@ -132,7 +133,7 @@ const page = () => {
         <div className="flex-1 flex flex-col gap-5 items-center justify-end relative">
           <Image
             alt="character"
-            src="/login/character.png"
+            src={`/login/character${number}.png`}
             quality={100}
             width={800}
             height={1000}

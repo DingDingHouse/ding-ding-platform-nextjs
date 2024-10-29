@@ -38,7 +38,7 @@ const LogoutButton = () => {
   };
 
   return (
-    <button onClick={handleClick}>
+    <button aria-label="logout" onClick={handleClick}>
       <LogoutIcon />
     </button>
   );

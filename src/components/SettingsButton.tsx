@@ -36,7 +36,10 @@ const SettingsButton = () => {
 
   return (
     <>
-      <button onClick={() => handleModalOpen("SETTINGS")}>
+      <button
+        aria-label="settings"
+         onClick={() => handleModalOpen("SETTINGS")}
+      >
         <SettingsIcon />
       </button>
       <Modal
