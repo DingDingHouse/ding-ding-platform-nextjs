@@ -17,12 +17,6 @@ import SoundTitle from "./svg/title/SoundTitle";
 import Sound from "./Sound";
 import Announcment from "./Announcment";
 
-const rubik = Rubik({
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-});
-
 const SettingsButton = () => {
   const [open, setOpen] = useState(false);
   const [modalType, setModalType] = useState("");
@@ -51,6 +45,7 @@ const SettingsButton = () => {
         setOpen={setOpen}
         modalType={modalType}
         setModalType={setModalType}
+        disableClose={false}
       >
         {ModalContent}
       </Modal>
@@ -109,17 +104,15 @@ const SettingContainer = () => {
     );
   };
   return (
-    <div
-      className={`flex flex-wrap items-center justify-evenly w-full h-full ${rubik.className}`}
-    >
+    <div className="flex flex-wrap items-center justify-evenly w-full h-full">
       {data.map((item: any, index: number) => (
         <div
           key={index}
-          className="bg-gradient-to-b from-[#FF8700] to-[#F2D25B] rounded-xl w-[45%] h-[45%] flex items-center justify-center"
+          className="bg-gradient-to-b from-[#FF8700] to-[#F2D25B] rounded-2xl w-[45%] h-[45%] flex items-center justify-center"
         >
           <button
             onClick={() => handleSubModal(item.element, item.title)}
-            className="bg-gradient-to-b from-[#6D3904] to-[#FD9303] rounded-xl h-[97%] w-[98%] shadow-lg flex flex-col items-center justify-center gap-0-5vw"
+            className="bg-gradient-to-b from-[#6D3904] to-[#FD9303] rounded-2xl h-[97%] w-[98%] shadow-lg flex flex-col items-center justify-center gap-0-5vw"
           >
             <p className="sm:text-[1.6vw] text-[1.5vh] font-[800] text-center text-white stroke">
               {item.name}

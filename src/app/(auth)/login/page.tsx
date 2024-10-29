@@ -57,11 +57,7 @@ const page = () => {
     if (response?.isUnderMaintenance) {
       toast.remove();
       return toast.custom((t) => (
-        <Notification
-          className="-rotate-90 sm:rotate-0"
-          visible={t.visible}
-          message={response.message}
-        />
+        <Notification visible={t.visible} message={response.message} />
       ));
     }
     if (response?.error) {

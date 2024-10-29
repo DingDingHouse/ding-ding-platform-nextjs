@@ -5,6 +5,13 @@ import ReactDOM from "react-dom";
 import ModalBackground from "./svg/ModalBackground";
 import CloseButton from "./svg/CloseButton";
 import SettingTitle from "./svg/title/SettingTitle";
+import { Rubik } from "next/font/google";
+
+const rubik = Rubik({
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
 
 const Modal = ({
   children,
@@ -12,6 +19,7 @@ const Modal = ({
   setOpen,
   modalType,
   setModalType,
+  disableClose,
 }: ModalProps) => {
   const [isOnClient, setIsOnClient] = useState<Boolean>(false);
 
@@ -29,8 +37,10 @@ const Modal = ({
   }
 
   const handleClose = () => {
-    setModalType("");
-    setOpen(false);
+    if (!disableClose) {
+      setModalType("");
+      setOpen(false);
+    }
   };
 
   if (!isOpen) {
@@ -47,7 +57,7 @@ const Modal = ({
     ? ReactDOM.createPortal(
         <div
           onClick={handleClose}
-          className={`fixed top-0 left-0 w-full h-full flex items-center justify-center bg-[#00000096] z-[999]`}
+          className={` ${rubik.className} fixed top-0 left-0 w-full h-full flex items-center justify-center bg-[#00000096] z-[999]`}
         >
           <div
             onClick={(e) => e.stopPropagation()}
@@ -65,12 +75,14 @@ const Modal = ({
               <div className=" h-[65%] w-[50%]  ">{children}</div>
             </div>
 
-            <button
-              className="absolute right-[-5%] top-[-2%] h-[12%] w-[10%]"
-              onClick={handleClose}
-            >
-              <CloseButton />
-            </button>
+            {!disableClose && (
+              <button
+                className="absolute right-[-5%] top-[-2%] h-[12%] w-[10%]"
+                onClick={handleClose}
+              >
+                <CloseButton />
+              </button>
+            )}
           </div>
         </div>,
         modalElement

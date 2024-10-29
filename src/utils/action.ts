@@ -54,7 +54,7 @@ export const getUserDetails = async () => {
 
 export async function fetchGames(category: string = "all") {
   const token = await getCookie();
-  const platform = "milkyway";
+  const platform = "DingDing";
   try {
     const res = await fetch(
       `${config.server}/api/games?platform=${platform}&category=${category}`,

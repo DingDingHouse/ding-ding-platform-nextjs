@@ -7,14 +7,7 @@ import { SocketProvider } from "@/components/context/SocketProvider";
 import { getCookie } from "@/utils/util";
 import type { Metadata } from "next";
 import "../globals.css";
-import { Montserrat } from "next/font/google";
 import StoreProvider from "@/components/StateProvider";
-
-const montserrat = Montserrat({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-});
 
 export const metadata: Metadata = {
   title: "Ding Ding",
@@ -27,7 +20,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const token = await getCookie();
-  const games = await fetchGames();
   return (
     <StoreProvider>
       <main className="relative w-full h-full flex items-center justify-center flex-col">

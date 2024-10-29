@@ -7,7 +7,7 @@ const Loader = () => {
       src="/loader.gif"
       height={500}
       width={500}
-      alt="loader"
+      alt="Loading animation"
       unoptimized
     />
   );

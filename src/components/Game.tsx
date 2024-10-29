@@ -4,6 +4,8 @@ import GameCard from "./GameCard";
 import LeftButton from "./svg/LeftButton";
 import RightButton from "./svg/RightButton";
 import GameContainer from "./GameContainer";
+import Modal from "./Modal";
+import Maintenance from "./Maintenance";
 
 const Game = ({ games }: any) => {
   const { others } = games;
@@ -14,6 +16,7 @@ const Game = ({ games }: any) => {
   const [touchEnd, setTouchEnd] = useState(0);
   const [startPosition, setStartPosition] = useState(0);
   const [endPosition, setEndPosition] = useState(0);
+  const [open, setOpen] = useState(false);
 
   const handleTouchStart = (event: React.TouchEvent) => {
     window.innerWidth < 640
@@ -82,10 +85,19 @@ const Game = ({ games }: any) => {
     setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, totalCards - 5));
   };
 
+  useEffect(() => {
+    if (games?.isUnderMaintenance) {
+      setOpen(true);
+    } else {
+      setOpen(false);
+    }
+  }, [games]);
+
   return (
-    <div className="h-[40vh] sm:h-[40vw] overflow-hidden flex w-100vw relative">
-      <div className="flex justify-evenly items-center w-full relative h-full overflow-hidden">
-        {/* <button
+    <div className="h-[40dvh] sm:h-[40dvw] overflow-hidden flex w-100vw relative">
+      {!open ? (
+        <div className="flex justify-evenly items-center w-full relative h-full overflow-hidden">
+          {/* <button
           onClick={handleLeftClick}
           disabled={currentIndex === 0}
           className="disabled:opacity-30"
@@ -93,27 +105,40 @@ const Game = ({ games }: any) => {
           <LeftButton />
         </button> */}
 
-        {/* Game Grid */}
-        <GameContainer
-          draggable="true"
-          displayedGames={displayedGames}
-          handleTouchStart={handleTouchStart}
-          handleTouchEnd={handleTouchEnd}
-          handleTouchMove={handleTouchMove}
-          currentIndex={currentIndex}
-          handleDragStart={handleDragStart}
-          handleDragEnd={handleDragEnd}
-          handleDrag={handleDrag}
-        />
+          {/* Game Grid */}
+          <GameContainer
+            draggable="true"
+            displayedGames={displayedGames}
+            handleTouchStart={handleTouchStart}
+            handleTouchEnd={handleTouchEnd}
+            handleTouchMove={handleTouchMove}
+            currentIndex={currentIndex}
+            handleDragStart={handleDragStart}
+            handleDragEnd={handleDragEnd}
+            handleDrag={handleDrag}
+          />
 
-        {/* <button
+          {/* <button
           onClick={handleRightClick}
           disabled={currentIndex >= totalCards - 5}
           className="disabled:opacity-30"
         >
           <RightButton />
         </button> */}
-      </div>
+        </div>
+      ) : (
+        <Modal
+          isOpen={open}
+          setOpen={setOpen}
+          modalType="Maintenance"
+          setModalType={() => {
+            ("");
+          }}
+          disableClose={true}
+        >
+          <Maintenance data={games} />
+        </Modal>
+      )}
     </div>
   );
 };
