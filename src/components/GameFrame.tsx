@@ -2,16 +2,22 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { config } from "@/utils/config";
+import Notification from "./Notification";
+import toast from "react-hot-toast";
+import { useVolumeControl } from "./context/VolumeControlContext";
 
 const GameFrame = ({ data }: any) => {
   const [iframeKey, setIframeKey] = useState(0);
   const [gameLoaded, setGameLoaded] = useState(false);
+  const { playAudio, pauseAudio } = useVolumeControl();
 
   const router = useRouter();
 
   useEffect(() => {
     if (data?.message) {
-      alert(data?.message);
+      toast.custom((t) => (
+        <Notification visible={t.visible} message={data?.message} />
+      ));
       setTimeout(() => {
         router.push("/");
         setGameLoaded(false);
@@ -20,6 +26,7 @@ const GameFrame = ({ data }: any) => {
     }
     if (data?.url) {
       setIframeKey((prevKey) => prevKey + 1);
+      pauseAudio();
     }
   }, [data]);
 
@@ -57,8 +64,10 @@ const GameFrame = ({ data }: any) => {
         }
       }
 
+      console.log("MESSAGE", message);
       if (message === "onExit") {
         setGameLoaded(false);
+        playAudio();
         router.push("/");
       }
 
