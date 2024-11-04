@@ -30,7 +30,11 @@ const FullScreenButton = () => {
   };
 
   return (
-    <button onClick={fullScreenHandler} className="transition-all">
+    <button
+      aria-label="full screen"
+      onClick={fullScreenHandler}
+      className="transition-all"
+    >
       {!fullScreen ? <FullScreenIcon /> : <NormalScreenIcon />}
     </button>
   );

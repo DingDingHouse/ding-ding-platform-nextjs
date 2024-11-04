@@ -1,5 +1,6 @@
 "use client";
 import { config } from "@/utils/config";
+import { setUserCredits } from "@/utils/store/features/user/userSlice";
 import { useRouter } from "next/navigation";
 import { useEffect, useState, createContext, useContext } from "react";
 import { io, Socket } from "socket.io-client";
@@ -27,7 +28,7 @@ export const SocketProvider: React.FC<{
   useEffect(() => {
     if (token) {
       const socketInstance = io(`${config.server}`, {
-        auth: { token },
+        auth: { token, origin: config.platform },
       });
       setSocket(socketInstance);
 
@@ -36,7 +37,18 @@ export const SocketProvider: React.FC<{
       });
 
       socketInstance.on("data", (data: any) => {
-        console.log("data", data);
+        switch (data?.type) {
+          case "CREDIT":
+            setUserCredits(data?.data?.credits);
+            break;
+          default:
+        }
+      });
+
+      socketInstance.on("alert", (message: any) => {
+        if (message == "ForcedExit") {
+          router.push("/logout");
+        }
       });
 
       return () => {
