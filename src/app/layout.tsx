@@ -32,9 +32,9 @@ export default async function RootLayout({
         <body
           className={`${montserrat.className} antialiased rotate-90 sm:rotate-0 overflow-hidden`}
         >
-          {/* game shape */}
           <StoreProvider>
             <SocketProvider token={token as string}>
+              {/* game shape */}
               <svg className="clippy">
                 <defs>
                   <clipPath id="gameshape" clipPathUnits="objectBoundingBox">
