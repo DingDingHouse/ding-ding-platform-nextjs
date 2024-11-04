@@ -37,7 +37,7 @@ const Game = ({ games }: any) => {
       (window.innerWidth < 640 ? window.innerHeight : window.innerWidth);
 
     const newIndex = Math.round(
-      currentIndex + swipePercentage * displayedGames.length * 0.4
+      currentIndex + swipePercentage * displayedGames.length * 0.9
     );
     setCurrentIndex(Math.max(0, Math.min(newIndex, displayedGames.length - 5)));
   };
