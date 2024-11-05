@@ -1,13 +1,20 @@
-import Footer from "@/components/Footer";
-import Game from "@/components/Game";
 import Header from "@/components/Header";
-import { fetchGames } from "@/utils/action";
+import Footer from "@/components/Footer";
 import Image from "next/image";
+import type { Metadata } from "next";
 
-const Home = async ({ params }: any) => {
-  const games = await fetchGames(params?.category);
+export const metadata: Metadata = {
+  title: "Ding Ding",
+  description: "Gaming platform",
+};
+
+export default async function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <>
+    <main className="relative w-full h-full flex items-center justify-center flex-col">
       <Image
         src="/home/bg.png"
         fill
@@ -28,10 +35,8 @@ const Home = async ({ params }: any) => {
         className="z-[-1] object-contain blur-md object-center"
       />
       <Header />
-      <Game games={games} />
+      {children}
       <Footer />
-    </>
+    </main>
   );
-};
-
-export default Home;
+}

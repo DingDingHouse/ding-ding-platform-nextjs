@@ -19,12 +19,11 @@ export const metadata: Metadata = {
   description: "Gaming platform",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const token = await getCookie();
 
   return (
     <html lang="en" className="">
@@ -32,8 +31,6 @@ export default async function RootLayout({
         <body
           className={`${montserrat.className} antialiased rotate-90 sm:rotate-0 overflow-hidden`}
         >
-          <StoreProvider>
-            <SocketProvider token={token as string}>
               {/* game shape */}
               <svg className="clippy">
                 <defs>
@@ -64,8 +61,6 @@ export default async function RootLayout({
                   <div id="modal"></div>
                 </div>
               </div>
-            </SocketProvider>
-          </StoreProvider>
         </body>
       </VolumeProvider>
     </html>
