@@ -1,6 +1,7 @@
 "use client";
 import { config } from "@/utils/config";
 import { setUserCredits } from "@/utils/store/features/user/userSlice";
+import { useAppDispatch } from "@/utils/store/hooks";
 import { useRouter } from "next/navigation";
 import { useEffect, useState, createContext, useContext } from "react";
 import { io, Socket } from "socket.io-client";
@@ -22,6 +23,7 @@ export const SocketProvider: React.FC<{
   token: string;
   children: React.ReactNode;
 }> = ({ token, children }) => {
+  const dispatch = useAppDispatch();
   const [socket, setSocket] = useState<Socket | null>(null);
   const router = useRouter();
 
@@ -39,7 +41,7 @@ export const SocketProvider: React.FC<{
       socketInstance.on("data", (data: any) => {
         switch (data?.type) {
           case "CREDIT":
-            setUserCredits(data?.data?.credits);
+            dispatch(setUserCredits(data?.data?.credits));
             break;
           default:
         }

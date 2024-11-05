@@ -64,7 +64,6 @@ const GameFrame = ({ data }: any) => {
         }
       }
 
-      console.log("MESSAGE", message);
       if (message === "onExit") {
         setGameLoaded(false);
         playAudio();

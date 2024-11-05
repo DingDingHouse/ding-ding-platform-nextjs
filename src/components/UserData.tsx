@@ -1,13 +1,10 @@
 "use client";
-import { setUserCredits } from "@/utils/store/features/user/userSlice";
-import { useAppDispatch, useAppSelector } from "@/utils/store/hooks";
+import { useAppSelector } from "@/utils/store/hooks";
 import Image from "next/image";
 import React from "react";
 
 const UserData = ({ data }: any) => {
-  const dispatch = useAppDispatch();
-  dispatch(setUserCredits(data?.credits));
-  const credits = useAppSelector((state) => state.user.credits);
+  const credits = useAppSelector((state) => state?.user?.credits);
   return (
     <div className="flex items-center justify-center gap-1-2vw">
       <div className="bg-gradient-to-b from-[#E9B43F] via-[#C79017] to-[#A97510] p-0-12vw rounded-full">

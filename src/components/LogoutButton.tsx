@@ -4,6 +4,7 @@ import LogoutIcon from "./svg/icons/LogoutIcon";
 import toast from "react-hot-toast";
 import Notification from "./Notification";
 import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 
 const LogoutButton = () => {
   const [duration, setDuration] = useState<any>(Infinity);
@@ -30,11 +31,18 @@ const LogoutButton = () => {
   };
 
   const handleLogout = () => {
-    toast.remove();
-    toast.custom((t) => (
-      <Notification visible={t.visible} message="Logout Successfully" />
-    ));
-    router.push("/logout");
+    try {
+      Cookies.remove("token");
+      toast.remove();
+      toast.custom((t) => (
+        <Notification visible={t.visible} message="Logout successful" />
+      ));
+      router.push("/login");
+    } catch (error) {
+      toast.custom((t) => (
+        <Notification visible={t.visible} message="Failed to logout" />
+      ));
+    }
   };
 
   return (
