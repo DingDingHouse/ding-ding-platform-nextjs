@@ -1,5 +1,6 @@
 import React from "react";
 import GameCard from "./GameCard";
+import Image from "next/image";
 
 const GameContainer = ({
   displayedGames,
@@ -77,6 +78,19 @@ const GameContainer = ({
                 zIndex: zIndex,
               }}
             >
+              {position === 2 && (
+                <div className="h-[118%] absolute w-[116%] top-[-9%] left-[-8%]">
+                  <Image
+                    src="/card.gif"
+                    alt=""
+                    quality={100}
+                    priority
+                    fill
+                    sizes={"100%"}
+                    className={`z-[-1]`}
+                  />
+                </div>
+              )}
               <GameCard position={position} data={game} />
             </div>
           );

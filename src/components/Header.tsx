@@ -18,7 +18,7 @@ const Header = async () => {
         <div className="w-full bg-gradient-to-r from-[#F0F09B] to-[#E9B43F]  pb-0-18vw">
           <div className="w-full bg-gradient-to-b from-[#2B2B2B] via-[#212121] to-[#101010] flex items-center justify-between px-2-5vw py-0-8vw">
             <UserData data={user} />
-            <Logo className="absolute left-[calc(50%-9.5vh)] sm:left-[calc(50%-9.5vw)] top-[-1.1vw] h-10vw w-auto z-[100]" />
+            <Logo className="absolute portrait:left-[calc(50%-9.5vh)] landscape:left-[calc(50%-9.5vw)] top-[-1.1vw] h-10vw w-auto z-[100]" />
             <div className="flex gap-[1vw] items-center">
               <FullScreenButton />
               <SettingsButton />

@@ -100,7 +100,7 @@ const page = () => {
         style={{ backgroundImage: 'url("/login/bg-login.png")' }}
         className="bg-no-repeat bg-cover w-full h-full flex justify-between overflow-hidden"
       >
-        <div className="flex-1 flex flex-col gap-3vw items-center justify-start sm:justify-center py-3vw">
+        <div className="flex-1 flex flex-col gap-3vw items-center portrait:justify-start landscape:justify-center py-3vw">
           <Logo className="h-15vw w-25vw" />
           <form
             onSubmit={handleSubmit}

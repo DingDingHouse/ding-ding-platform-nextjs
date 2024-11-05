@@ -29,7 +29,7 @@ const Notification = ({
       className={` w-100vw h-100vh z-[99] bg-black bg-opacity-50 flex items-center justify-center fixed top-0 left-0`}
     >
       <div
-        className={`${className} sm:h-[52vw] h-[52vh] sm:w-[38vw] w-[38vh] z-[100] flex items-center justify-center relative ${
+        className={`${className} landscape:h-[52vw] portrait:h-[52vh] landscape:w-[38vw] portrait:w-[38vh] z-[100] flex items-center justify-center relative ${
           visible ? "animate-enter" : "animate-leave"
         }`}
       >
@@ -38,7 +38,7 @@ const Notification = ({
           onClick={(e) => {
             e.stopPropagation();
           }}
-          className={`absolute flex flex-col h-[20vh] items-center justify-center sm:h-[20vw] top-auto left-auto w-full ${rubik.className}`}
+          className={`absolute flex flex-col portrait:h-[20vh] items-center justify-center landscape:h-[20vw] top-auto left-auto w-full ${rubik.className}`}
         >
           {/* title text  */}
           {title && (
@@ -52,12 +52,12 @@ const Notification = ({
           )}
           <div>
             {/* message or title  */}
-            <p className="sm:text-[2.5vw] text-[2.5vh] text-white font-[800] text-center stroke uppercase ">
+            <p className="landscape:text-[2.5vw] portrait:text-[2.5vh] text-white font-[800] text-center stroke uppercase ">
               {message}
             </p>
             {/* element to render in settings button */}
             {element && (
-              <div className="h-[16vh] w-full sm:h-[16vw] flex items-center justify-center">
+              <div className="portrait:h-[16vh] w-full landscape:h-[16vw] flex items-center justify-center">
                 {element}
               </div>
             )}

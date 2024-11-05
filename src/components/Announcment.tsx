@@ -28,9 +28,9 @@ const Announcment = () => {
           </button>
         ))}
       </div>
-      <div className="w-[80%] bg-gradient-to-b from-[#000000] to-[#933710] rounded-2xl p-0-12vw h-[8vh] sm:h-[8vw] overflow-hidden">
+      <div className="w-[80%] bg-gradient-to-b from-[#000000] to-[#933710] rounded-2xl p-0-12vw portrait:h-[8vh] landscape:h-[8vw] overflow-hidden">
         <div className="h-full hideScrollBar overflow-y-auto bg-gradient-to-b from-[#FFB90180] to-[#FA800180] rounded-2xl p-0-3vw">
-          <p className="p-0-3vw font-[400] text-[1vh] sm:text-[1vw]">
+          <p className="p-0-3vw font-[400] portrait:text-[1vh] landscape:text-[1vw]">
             Nothing to show here!
           </p>
         </div>
