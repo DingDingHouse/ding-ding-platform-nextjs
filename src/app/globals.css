@@ -400,3 +400,29 @@ svg.clippy {
     perspective: 800px;
   }
 }
+
+/* Light transitions for carousel items */
+.react-responsive-carousel .carousel .slide {
+  transition: transform 0.2s ease-out;
+}
+
+/* Reduced animation duration for buttons */
+button {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+@media (max-width: 640px) {
+  /* Faster transition on smaller devices */
+  .react-responsive-carousel .carousel .slide {
+    transition: transform 0.15s ease-out;
+  }
+}
+
+/* Apply smooth transitions to carousel items */
+.flex-none {
+  transition: transform 0.25s ease-out;
+}
+
+button {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}

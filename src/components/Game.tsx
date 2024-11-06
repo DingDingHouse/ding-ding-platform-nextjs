@@ -4,8 +4,8 @@ import React, { useEffect, useState } from "react";
 import GameContainer from "./GameContainer";
 import Modal from "./Modal";
 import Maintenance from "./Maintenance";
-import RightButton from "./svg/RightButton";
 import LeftButton from "./svg/LeftButton";
+import RightButton from "./svg/RightButton";
 
 const Game = ({ games }: any) => {
   const { others } = games;
@@ -79,14 +79,6 @@ const Game = ({ games }: any) => {
     };
   }, [totalCards]);
 
-  const handleLeftClick = () => {
-    setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
-  };
-
-  const handleRightClick = () => {
-    setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, totalCards - 5));
-  };
-
   useEffect(() => {
     if (games?.isUnderMaintenance) {
       setOpen(true);
@@ -99,13 +91,13 @@ const Game = ({ games }: any) => {
     <div className="h-[45dvh] sm:h-[40dvw] flex w-100vw relative">
       {!open ? (
         <div className="flex justify-evenly items-center w-[97%] mx-auto relative h-full sm:p-12 ">
-              <button
-          onClick={handleLeftClick}
-          disabled={currentIndex === 0}
-          className="disabled:opacity-30"
-        >
-          <LeftButton />
-        </button>
+            <button
+            onClick={moveLeft}
+            disabled={currentIndex === 0}
+            className="disabled:opacity-30 bg-black p-1 rounded-xl bg-opacity-60 scale-110 z-[99]"
+          >
+            <LeftButton />
+          </button>
           <GameContainer
             draggable="true"
             displayedGames={displayedGames}
@@ -117,14 +109,14 @@ const Game = ({ games }: any) => {
             handleDragEnd={handleDragEnd}
             handleDrag={handleDrag}
           />
-
-           <button
-          onClick={handleRightClick}
-          disabled={currentIndex >= totalCards - 5}
-          className="disabled:opacity-30"
-        >
-          <RightButton />
-        </button>
+          
+          <button
+            onClick={moveRight}
+            disabled={currentIndex >= totalCards - 5}
+            className="disabled:opacity-30 bg-black p-1 rounded-xl bg-opacity-60 scale-110 z-[99]"
+          >
+            <RightButton />
+          </button>
         </div>
       ) : (
         <Modal
