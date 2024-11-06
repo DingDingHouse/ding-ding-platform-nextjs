@@ -200,9 +200,13 @@ body {
   border-radius: 2vw;
 }
 
-@media (max-width: 640px) {
+/* @media (max-width: 640px) {
+ */
+@media screen and (orientation: portrait) {
   /* Adjust the breakpoint as needed */
-
+  body {
+    transform: rotate(90deg);
+  }
   .rounded-2xl {
     border-radius: 0.5vh;
   }
@@ -387,9 +391,11 @@ svg.clippy {
 
 .transform-3d {
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
 }
 .perspective {
   perspective: 1000px;
+  -webkit-perspective: 1000px;
 }
 .stroke {
   -webkit-text-stroke: 0.1vw #90510f;

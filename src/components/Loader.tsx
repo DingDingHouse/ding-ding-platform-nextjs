@@ -8,7 +8,7 @@ const Loader = () => {
       height={300}
       width={300}
       alt="Loading animation"
-      className="w-[15vh] h-[15vh] sm:w-[15vw] sm:h-[15vw]"
+      className="portrait:w-[15vh] portrait:h-[15vh] landscape:w-[15vw] landscape:h-[15vw]"
       unoptimized
     />
   );

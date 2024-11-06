@@ -1,18 +1,23 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
+import React, { useEffect } from "react";
 
-const DeleteUser = ({ deleteToken }: any) => {
-  const deleteTokensRef = useRef(deleteToken);
-
+const DeleteUser = ({ deleteToken }: { deleteToken: () => Promise<void> }) => {
+  const router = useRouter();
   useEffect(() => {
-    deleteTokensRef.current = deleteToken;
-  });
+    const performLogout = async () => {
+      try {
+        await deleteToken();
+        router.push("/login");
+      } catch (error) {
+        console.error("Error during logout:", error);
+      }
+    };
 
-  useEffect(() => {
-    deleteTokensRef.current();
-  }, []);
+    performLogout(); // Immediately call the logout function on mount
+  }, [deleteToken]); // Run effect when deleteToken changes
 
-  return null;
+  return null; // No UI is rendered
 };
 
 export default DeleteUser;
