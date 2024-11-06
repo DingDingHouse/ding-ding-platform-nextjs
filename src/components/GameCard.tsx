@@ -5,20 +5,7 @@ import GameBorder from "./svg/GameBorder";
 
 const GameCard = ({ position, data }: any) => {
   return (
-    <div className="w-full h-full relative flex items-center justify-center perspective pointer-events-auto">
-      {/* {position === 2 && (
-        <div className="h-[110%] absolute w-[105%]">
-          <Image
-            src="/card-animation.gif"
-            alt=""
-            quality={100}
-            priority
-            fill
-            sizes={"100%"}
-            className="z-[1] blur-[1.5px]"
-          />
-        </div>
-      )} */}
+    <div className="w-full h-full relative flex items-center justify-center  perspective pointer-events-auto">
       <GameBorder className="h-full w-full mx-auto z-[2] transform-3d" />
       <Link
         href={`/game/${data?.slug}`}
@@ -28,11 +15,11 @@ const GameCard = ({ position, data }: any) => {
           alt={data?.name}
           draggable="false"
           src={data?.thumbnail}
-          fill
           quality={100}
           priority
-          sizes={"100%"}
-          className="rounded-[4vw] shadow-2xl gameCard"
+          width={2000}
+          height={2000}
+          className="rounded-[8vw] h-full sm:rounded-[4vw] shadow-2xl gameCard"
         />
       </Link>
     </div>

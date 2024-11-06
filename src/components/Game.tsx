@@ -1,11 +1,11 @@
-"use client";
+"use client"
 import React, { useEffect, useState } from "react";
-import GameCard from "./GameCard";
-import LeftButton from "./svg/LeftButton";
-import RightButton from "./svg/RightButton";
+
 import GameContainer from "./GameContainer";
 import Modal from "./Modal";
 import Maintenance from "./Maintenance";
+import RightButton from "./svg/RightButton";
+import LeftButton from "./svg/LeftButton";
 
 const Game = ({ games }: any) => {
   const { others } = games;
@@ -18,56 +18,58 @@ const Game = ({ games }: any) => {
   const [endPosition, setEndPosition] = useState(0);
   const [open, setOpen] = useState(false);
 
-  const handleTouchStart = (event: React.TouchEvent) => {
-    window.innerWidth < 640
-      ? setTouchStart(event.touches[0].clientY)
-      : setTouchStart(event.touches[0].clientX);
+  const moveLeft = () => {
+    setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
   };
 
-  const handleTouchMove = (event: React.TouchEvent) => {
-    window.innerWidth < 640
-      ? setTouchEnd(event.touches[0].clientY)
-      : setTouchEnd(event.touches[0].clientX);
+  const moveRight = () => {
+    setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, totalCards - 5));
+  };
+
+  const handleTouchStart = (event: React.TouchEvent) => {
+    const touchPosition = window.innerWidth < 640 ? event.touches[0].clientY : event.touches[0].clientX;
+    setTouchStart(touchPosition);
   };
 
   const handleTouchEnd = () => {
     const distanceMoved = touchStart - touchEnd;
-    const swipePercentage =
-      distanceMoved /
-      (window.innerWidth < 640 ? window.innerHeight : window.innerWidth);
+    if (distanceMoved > 50) {
+      moveRight();
+    } else if (distanceMoved < -50) {
+      moveLeft();
+    }
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
 
-    const newIndex = Math.round(
-      currentIndex + swipePercentage * displayedGames.length * 0.9
-    );
-    setCurrentIndex(Math.max(0, Math.min(newIndex, displayedGames.length - 5)));
+  const handleTouchMove = (event: React.TouchEvent) => {
+    const touchPosition = window.innerWidth < 640 ? event.touches[0].clientY : event.touches[0].clientX;
+    setTouchEnd(touchPosition);
   };
 
   const handleDragStart = (event: React.DragEvent) => {
     setStartPosition(event.clientX);
   };
 
-  const handleDrag = (event: React.DragEvent) => {
-    setEndPosition(event.clientX);
-  };
-
   const handleDragEnd = () => {
     const distanceMoved = startPosition - endPosition;
-    const dragPercentage =
-      distanceMoved /
-      (window.innerWidth < 640 ? window.innerHeight : window.innerWidth);
+    if (distanceMoved > 50) {
+      moveRight();
+    } else if (distanceMoved < -50) {
+      moveLeft();
+    }
+    setStartPosition(0);
+    setEndPosition(0);
+  };
 
-    const newIndex = Math.round(
-      currentIndex + dragPercentage * displayedGames.length * 0.8
-    );
-    setCurrentIndex(Math.max(0, Math.min(newIndex, displayedGames.length - 5)));
+  const handleDrag = (event: React.DragEvent) => {
+    setEndPosition(event.clientX);
   };
 
   useEffect(() => {
     const handleScroll = (event: WheelEvent) => {
       setCurrentIndex((prevIndex) =>
-        event.deltaY < 0
-          ? Math.max(prevIndex - 1, 0)
-          : Math.min(prevIndex + 1, totalCards - 5)
+        event.deltaY < 0 ? Math.max(prevIndex - 1, 0) : Math.min(prevIndex + 1, totalCards - 5)
       );
     };
 
@@ -94,18 +96,16 @@ const Game = ({ games }: any) => {
   }, [games]);
 
   return (
-    <div className="h-[45dvh] sm:h-[40dvw] overflow-hidden flex w-100vw relative">
+    <div className="h-[45dvh] sm:h-[40dvw] flex w-100vw relative">
       {!open ? (
-        <div className="flex justify-evenly items-center w-full relative h-full overflow-hidden">
-          {/* <button
+        <div className="flex justify-evenly items-center w-[97%] mx-auto relative h-full sm:p-12 ">
+              <button
           onClick={handleLeftClick}
           disabled={currentIndex === 0}
           className="disabled:opacity-30"
         >
           <LeftButton />
-        </button> */}
-
-          {/* Game Grid */}
+        </button>
           <GameContainer
             draggable="true"
             displayedGames={displayedGames}
@@ -118,22 +118,20 @@ const Game = ({ games }: any) => {
             handleDrag={handleDrag}
           />
 
-          {/* <button
+           <button
           onClick={handleRightClick}
           disabled={currentIndex >= totalCards - 5}
           className="disabled:opacity-30"
         >
           <RightButton />
-        </button> */}
+        </button>
         </div>
       ) : (
         <Modal
           isOpen={open}
           setOpen={setOpen}
           modalType="Maintenance"
-          setModalType={() => {
-            ("");
-          }}
+          setModalType={() => {}}
           disableClose={true}
         >
           <Maintenance data={games} />
