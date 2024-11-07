@@ -3,13 +3,13 @@ import Link from "next/link";
 import React from "react";
 import GameBorder from "./svg/GameBorder";
 
-const GameCard = ({ position, data }: any) => {
+const GameCard = ({data}: any) => {
   return (
-    <div className="w-full h-full hover:scale-110 transition-all relative flex items-center justify-center  perspective pointer-events-auto">
+    <div className="w-full h-full  transition-all relative flex items-center justify-center  perspective pointer-events-auto">
       <GameBorder className="h-full w-full mx-auto z-[2] " />
       <Link
         href={`/game/${data?.slug}`}
-        className="absolute top-auto left-auto w-[85%] h-[92%] z-[3] "
+        className="absolute top-auto left-auto w-[87%] h-[93%] z-[3] "
       >
         <Image
           alt={data?.name}

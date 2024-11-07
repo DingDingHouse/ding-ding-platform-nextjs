@@ -4,9 +4,6 @@ import { Montserrat } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import { VolumeProvider } from "@/components/context/VolumeControlContext";
 import AudioPlayer from "@/components/AudioPlayer";
-import { SocketProvider } from "@/components/context/SocketProvider";
-import StoreProvider from "@/components/StateProvider";
-import { getCookie } from "@/utils/util";
 
 const montserrat = Montserrat({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],

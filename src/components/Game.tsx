@@ -1,6 +1,5 @@
 "use client"
 import React, { useEffect, useState } from "react";
-
 import GameContainer from "./GameContainer";
 import Modal from "./Modal";
 import Maintenance from "./Maintenance";
@@ -12,8 +11,6 @@ const Game = ({ games }: any) => {
   const displayedGames = others?.length > 0 ? others : [];
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalCards = displayedGames.length;
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
   const [startPosition, setStartPosition] = useState(0);
   const [endPosition, setEndPosition] = useState(0);
   const [open, setOpen] = useState(false);
@@ -26,26 +23,6 @@ const Game = ({ games }: any) => {
     setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, totalCards - 5));
   };
 
-  const handleTouchStart = (event: React.TouchEvent) => {
-    const touchPosition = window.innerWidth < 640 ? event.touches[0].clientY : event.touches[0].clientX;
-    setTouchStart(touchPosition);
-  };
-
-  const handleTouchEnd = () => {
-    const distanceMoved = touchStart - touchEnd;
-    if (distanceMoved > 50) {
-      moveRight();
-    } else if (distanceMoved < -50) {
-      moveLeft();
-    }
-    setTouchStart(0);
-    setTouchEnd(0);
-  };
-
-  const handleTouchMove = (event: React.TouchEvent) => {
-    const touchPosition = window.innerWidth < 640 ? event.touches[0].clientY : event.touches[0].clientX;
-    setTouchEnd(touchPosition);
-  };
 
   const handleDragStart = (event: React.DragEvent) => {
     setStartPosition(event.clientX);
@@ -88,22 +65,18 @@ const Game = ({ games }: any) => {
   }, [games]);
 
   return (
-    <div className="h-[45dvh] sm:h-[40dvw] flex w-100vw relative">
+    <div className="h-[45dvh] sm:h-[40dvw] overflow-x-scroll overflow-y-hidden transition-all element">
       {!open ? (
-        <div className="flex justify-evenly items-center w-[97%] mx-auto relative h-full sm:p-12 ">
+        <div className="flex justify-evenly items-center element  overflow-x-scroll sm:overflow-y-hidden transition-all mx-auto relative  h-full ">
             <button
             onClick={moveLeft}
-            disabled={currentIndex === 0}
-            className="disabled:opacity-30 bg-black p-1 rounded-xl bg-opacity-60 scale-110 z-[99]"
+            className=" sm:block hidden bg-black p-1 fixed top-[47%] left-[2%]  rounded-xl bg-opacity-50 scale-110 z-[99]"
           >
             <LeftButton />
           </button>
           <GameContainer
             draggable="true"
             displayedGames={displayedGames}
-            handleTouchStart={handleTouchStart}
-            handleTouchEnd={handleTouchEnd}
-            handleTouchMove={handleTouchMove}
             currentIndex={currentIndex}
             handleDragStart={handleDragStart}
             handleDragEnd={handleDragEnd}
@@ -112,8 +85,7 @@ const Game = ({ games }: any) => {
           
           <button
             onClick={moveRight}
-            disabled={currentIndex >= totalCards - 5}
-            className="disabled:opacity-30 bg-black p-1 rounded-xl bg-opacity-60 scale-110 z-[99]"
+            className=" bg-black  sm:block hidden  p-1 fixed top-[47%] right-[2%]  rounded-xl bg-opacity-50 scale-110 z-[99]"
           >
             <RightButton />
           </button>
