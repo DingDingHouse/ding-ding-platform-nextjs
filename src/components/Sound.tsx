@@ -48,8 +48,8 @@ const Sound = () => {
           </svg>
         </div>
       </div>
-      <div className="flex items-center justify-center gap-[2vw] sm:w-[25vw] w-[25vh]">
-        <div className="relative flex items-center w-full sm:h-[1.5vw] h-[3.5vw]">
+      <div className="flex items-center justify-center gap-[2vw] landscape:w-[25vw] portrait:w-[25vh]">
+        <div className="relative flex items-center w-full landscape:h-[1.5vw] portrait:h-[3.5vw]">
           <input
             type="range"
             min="0"
@@ -64,7 +64,7 @@ const Sound = () => {
             value={progress}
             id="progress"
             max="100"
-            className="absolute appearance-none w-[85%] sm:w-[83%] ml-[0.3vw] z-[2] h-[50%] top-auto left-auto  rounded-[2vw] progress"
+            className="absolute appearance-none portrait:w-[85%] landscape:w-[83%] ml-[0.3vw] z-[2] h-[50%] top-auto left-auto  rounded-[2vw] progress"
           ></progress>
         </div>
       </div>

@@ -61,11 +61,7 @@ const Modal = ({
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className={`w-[65%] h-auto relative animate-popup ${
-              modalType === "Note"
-                ? "-rotate-90 sm:rotate-0 w-[90vw] sm:w-[65%]"
-                : ""
-            }`}
+            className={`w-[65%] h-auto relative`}
           >
             <ModalBackground />
             <div className="w-full absolute top-0 left-0 h-full flex flex-col items-center justify-center ">

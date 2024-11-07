@@ -47,7 +47,7 @@ const Maintenance = ({ data }: any) => {
         <>
           <p className="text-white text-2vw font-[400]">We will be back in</p>
           <div className="bg-gradient-to-b from-[#6D3904] to-[#FD9303] p-0-08vw rounded-2xl min-w-fit w-[90%]">
-            <p className="shadow-lg text-white sm:text-[4vw] text-[4vh] bg-gradient-to-b from-[#FF8700] to-[#F2D25B] rounded-2xl border-[0.2vw] w-full text-center border-[#6D3904] font-semibold stroke">
+            <p className="shadow-lg text-white landscape:text-[4vw] portrait:text-[4vh] bg-gradient-to-b from-[#FF8700] to-[#F2D25B] rounded-2xl border-[0.2vw] w-full text-center border-[#6D3904] font-semibold stroke">
               {formatTime(timeRemaining)}
             </p>
           </div>

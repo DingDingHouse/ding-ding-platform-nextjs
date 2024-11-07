@@ -36,10 +36,7 @@ const SettingsButton = () => {
 
   return (
     <>
-      <button
-        aria-label="settings"
-         onClick={() => handleModalOpen("SETTINGS")}
-      >
+      <button aria-label="settings" onClick={() => handleModalOpen("SETTINGS")}>
         <SettingsIcon />
       </button>
       <Modal
@@ -116,10 +113,10 @@ const SettingContainer = () => {
             onClick={() => handleSubModal(item.element, item.title)}
             className="bg-gradient-to-b from-[#6D3904] to-[#FD9303] rounded-2xl h-[97%] w-[98%] shadow-lg flex flex-col items-center justify-center gap-0-5vw"
           >
-            <p className="sm:text-[1.6vw] text-[1.5vh] font-[800] text-center text-white stroke">
+            <p className="landscape:text-[1.6vw] portrait:text-[1.5vh] font-[800] text-center text-white stroke">
               {item.name}
             </p>
-            <div className="sm:w-[5vw] sm:h-[5vw] w-[5vh] h-[5vh]">
+            <div className="landscape:w-[5vw] landscape:h-[5vw] portrait:w-[5vh] portrait:h-[5vh]">
               {item.icon}
             </div>
           </button>

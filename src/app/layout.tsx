@@ -21,9 +21,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en" className="">
+      <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        ></meta>
+      </head>
       <VolumeProvider>
         <body
           className={`${montserrat.className} antialiased rotate-90 sm:rotate-0 overflow-hidden`}
@@ -58,6 +63,7 @@ export default function RootLayout({
                   <div id="modal"></div>
                 </div>
               </div>
+
         </body>
       </VolumeProvider>
     </html>

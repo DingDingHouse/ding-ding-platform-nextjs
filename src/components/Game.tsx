@@ -39,6 +39,7 @@ const Game = ({ games }: any) => {
     setEndPosition(0);
   };
 
+
   const handleDrag = (event: React.DragEvent) => {
     setEndPosition(event.clientX);
   };
