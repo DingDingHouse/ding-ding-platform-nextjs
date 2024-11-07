@@ -3,8 +3,6 @@ import React, { useEffect, useState } from "react";
 import GameContainer from "./GameContainer";
 import Modal from "./Modal";
 import Maintenance from "./Maintenance";
-import LeftButton from "./svg/LeftButton";
-import RightButton from "./svg/RightButton";
 import Arrows from "./svg/icons/Arrows";
 
 const Game = ({ games }: any) => {

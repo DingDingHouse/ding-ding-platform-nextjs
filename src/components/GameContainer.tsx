@@ -20,7 +20,7 @@ const GameContainer = ({
           className={`flex-none relative sm:hover:scale-105 w-[20%] transition-[2s]`}
         >
           {currentIndex+2===index && (
-            <div className="absolute top-0  left-0 w-full  scale-[1.2] h-full">
+            <div className="absolute top-0 sm:block hidden left-0 w-full  scale-[1.2] h-full">
               <Image
                 src="/card.gif"
                 alt=""
