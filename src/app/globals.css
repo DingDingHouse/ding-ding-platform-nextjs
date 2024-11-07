@@ -393,10 +393,50 @@ svg.clippy {
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
 }
-.perspective {
-  perspective: 1000px;
-  -webkit-perspective: 1000px;
-}
+
 .stroke {
   -webkit-text-stroke: 0.1vw #90510f;
+}
+
+@media (min-width: 768px) {
+  .perspective {
+    perspective: 800px;
+  }
+}
+
+/* Light transitions for carousel items */
+.react-responsive-carousel .carousel .slide {
+  transition: transform 0.2s ease-out;
+}
+
+/* Reduced animation duration for buttons */
+button {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+@media (max-width: 640px) {
+  /* Faster transition on smaller devices */
+  .react-responsive-carousel .carousel .slide {
+    transition: transform 0.15s ease-out;
+  }
+}
+
+/* Apply smooth transitions to carousel items */
+.flex-none {
+  transition: transform 0.25s ease-out;
+}
+
+button {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.element::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.element {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
