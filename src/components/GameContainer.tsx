@@ -17,7 +17,7 @@ const GameContainer = ({
           key={game.id || index}
           className={`flex-none relative sm:hover:scale-105 min-w-[20vw] w-[20%] transition-[2s]`}
         >
-          {currentIndex + 2 === index && (
+          {currentIndex + 2 === index && displayedGames?.length >= 5 && (
             <div className="absolute top-0 sm:block hidden left-0 w-full  scale-[1.2] h-full">
               <Image
                 src="/card.gif"
@@ -44,7 +44,9 @@ const GameContainer = ({
       onDrag={handleDrag}
     >
       <div
-        className="flex items-center  justify-center ease-in-out transition-all duration-200 w-[100%] border-2"
+        className={`flex items-center  ${
+          displayedGames.length < 5 ? "justify-center" : "justify-start"
+        } ease-in-out transition-all duration-200 w-[100%] `}
         style={{ transform: `translateX(-${currentIndex * (100 / 5)}%)` }}
       >
         {renderedGames}

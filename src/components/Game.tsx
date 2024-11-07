@@ -68,12 +68,14 @@ const Game = ({ games }: any) => {
     <div className="h-[45dvh] sm:h-[40dvw] overflow-x-scroll sm:overflow-x-hidden overflow-y-hidden transition-all element w-100vw">
       {!open ? (
         <div className="flex w-full justify-evenly items-center element  overflow-x-scroll sm:overflow-x-hidden sm:overflow-y-hidden transition-all mx-auto relative  h-full ">
-          <button
-            onClick={moveLeft}
-            className=" sm:block hidden  p-1 fixed top-[47%] left-0  rounded-xl bg-opacity-50 scale-[1.3] z-[99]"
-          >
-            <Arrows />
-          </button>
+          {displayedGames?.length > 5 && (
+            <button
+              onClick={moveLeft}
+              className=" sm:block hidden  p-1 fixed top-[47%] left-0  rounded-xl bg-opacity-50 scale-[1.3] z-[99]"
+            >
+              <Arrows />
+            </button>
+          )}
           <GameContainer
             draggable="true"
             displayedGames={displayedGames}
@@ -83,12 +85,14 @@ const Game = ({ games }: any) => {
             handleDrag={handleDrag}
           />
 
-          <button
-            onClick={moveRight}
-            className="sm:block hidden rotate-180 p-1 fixed top-[47%] right-0  rounded-xl bg-opacity-50 scale-[1.3] z-[99]"
-          >
-            <Arrows />
-          </button>
+          {displayedGames?.length > 5 && (
+            <button
+              onClick={moveRight}
+              className="sm:block hidden rotate-180 p-1 fixed top-[47%] right-0  rounded-xl bg-opacity-50 scale-[1.3] z-[99]"
+            >
+              <Arrows />
+            </button>
+          )}
         </div>
       ) : (
         <Modal
