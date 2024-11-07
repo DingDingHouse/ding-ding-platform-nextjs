@@ -27,7 +27,7 @@ const UserData = ({ data }: any) => {
           {data?.username}
         </p>
         <p className="text-1vw capitalize font-medium bg-gradient-to-b from-[#C79F28] via-[#FFE650] to-[#FFE650] bg-clip-text text-transparent">
-          {credits}
+          {credits===0?0:credits.toFixed(2)}
         </p>
       </div>
     </div>
