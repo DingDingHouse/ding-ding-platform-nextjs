@@ -65,6 +65,7 @@ const Game = ({ games }: any) => {
     }
   }, [games]);
 
+  
   return (
     <div className="h-[45dvh] sm:h-[40dvw] overflow-x-scroll overflow-y-hidden transition-all element">
       {!open ? (
