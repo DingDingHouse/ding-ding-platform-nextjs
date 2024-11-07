@@ -9,17 +9,15 @@ const GameContainer = ({
   handleDragEnd,
   handleDrag,
 }: any) => {
-
-
   const renderedGames = useMemo(() => {
     return displayedGames?.map((game: any, index: number) => {
       const position = index - currentIndex;
       return (
         <div
           key={game.id || index}
-          className={`flex-none relative sm:hover:scale-105 w-[20%] transition-[2s]`}
+          className={`flex-none relative sm:hover:scale-105 min-w-[20vw] w-[20%] transition-[2s]`}
         >
-          {currentIndex+2===index && (
+          {currentIndex + 2 === index && (
             <div className="absolute top-0 sm:block hidden left-0 w-full  scale-[1.2] h-full">
               <Image
                 src="/card.gif"
@@ -40,14 +38,13 @@ const GameContainer = ({
 
   return (
     <div
-      className="relative   h-full  flex transition-all"
+      className="relative h-full flex transition-all w-full"
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
       onDrag={handleDrag}
     >
-
       <div
-        className="flex items-center  justify-between ease-in-out transition-all duration-200 "
+        className="flex items-center  justify-center ease-in-out transition-all duration-200 w-[100%] border-2"
         style={{ transform: `translateX(-${currentIndex * (100 / 5)}%)` }}
       >
         {renderedGames}

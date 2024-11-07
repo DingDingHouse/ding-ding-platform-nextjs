@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import GameContainer from "./GameContainer";
 import Modal from "./Modal";
@@ -22,7 +22,6 @@ const Game = ({ games }: any) => {
     setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, totalCards - 5));
   };
 
-
   const handleDragStart = (event: React.DragEvent) => {
     setStartPosition(event.clientX);
   };
@@ -38,7 +37,6 @@ const Game = ({ games }: any) => {
     setEndPosition(0);
   };
 
-
   const handleDrag = (event: React.DragEvent) => {
     setEndPosition(event.clientX);
   };
@@ -46,7 +44,9 @@ const Game = ({ games }: any) => {
   useEffect(() => {
     const handleScroll = (event: WheelEvent) => {
       setCurrentIndex((prevIndex) =>
-        event.deltaY < 0 ? Math.max(prevIndex - 1, 0) : Math.min(prevIndex + 1, totalCards - 5)
+        event.deltaY < 0
+          ? Math.max(prevIndex - 1, 0)
+          : Math.min(prevIndex + 1, totalCards - 5)
       );
     };
 
@@ -64,12 +64,11 @@ const Game = ({ games }: any) => {
     }
   }, [games]);
 
-  
   return (
-    <div className="h-[45dvh] sm:h-[40dvw] overflow-x-scroll sm:overflow-x-hidden overflow-y-hidden transition-all element">
+    <div className="h-[45dvh] sm:h-[40dvw] overflow-x-scroll sm:overflow-x-hidden overflow-y-hidden transition-all element w-100vw">
       {!open ? (
-        <div className="flex justify-evenly items-center element  overflow-x-scroll sm:overflow-x-hidden sm:overflow-y-hidden transition-all mx-auto relative  h-full ">
-            <button
+        <div className="flex w-full justify-evenly items-center element  overflow-x-scroll sm:overflow-x-hidden sm:overflow-y-hidden transition-all mx-auto relative  h-full ">
+          <button
             onClick={moveLeft}
             className=" sm:block hidden  p-1 fixed top-[47%] left-0  rounded-xl bg-opacity-50 scale-[1.3] z-[99]"
           >
@@ -83,12 +82,12 @@ const Game = ({ games }: any) => {
             handleDragEnd={handleDragEnd}
             handleDrag={handleDrag}
           />
-          
+
           <button
             onClick={moveRight}
             className="sm:block hidden rotate-180 p-1 fixed top-[47%] right-0  rounded-xl bg-opacity-50 scale-[1.3] z-[99]"
           >
-              <Arrows />
+            <Arrows />
           </button>
         </div>
       ) : (
