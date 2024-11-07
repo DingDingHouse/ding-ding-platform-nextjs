@@ -71,7 +71,7 @@ const Game = ({ games }: any) => {
         <div className="flex justify-evenly items-center element  overflow-x-scroll sm:overflow-x-hidden sm:overflow-y-hidden transition-all mx-auto relative  h-full ">
             <button
             onClick={moveLeft}
-            className=" sm:block hidden  p-1 fixed top-[47%] left-[2%]  rounded-xl bg-opacity-50 scale-110 z-[99]"
+            className=" sm:block hidden  p-1 fixed top-[47%] left-0  rounded-xl bg-opacity-50 scale-[1.3] z-[99]"
           >
             <Arrows />
           </button>
@@ -86,7 +86,7 @@ const Game = ({ games }: any) => {
           
           <button
             onClick={moveRight}
-            className="sm:block hidden rotate-180 p-1 fixed top-[47%] right-[2%]  rounded-xl bg-opacity-50 scale-110 z-[99]"
+            className="sm:block hidden rotate-180 p-1 fixed top-[47%] right-0  rounded-xl bg-opacity-50 scale-[1.3] z-[99]"
           >
               <Arrows />
           </button>
