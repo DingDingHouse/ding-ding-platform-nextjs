@@ -5,12 +5,13 @@ import Modal from "./Modal";
 import Maintenance from "./Maintenance";
 import LeftButton from "./svg/LeftButton";
 import RightButton from "./svg/RightButton";
+import Arrows from "./svg/icons/Arrows";
 
 const Game = ({ games }: any) => {
   const { others } = games;
   const displayedGames = others?.length > 0 ? others : [];
   const [currentIndex, setCurrentIndex] = useState(0);
-  const totalCards = displayedGames.length;
+  const totalCards = displayedGames?.length;
   const [startPosition, setStartPosition] = useState(0);
   const [endPosition, setEndPosition] = useState(0);
   const [open, setOpen] = useState(false);
@@ -67,14 +68,14 @@ const Game = ({ games }: any) => {
 
   
   return (
-    <div className="h-[45dvh] sm:h-[40dvw] overflow-x-scroll overflow-y-hidden transition-all element">
+    <div className="h-[45dvh] sm:h-[40dvw] overflow-x-scroll sm:overflow-x-hidden overflow-y-hidden transition-all element">
       {!open ? (
-        <div className="flex justify-evenly items-center element  overflow-x-scroll sm:overflow-y-hidden transition-all mx-auto relative  h-full ">
+        <div className="flex justify-evenly items-center element  overflow-x-scroll sm:overflow-x-hidden sm:overflow-y-hidden transition-all mx-auto relative  h-full ">
             <button
             onClick={moveLeft}
-            className=" sm:block hidden bg-black p-1 fixed top-[47%] left-[2%]  rounded-xl bg-opacity-50 scale-110 z-[99]"
+            className=" sm:block hidden  p-1 fixed top-[47%] left-[2%]  rounded-xl bg-opacity-50 scale-110 z-[99]"
           >
-            <LeftButton />
+            <Arrows />
           </button>
           <GameContainer
             draggable="true"
@@ -87,9 +88,9 @@ const Game = ({ games }: any) => {
           
           <button
             onClick={moveRight}
-            className=" bg-black  sm:block hidden  p-1 fixed top-[47%] right-[2%]  rounded-xl bg-opacity-50 scale-110 z-[99]"
+            className="sm:block hidden rotate-180 p-1 fixed top-[47%] right-[2%]  rounded-xl bg-opacity-50 scale-110 z-[99]"
           >
-            <RightButton />
+              <Arrows />
           </button>
         </div>
       ) : (

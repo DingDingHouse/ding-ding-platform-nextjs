@@ -9,21 +9,18 @@ const GameContainer = ({
   handleDragEnd,
   handleDrag,
 }: any) => {
-  const getStyles = useCallback((position: number) => {
 
-  }, []);
 
   const renderedGames = useMemo(() => {
-    return displayedGames.map((game: any, index: number) => {
+    return displayedGames?.map((game: any, index: number) => {
       const position = index - currentIndex;
-
       return (
         <div
           key={game.id || index}
-          className={`flex-none relative w-[20%] transition-all`}
+          className={`flex-none relative sm:hover:scale-105 w-[20%] transition-[2s]`}
         >
-          {position === 2 && (
-            <div className="absolute top-0 sm:block hidden left-0 w-full  scale-[1.2] h-full">
+          {currentIndex+2===index && (
+            <div className="absolute top-0  left-0 w-full  scale-[1.2] h-full">
               <Image
                 src="/card.gif"
                 alt=""
@@ -39,7 +36,7 @@ const GameContainer = ({
         </div>
       );
     });
-  }, [displayedGames, currentIndex, getStyles]);
+  }, [displayedGames, currentIndex]);
 
   return (
     <div
