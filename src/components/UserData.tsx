@@ -14,7 +14,8 @@ const UserData = ({ data }: any) => {
   useEffect(() => {
     let timer: NodeJS.Timeout;
 
-    if (credits !== 0) {
+    // Check if credits have been loaded (including zero)
+    if (credits !== undefined) {
       timer = setTimeout(() => {
         setIsLoading(false);
       }, 1000); // Ensure loader is visible for at least 1 second after credits are loaded
@@ -24,7 +25,6 @@ const UserData = ({ data }: any) => {
       if (timer) clearTimeout(timer);
     };
   }, [credits]);
-
   return (
     <>
       <FullScreenLoader isLoading={isLoading} />{" "}
