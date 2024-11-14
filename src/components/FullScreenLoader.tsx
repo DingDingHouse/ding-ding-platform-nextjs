@@ -25,7 +25,7 @@ export default function FullScreenLoader({ isLoading }: FullScreenLoaderProps) {
   return (
     <Portal>
       <div
-        className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-500"
+        className="fixed top-0 left-0 w-[100vh] sm:w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-500 "
         style={{ opacity }}
         aria-live="polite"
         aria-busy={isLoading}

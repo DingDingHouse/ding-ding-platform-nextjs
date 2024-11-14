@@ -13,14 +13,12 @@ const UserData = ({ data }: any) => {
 
   useEffect(() => {
     let timer: NodeJS.Timeout;
-
     // Check if credits have been loaded (including zero)
     if (credits !== undefined) {
       timer = setTimeout(() => {
         setIsLoading(false);
       }, 1000); // Ensure loader is visible for at least 1 second after credits are loaded
     }
-
     return () => {
       if (timer) clearTimeout(timer);
     };
