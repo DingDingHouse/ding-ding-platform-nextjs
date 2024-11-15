@@ -20,11 +20,12 @@ const Notification = ({
   showCloseButton,
   onYesClick,
   onClose,
+  isClosable = true, // Add a prop to control closability
 }: any) => {
   return (
     <div
       onClick={() => {
-        toast.remove();
+        if (isClosable) toast.remove(); // Only allow closing if isClosable is true
       }}
       className={` w-100vw h-100vh z-[99] bg-black bg-opacity-50 flex items-center justify-center fixed top-0 left-0`}
     >

@@ -5,6 +5,8 @@ import { useAppDispatch } from "@/utils/store/hooks";
 import { useRouter } from "next/navigation";
 import { useEffect, useState, createContext, useContext } from "react";
 import { io, Socket } from "socket.io-client";
+import Notification from "../Notification";
+import toast from "react-hot-toast";
 
 interface SocketContextType {
   socket: Socket | null;
@@ -50,6 +52,18 @@ export const SocketProvider: React.FC<{
       socketInstance.on("alert", (message: any) => {
         if (message == "ForcedExit") {
           router.push("/logout");
+        } else if (message === "NewTab") {
+          console.warn("ALERT : ", message);
+          toast.custom(
+            (t) => (
+              <Notification
+                visible={t.visible}
+                message="You are already active in another tab."
+                isClosable={false} // Make this notification non-closable
+              />
+            ),
+            { duration: Infinity } // Keep the notification open indefinitely
+          );
         }
       });
 
