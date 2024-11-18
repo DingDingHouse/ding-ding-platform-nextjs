@@ -31,8 +31,15 @@ export const SocketProvider: React.FC<{
 
   useEffect(() => {
     if (token) {
+      // Use sessionStorage instead of localStorage for unique platformId per tab
+      let platformId = sessionStorage.getItem("platformId");
+      if (!platformId) {
+        platformId = crypto.randomUUID(); // Generate a unique platformId
+        sessionStorage.setItem("platformId", platformId);
+      }
+
       const socketInstance = io(`${config.server}`, {
-        auth: { token, origin: config.platform },
+        auth: { token, origin: config.platform, platformId },
       });
       setSocket(socketInstance);
 
