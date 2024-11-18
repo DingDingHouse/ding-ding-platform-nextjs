@@ -43,14 +43,7 @@ const page = () => {
         />
       ));
     }
-    if (data.password.length < 6) {
-      return toast.custom((t) => (
-        <Notification
-          visible={t.visible}
-          message="Minimun length for password is 6"
-        />
-      ));
-    }
+
     toast.custom((t) => (
       <Notification visible={t.visible} message="Loggin In..." />
     ));
