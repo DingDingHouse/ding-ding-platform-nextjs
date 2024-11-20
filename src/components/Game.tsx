@@ -103,7 +103,7 @@ const Game = ({ games }: any) => {
 
       const intervalId = setInterval(() => {
         smoothScrollToNextCard();
-      }, 3000);
+      }, 5000);
 
       return () => {
         clearInterval(intervalId);
