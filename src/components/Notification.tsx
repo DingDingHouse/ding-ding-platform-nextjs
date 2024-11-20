@@ -21,6 +21,7 @@ const Notification = ({
   onYesClick,
   onClose,
   isClosable = true, // Add a prop to control closability
+  styleTop
 }: any) => {
   return (
     <div
@@ -30,7 +31,7 @@ const Notification = ({
       className={` w-100vw h-100vh z-[99] bg-black bg-opacity-50 flex items-center justify-center fixed top-0 left-0`}
     >
       <div
-        className={`${className} landscape:h-[52vw] portrait:h-[52vh] landscape:w-[38vw] portrait:w-[38vh] z-[100] flex items-center justify-center relative ${
+        className={`${className} ${styleTop} landscape:h-[52vw] portrait:h-[52vh] landscape:w-[38vw] portrait:w-[38vh] z-[100] flex items-center justify-center relative ${
           visible ? "animate-enter" : "animate-leave"
         }`}
       >

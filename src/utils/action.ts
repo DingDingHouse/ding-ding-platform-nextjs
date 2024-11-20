@@ -11,10 +11,7 @@ export const login = async (data: any) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          username: data.name,
-          password: data.password,
-        }),
+        body: JSON.stringify(data),
       }
     );
     if (!response.ok) {
