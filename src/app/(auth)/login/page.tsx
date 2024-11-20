@@ -73,7 +73,7 @@ export default function UserLogin() {
             toast.custom((t) => (
               <Notification
                 className="rotate-0"
-                styleTop={'w-full h-screen !-rotate-90 sm:rotate-0'}
+                styleTop={'w-full h-screen !-rotate-90'}
                 visible={t.visible}
                 message="Login Successful"
               />
@@ -82,6 +82,7 @@ export default function UserLogin() {
             const randomNumber: number = Math.floor(Math.random() * 10) + 1
             Cookies.set("index", randomNumber.toString())
             router.push("/")
+            toast.remove()
           } else {
             toast.remove()
             toast.custom((t) => (
