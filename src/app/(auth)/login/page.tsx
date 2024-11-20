@@ -1,5 +1,4 @@
 'use client'
-
 import { jwtDecode } from "jwt-decode"
 import Image from "next/image"
 import Link from "next/link"
@@ -53,7 +52,6 @@ export default function UserLogin() {
         />
       ))
       const response: any = await login({ username, password })
-      console.log(response,"response")
       if (response) {
         if (response?.isUnderMaintenance) {
           toast.remove()
@@ -82,7 +80,6 @@ export default function UserLogin() {
             ))
             toast.remove()
 
-            Cookies.set("token", token)
             const randomNumber: number = Math.floor(Math.random() * 10) + 1
             Cookies.set("index", randomNumber.toString())
             router.push("/")
@@ -103,7 +100,7 @@ export default function UserLogin() {
             <Notification
               styleTop={'w-full -rotate-90 sm:rotate-0 h-screen'}
               visible={t.visible}
-              message="Invalid Token"
+              message={response?.error}
             />
           ))
         }
