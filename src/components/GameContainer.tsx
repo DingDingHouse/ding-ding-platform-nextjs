@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback } from "react";
+import React, { useMemo } from "react";
 import GameCard from "./GameCard";
 import Image from "next/image";
 
@@ -15,10 +15,10 @@ const GameContainer = ({
       return (
         <div
           key={game.id || index}
-          className={`flex-none relative sm:hover:scale-105 min-w-[20vw] w-[20%] transition-[2s]`}
+          className={`flex-none relative lg:hover:scale-105 sm:min-w-[18vw] sm:w-[18%] min-w-[20vw] w-[20%] lg:min-w-[20vw] lg:w-[20%] transition-[2s]`}
         >
           {currentIndex + 2 === index && displayedGames?.length >= 5 && (
-            <div className="absolute top-0 sm:block hidden left-0 w-full  scale-[1.2] h-full">
+            <div className="absolute top-0 lg:block hidden left-0 w-full  scale-[1.2] h-full">
               <Image
                 src="/card.gif"
                 alt=""
