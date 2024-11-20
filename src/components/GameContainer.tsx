@@ -45,7 +45,7 @@ const GameContainer = ({
     >
       <div
         className={`flex items-center  ${
-          displayedGames.length < 5 ? "justify-center" : "justify-start"
+          displayedGames?.length < 5 ? "justify-center" : "justify-start"
         } ease-in-out transition-all duration-200 w-[100%] `}
         style={{ transform: `translateX(-${currentIndex * (100 / 5)}%)` }}
       >

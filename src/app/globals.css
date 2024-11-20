@@ -7,6 +7,10 @@
   --foreground: #171717;
 }
 
+html {
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
