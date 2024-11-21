@@ -15,10 +15,10 @@ const GameContainer = ({
       return (
         <div
           key={game.id || index}
-          className={`flex-none relative lg:hover:scale-105 sm:min-w-[20vw] sm:w-[20%] min-w-[20vw] w-[20%] lg:min-w-[20vw] lg:w-[20%] transition-[2s]`}
+          className={`flex-none relative lg:hover:scale-105  sm:min-w-[20vw] sm:h-[80%] lg:h-full sm:w-[20%] min-w-[20vw] w-[20%] lg:min-w-[20vw] lg:w-[20%] transition-[2s]`}
         >
           {currentIndex + 2 === index && displayedGames?.length >= 5 && (
-            <div className="absolute top-0 lg:block hidden left-0 w-full  scale-[1.2] h-full">
+            <div className="absolute bottom-0 lg:block hidden left-0 w-full scale-[1.2]  h-full">
               <Image
                 src="/card.gif"
                 alt=""

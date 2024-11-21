@@ -1,8 +1,6 @@
 'use client'
-
 import { jwtDecode } from "jwt-decode"
 import Image from "next/image"
-import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import toast from "react-hot-toast"
@@ -75,17 +73,16 @@ export default function UserLogin() {
             toast.custom((t) => (
               <Notification
                 className="rotate-0"
-                styleTop={'w-full h-screen !rotate-90 sm:rotate-0'}
+                styleTop={'w-full h-screen !-rotate-90'}
                 visible={t.visible}
                 message="Login Successful"
               />
             ))
-            toast.remove()
-
-            Cookies.set("token", token)
+            Cookies.set("token", token);
             const randomNumber: number = Math.floor(Math.random() * 10) + 1
             Cookies.set("index", randomNumber.toString())
             router.push("/")
+            toast.remove()
           } else {
             toast.remove()
             toast.custom((t) => (
@@ -103,7 +100,7 @@ export default function UserLogin() {
             <Notification
               styleTop={'w-full -rotate-90 sm:rotate-0 h-screen'}
               visible={t.visible}
-              message="Invalid Token"
+              message={response?.error}
             />
           ))
         }

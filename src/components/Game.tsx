@@ -155,7 +155,7 @@ const Game = ({ games }: any) => {
 
   return (
     <div
-      className="h-[45dvh] sm:h-[40dvw] overflow-x-scroll lg:overflow-x-hidden overflow-y-hidden transition-all element w-100vw"
+      className="h-[45dvh]  sm:h-[40dvw] overflow-x-scroll lg:overflow-x-hidden overflow-y-hidden transition-all element w-100vw"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onTouchStart={handleTouchStart}

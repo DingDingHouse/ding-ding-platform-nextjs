@@ -3,7 +3,7 @@ import React from "react";
 const GameBorder = ({ className }: any) => {
   return (
     <svg
-      width="357"
+      width="400"
       height="588"
       viewBox="0 0 357 588"
       fill="none"
