@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback } from "react";
+import React, { useMemo } from "react";
 import GameCard from "./GameCard";
 import Image from "next/image";
 
@@ -15,22 +15,9 @@ const GameContainer = ({
       return (
         <div
           key={game.id || index}
-          className={`flex-none relative sm:hover:scale-105 min-w-[20vw] w-[20%] transition-[2s]`}
+          className={`flex-none relative lg:hover:scale-105  sm:min-w-[20vw]  sm:h-[80%] lg:h-full sm:w-[20%] h-[70dvw] min-w-[20dvh] w-[20%] lg:min-w-[20vw] lg:w-[20%] transition-[2s]`}
         >
-          {currentIndex + 2 === index && displayedGames?.length >= 5 && (
-            <div className="absolute top-0 sm:block hidden left-0 w-full  scale-[1.2] h-full">
-              <Image
-                src="/card.gif"
-                alt=""
-                quality={100}
-                priority
-                height={4000}
-                width={4000}
-                className={`z-[99]`}
-              />
-            </div>
-          )}
-          <GameCard position={position} data={game} />
+          <GameCard displayeGame={displayedGames} middleind={currentIndex + 2 === index} position={position} data={game} />
         </div>
       );
     });
@@ -45,7 +32,7 @@ const GameContainer = ({
     >
       <div
         className={`flex items-center  ${
-          displayedGames.length < 5 ? "justify-center" : "justify-start"
+          displayedGames?.length < 5 ? "justify-center" : "justify-start"
         } ease-in-out transition-all duration-200 w-[100%] `}
         style={{ transform: `translateX(-${currentIndex * (100 / 5)}%)` }}
       >
