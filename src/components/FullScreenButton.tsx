@@ -4,7 +4,7 @@ import FullScreenIcon from "./svg/icons/FullScreenIcon";
 import NormalScreenIcon from "./svg/icons/NormalScreenIcon";
 
 const FullScreenButton = () => {
-  const [fullScreen, setFullScreen] = useState(false);
+  const [fullScreen, setFullScreen] = useState(window?.innerWidth<=900?true:false);
 
   const fullScreenHandler = () => {
     const doc = document.documentElement;

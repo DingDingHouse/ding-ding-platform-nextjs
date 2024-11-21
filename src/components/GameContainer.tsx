@@ -15,7 +15,7 @@ const GameContainer = ({
       return (
         <div
           key={game.id || index}
-          className={`flex-none relative lg:hover:scale-105  sm:min-w-[20vw] sm:h-[80%] lg:h-full sm:w-[20%] min-w-[20vw] w-[20%] lg:min-w-[20vw] lg:w-[20%] transition-[2s]`}
+          className={`flex-none relative lg:hover:scale-105  sm:min-w-[20vw]  sm:h-[80%] lg:h-full sm:w-[20%] h-[70dvw] min-w-[20dvh] w-[20%] lg:min-w-[20vw] lg:w-[20%] transition-[2s]`}
         >
           <GameCard displayeGame={displayedGames} middleind={currentIndex + 2 === index} position={position} data={game} />
         </div>
