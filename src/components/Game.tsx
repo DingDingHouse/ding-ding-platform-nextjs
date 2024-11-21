@@ -126,7 +126,7 @@ const Game = ({ games }: any) => {
       if (totalCards > 1 && window.innerWidth > 980) {
         const intervalId = setInterval(() => {
           moveRight();
-        }, 3000);
+        }, 5000);
 
         return () => clearInterval(intervalId);
       }

@@ -8,9 +8,10 @@ import Cookies from "js-cookie"
 import Notification from "@/components/Notification"
 import { login } from "@/utils/action"
 import Input from "@/components/Input"
-import Name from "@/components/svg/Input/Name"
 import Password from "@/components/svg/Input/Password"
 import Button from "@/components/Button"
+import Name from "@/components/svg/Input/Name"
+import Logo from "@/components/svg/Logo"
 
 export default function UserLogin() {
   const router = useRouter()
@@ -56,9 +57,8 @@ export default function UserLogin() {
         if (response?.isUnderMaintenance) {
           toast.remove()
           return toast.custom((t) => (
-            <Notification
-              className="rotate-0"
-              styleTop={'w-full h-screen'}
+            <Notification 
+              styleTop={'w-full h-screen -rotate-90 sm:rotate-0'}
               visible={t.visible}
               message={response?.message}
             />
@@ -72,8 +72,7 @@ export default function UserLogin() {
             toast.remove()
             toast.custom((t) => (
               <Notification
-                className="rotate-0"
-                styleTop={'w-full h-screen !-rotate-90'}
+                styleTop={'w-full h-screen'}
                 visible={t.visible}
                 message="Login Successful"
               />
@@ -82,13 +81,14 @@ export default function UserLogin() {
             const randomNumber: number = Math.floor(Math.random() * 10) + 1
             Cookies.set("index", randomNumber.toString())
             router.push("/")
-            toast.remove()
+            setTimeout(()=>{
+              toast.remove()
+            },2000)
           } else {
             toast.remove()
             toast.custom((t) => (
               <Notification
-                className="rotate-0"
-                styleTop={'w-full h-screen'}
+                styleTop={'w-full h-screen -rotate-90 sm:rotate-0'}
                 visible={t.visible}
                 message="Access Denied: Not a player"
               />
@@ -136,7 +136,9 @@ export default function UserLogin() {
         {/* Content Div */}
         <div className="flex-grow flex items-center justify-center md:items-start md:justify-start p-4 sm:p-8 w-full md:w-3/5 relative z-10">
           <div className="w-full max-w-md">
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 w-full max-w-sm mx-auto bg-black bg-opacity-50 p-4 rounded-lg md:bg-transparent md:p-0">
+          
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 w-full sm:max-w-xs lg:max-w-sm max-w-sm mx-auto bg-black bg-opacity-50 p-4 rounded-lg md:bg-transparent md:p-0">
+              <Logo className={'w-[80%] mx-auto h-auto lg:w-full  lg:block sm:hidden'}/>
               <Input
                 name="name"
                 onChange={handleUsernameChange}

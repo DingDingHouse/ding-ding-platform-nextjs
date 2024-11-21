@@ -17,20 +17,7 @@ const GameContainer = ({
           key={game.id || index}
           className={`flex-none relative lg:hover:scale-105  sm:min-w-[20vw] sm:h-[80%] lg:h-full sm:w-[20%] min-w-[20vw] w-[20%] lg:min-w-[20vw] lg:w-[20%] transition-[2s]`}
         >
-          {currentIndex + 2 === index && displayedGames?.length >= 5 && (
-            <div className="absolute bottom-0 lg:block hidden left-0 w-full scale-[1.2]  h-full">
-              <Image
-                src="/card.gif"
-                alt=""
-                quality={100}
-                priority
-                height={4000}
-                width={4000}
-                className={`z-[99]`}
-              />
-            </div>
-          )}
-          <GameCard position={position} data={game} />
+          <GameCard displayeGame={displayedGames} middleind={currentIndex + 2 === index} position={position} data={game} />
         </div>
       );
     });
