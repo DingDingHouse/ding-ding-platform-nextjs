@@ -69,7 +69,7 @@ export default function UserLogin() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (!validateForm()) return
-    if(window?.innerWidth<=900){
+    if (window?.innerWidth <= 900) {
       handelFullscreen();
     }
     try {
@@ -100,7 +100,7 @@ export default function UserLogin() {
             toast.remove()
             toast.custom((t) => (
               <Notification
-                styleTop={'w-full h-screen'}
+                styleTop={'w-full -rotate-90 sm:rotate-0 h-screen'}
                 visible={t.visible}
                 message="Login Successful"
               />
@@ -111,7 +111,7 @@ export default function UserLogin() {
             router.push("/")
             setTimeout(() => {
               toast.remove()
-            }, 2000)
+            }, 1000)
           } else {
             toast.remove()
             toast.custom((t) => (
@@ -155,16 +155,15 @@ export default function UserLogin() {
   }
 
   return (
-    <div className="relative !-rotate-90 sm:!rotate-0 min-h-screen w-full overflow-hidden">
+    <div className="relative !-rotate-90 sm:!rotate-0 min-h-[100vh] sm:min-h-screen w-full overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 bg-[url('/login/bg-login.png')] bg-cover bg-center" />
+      <div className="absolute inset-0 bg-[url('/login/bg-login.png')]  bg-cover bg-center" />
 
-      <div className="relative flex min-h-screen w-full items-center">
+      <div className="flex border min-h-[100dvh] sm:min-h-screen  w-full items-center">
         {/* Content Div */}
-        <div className={`flex-grow flex items-center justify-center md:items-start md:justify-start p-4 sm:p-8 w-full ${isSmallScreen ? 'absolute inset-0 z-20' : 'md:w-3/5'} relative z-10`}>
-          <div className="w-full max-w-md scale-[.85] sm:scale-100">
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 w-full sm:max-w-xs lg:max-w-sm max-w-sm mx-auto bg-black bg-opacity-50 p-4 rounded-lg md:bg-transparent md:p-0">
-              <Logo className={'w-[80%] mx-auto h-auto lg:w-full lg:block sm:hidden'} />
+        <div className={`flex-grow w-full h-full flex items-center justify-center md:items-start md:justify-start sm:p-8   z-20 sm:z-10`}>
+            <form onSubmit={handleSubmit} className="w-[48%] space-y-4 sm:space-y-6 sm:w-[50%] 2xl:w-[60%] mx-auto bg-black bg-opacity-50 p-4 rounded-lg md:bg-transparent md:p-0">
+              <Logo className={'w-[60%] mx-auto h-auto lg:w-full lg:block sm:hidden'} />
               <Input
                 name="name"
                 onChange={handleUsernameChange}
@@ -189,17 +188,15 @@ export default function UserLogin() {
                 </button>
               </div>
             </form>
-          </div>
         </div>
-        <div className={`absolute inset-0 md:relative md:flex-shrink-0 md:h-screen md:w-2/5 ${isSmallScreen ? 'z-10' : ''}`}>
+        <div className={`absolute inset-0 md:relative md:flex-shrink-0 h-screen md:w-2/5`}>
           <div className="relative h-full w-full">
             <Image
               src="/login/character4.png"
               alt="Lady image"
-              width={2000}
-              height={2000}
+              fill
               priority
-              className={`object-contain w-full h-[95%] lg:h-full absolute bottom-0 opacity-90 md:opacity-100`}
+              className={`object-contain object-center  sm:object-cover  opacity-90 md:opacity-100`}
             />
           </div>
         </div>
