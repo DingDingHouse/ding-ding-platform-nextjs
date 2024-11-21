@@ -18,7 +18,7 @@ const GameCard = ({data,displayeGame,middleind}: any) => {
           priority
           width={3000}
           height={2000}
-          className="rounded-[8vw] h-full w-full sm:rounded-[4vw] lg:rounded-[3vw]  shadow-2xl gameCard"
+          className="rounded-[8vw]  sm:rounded-[4vw] lg:rounded-[3vw]  shadow-2xl gameCard"
         />
         {displayeGame?.length>=5&&middleind&&(
             <div className="absolute z-[-3] bottom-0 lg:block hidden left-0 w-full  h-full">
