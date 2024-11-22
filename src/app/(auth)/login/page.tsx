@@ -155,51 +155,55 @@ export default function UserLogin() {
   }
 
   return (
-    <div className="relative !-rotate-90 sm:!rotate-0 min-h-[100vh] sm:min-h-screen w-full overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 bg-[url('/login/bg-login.png')]  bg-cover bg-center" />
+    <div className="relative items-center sm:items-start w-screen sm:w-full -rotate-90 sm:rotate-0 h-auto flex justify-evenly">
+      <Image
+        src="/login/bg-login.png"
+        alt="login-bg"
+        fill
+        priority={true}
+        quality={100}
+        objectPosition="center"
+        className=" object-cover  w-full"
+      />
+      <form
+        onSubmit={handleSubmit}
+        className="z-[3] p-[3%]  bg-black rounded-[1vw] bg-opacity-60 sm:bg-transparent sm:static flex justify-center flex-col gap-[3vw] sm:gap-[3vw] w-[88%] sm:w-[35%] h-auto sm:h-[50%] m-auto absolute top-auto "
+        autoComplete="off"
+      >
+        <Logo className={' mx-auto h-auto w-[60%] lg:w-full lg:block sm:hidden'} />
+        <Input
+          name="name"
+          onChange={handleUsernameChange}
+          type="text"
+          placeholder="Enter Name"
+          icon={<Name className="h-[85%] w-[85%]" />}
+        />
 
-      <div className="flex border min-h-[100dvh] sm:min-h-screen  w-full items-center">
-        {/* Content Div */}
-        <div className={`flex-grow w-full h-full flex items-center justify-center md:items-start md:justify-start sm:p-8   z-20 sm:z-10`}>
-            <form onSubmit={handleSubmit} className="w-[48%] space-y-4 sm:space-y-6 sm:w-[50%] 2xl:w-[60%] mx-auto bg-black bg-opacity-50 p-4 rounded-lg md:bg-transparent md:p-0">
-              <Logo className={'w-[60%] mx-auto h-auto lg:w-full lg:block sm:hidden'} />
-              <Input
-                name="name"
-                onChange={handleUsernameChange}
-                type="text"
-                placeholder="Enter Name"
-                icon={<Name className="h-[85%] w-[85%]" />}
-              />
+        <Input
+          name="password"
+          onChange={handlePasswordChange}
+          type="password"
+          placeholder="Enter Password"
+          icon={<Password className="h-[85%] w-[85%]" />}
+        />
+        <div className="flex justify-center ">
+          <button
+            type="submit"
+            className="mt-2vw z-[100]"
+          >
+            <Button className="uppercase" text="Login" />
+          </button>
+        </div>
 
-              <Input
-                name="password"
-                onChange={handlePasswordChange}
-                type="password"
-                placeholder="Enter Password"
-                icon={<Password className="h-[85%] w-[85%]" />}
-              />
-              <div className="flex justify-center ">
-                <button
-                  type="submit"
-                  className="mt-2vw z-[100]"
-                >
-                  <Button className="uppercase" text="Login" />
-                </button>
-              </div>
-            </form>
-        </div>
-        <div className={`absolute inset-0 md:relative md:flex-shrink-0 h-screen md:w-2/5`}>
-          <div className="relative h-full w-full">
-            <Image
-              src="/login/character4.png"
-              alt="Lady image"
-              fill
-              priority
-              className={`object-contain object-center  sm:object-cover  opacity-90 md:opacity-100`}
-            />
-          </div>
-        </div>
+
+      </form>
+      <div className="relative w-full sm:w-[45%] z-[2]  min-h-screen sm:min-h-[20vw] sm:mr-0 sm:h-[50vw] m-auto">
+        <Image
+          src="/login/character4.png"
+          alt="login-character"
+          fill
+          className="z-[2] object-cover sm:object-contain bottom-0"
+        />
       </div>
     </div>
   )
