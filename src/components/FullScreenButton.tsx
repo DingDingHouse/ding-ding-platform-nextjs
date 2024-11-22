@@ -1,10 +1,14 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FullScreenIcon from "./svg/icons/FullScreenIcon";
 import NormalScreenIcon from "./svg/icons/NormalScreenIcon";
 
 const FullScreenButton = () => {
-  const [fullScreen, setFullScreen] = useState(window?.innerWidth<=900?true:false);
+  const [fullScreen, setFullScreen] = useState(false);
+
+  useEffect(() => {
+    setFullScreen(window.innerWidth <= 900);
+  }, []); 
 
   const fullScreenHandler = () => {
     const doc = document.documentElement;
