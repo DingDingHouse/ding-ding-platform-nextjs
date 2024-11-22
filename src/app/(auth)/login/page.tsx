@@ -18,18 +18,7 @@ export default function UserLogin() {
   const router = useRouter()
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
-  const [isSmallScreen, setIsSmallScreen] = useState(false)
-
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsSmallScreen(window.innerWidth <= 768)
-    }
-
-    checkScreenSize()
-    window.addEventListener('resize', checkScreenSize)
-
-    return () => window.removeEventListener('resize', checkScreenSize)
-  }, [])
+  const [number, setNumber] = useState(Math.floor(Math.random() * 5) + 1);
 
   const handelFullscreen = () => {
     const doc = document.documentElement;
@@ -199,7 +188,7 @@ export default function UserLogin() {
       </form>
       <div className="relative w-full sm:w-[45%] z-[2]  min-h-screen sm:min-h-[20vw] sm:mr-0 sm:h-[50vw] m-auto">
         <Image
-          src="/login/character4.png"
+          src={`/login/character${number}.png`}
           alt="login-character"
           fill
           className="z-[2] object-cover sm:object-contain bottom-0"
