@@ -20,16 +20,16 @@ export default function UserLogin() {
   const [password, setPassword] = useState("")
   const [number, setNumber] = useState(Math.floor(Math.random() * 5) + 1);
 
-  const handelFullscreen = () => {
-    const doc = document.documentElement;
-    if (!document.fullscreenElement) {
-      if (doc.requestFullscreen) {
-        doc.requestFullscreen();
-      } else if ((doc as any).webkitRequestFullscreen) {
-        (doc as any).webkitRequestFullscreen();
-      } else if ((doc as any).msRequestFullscreen) {
-        (doc as any).msRequestFullscreen();
-      }
+  function goFullScreen() {
+    const elem:any = document.documentElement; // The <html> element
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { // Firefox
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { // IE/Edge
+      elem.msRequestFullscreen();
     }
   }
 
@@ -59,7 +59,7 @@ export default function UserLogin() {
     e.preventDefault()
     if (!validateForm()) return
     if (window?.innerWidth <= 900) {
-      handelFullscreen();
+      goFullScreen();
     }
     try {
       toast.custom((t) => (
