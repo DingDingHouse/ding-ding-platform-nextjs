@@ -50,7 +50,6 @@ export const VolumeProvider: React.FC<{ children: ReactNode }> = ({
       try {
         await audioRef.current.play();
       } catch (err) {
-        console.error("Audio play error:", err);
       }
     }
   };

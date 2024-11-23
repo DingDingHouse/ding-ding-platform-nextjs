@@ -22,7 +22,6 @@ const AudioPlayer = () => {
         } else {
           setError("Failed to play the audio.");
         }
-        console.error("Audio play error:", err);
       }
     };
 
@@ -31,7 +30,6 @@ const AudioPlayer = () => {
     // Error event listener
     const handleError = () => {
       setError("An error occurred while trying to load the audio");
-      console.error("Audio loading error");
     };
 
     audio.addEventListener("error", handleError);

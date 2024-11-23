@@ -49,7 +49,6 @@ const Modal = ({
 
   const modalElement = document.getElementById("modal");
   if (!modalElement) {
-    console.warn('Element with id "modal" not found');
     return null;
   }
 

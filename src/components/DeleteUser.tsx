@@ -10,7 +10,6 @@ const DeleteUser = ({ deleteToken }: { deleteToken: () => Promise<void> }) => {
         await deleteToken();
         router.push("/login");
       } catch (error) {
-        console.error("Error during logout:", error);
       }
     };
 
