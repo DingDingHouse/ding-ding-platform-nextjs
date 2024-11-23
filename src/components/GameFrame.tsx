@@ -44,7 +44,6 @@ const GameFrame = ({ data }: any) => {
     return cookieObject[cookieName];
   }
 
-
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
       const message = event.data;

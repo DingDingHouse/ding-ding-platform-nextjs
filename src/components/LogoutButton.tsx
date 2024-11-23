@@ -38,7 +38,7 @@ const LogoutButton = () => {
         <Notification visible={t.visible} message="Logout successful" />
       ));
       toast.remove();
-      router.push("/login");
+      router.push("/logout");
     } catch (error) {
       toast.remove();
       toast.custom((t) => (
