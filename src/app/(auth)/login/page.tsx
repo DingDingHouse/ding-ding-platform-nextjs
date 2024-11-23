@@ -18,29 +18,18 @@ export default function UserLogin() {
   const router = useRouter()
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
-  const [isSmallScreen, setIsSmallScreen] = useState(false)
+  const [number, setNumber] = useState(Math.floor(Math.random() * 5) + 1);
 
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsSmallScreen(window.innerWidth <= 768)
-    }
-
-    checkScreenSize()
-    window.addEventListener('resize', checkScreenSize)
-
-    return () => window.removeEventListener('resize', checkScreenSize)
-  }, [])
-
-  const handelFullscreen = () => {
-    const doc = document.documentElement;
-    if (!document.fullscreenElement) {
-      if (doc.requestFullscreen) {
-        doc.requestFullscreen();
-      } else if ((doc as any).webkitRequestFullscreen) {
-        (doc as any).webkitRequestFullscreen();
-      } else if ((doc as any).msRequestFullscreen) {
-        (doc as any).msRequestFullscreen();
-      }
+  function goFullScreen() {
+    const elem:any = document.documentElement; // The <html> element
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { // Firefox
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { // IE/Edge
+      elem.msRequestFullscreen();
     }
   }
 
@@ -69,8 +58,8 @@ export default function UserLogin() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (!validateForm()) return
-    if(window?.innerWidth<=900){
-      handelFullscreen();
+    if (window?.innerWidth <= 900) {
+      goFullScreen();
     }
     try {
       toast.custom((t) => (
@@ -100,7 +89,7 @@ export default function UserLogin() {
             toast.remove()
             toast.custom((t) => (
               <Notification
-                styleTop={'w-full h-screen'}
+                styleTop={'w-full -rotate-90 sm:rotate-0 h-screen'}
                 visible={t.visible}
                 message="Login Successful"
               />
@@ -111,7 +100,7 @@ export default function UserLogin() {
             router.push("/")
             setTimeout(() => {
               toast.remove()
-            }, 2000)
+            }, 1000)
           } else {
             toast.remove()
             toast.custom((t) => (
@@ -155,54 +144,55 @@ export default function UserLogin() {
   }
 
   return (
-    <div className="relative !-rotate-90 sm:!rotate-0 min-h-screen w-full overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 bg-[url('/login/bg-login.png')] bg-cover bg-center" />
+    <div className="relative items-center sm:items-start w-screen sm:w-full -rotate-90 sm:rotate-0 h-auto flex justify-evenly">
+      <Image
+        src="/login/bg-login.png"
+        alt="login-bg"
+        fill
+        priority={true}
+        quality={100}
+        objectPosition="center"
+        className=" object-cover  w-full"
+      />
+      <form
+        onSubmit={handleSubmit}
+        className="z-[3] p-[3%]  bg-black rounded-[1vw] bg-opacity-60 sm:bg-transparent sm:static flex justify-center flex-col gap-[3vw] sm:gap-[3vw] w-[88%] sm:w-[35%] h-auto sm:h-[50%] m-auto absolute top-auto "
+        autoComplete="off"
+      >
+        <Logo className={' mx-auto h-auto w-[60%] lg:w-full lg:block sm:hidden'} />
+        <Input
+          name="name"
+          onChange={handleUsernameChange}
+          type="text"
+          placeholder="Enter Name"
+          icon={<Name className="h-[85%] w-[85%]" />}
+        />
 
-      <div className="relative flex min-h-screen w-full items-center">
-        {/* Content Div */}
-        <div className={`flex-grow flex items-center justify-center md:items-start md:justify-start p-4 sm:p-8 w-full ${isSmallScreen ? 'absolute inset-0 z-20' : 'md:w-3/5'} relative z-10`}>
-          <div className="w-full max-w-md scale-[.85] sm:scale-100">
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 w-full sm:max-w-xs lg:max-w-sm max-w-sm mx-auto bg-black bg-opacity-50 p-4 rounded-lg md:bg-transparent md:p-0">
-              <Logo className={'w-[80%] mx-auto h-auto lg:w-full lg:block sm:hidden'} />
-              <Input
-                name="name"
-                onChange={handleUsernameChange}
-                type="text"
-                placeholder="Enter Name"
-                icon={<Name className="h-[85%] w-[85%]" />}
-              />
+        <Input
+          name="password"
+          onChange={handlePasswordChange}
+          type="password"
+          placeholder="Enter Password"
+          icon={<Password className="h-[85%] w-[85%]" />}
+        />
+        <div className="flex justify-center ">
+          <button
+            type="submit"
+            className="mt-2vw z-[100]"
+          >
+            <Button className="uppercase" text="Login" />
+          </button>
+        </div>
 
-              <Input
-                name="password"
-                onChange={handlePasswordChange}
-                type="password"
-                placeholder="Enter Password"
-                icon={<Password className="h-[85%] w-[85%]" />}
-              />
-              <div className="flex justify-center ">
-                <button
-                  type="submit"
-                  className="mt-2vw z-[100]"
-                >
-                  <Button className="uppercase" text="Login" />
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div className={`absolute inset-0 md:relative md:flex-shrink-0 md:h-screen md:w-2/5 ${isSmallScreen ? 'z-10' : ''}`}>
-          <div className="relative h-full w-full">
-            <Image
-              src="/login/character4.png"
-              alt="Lady image"
-              width={2000}
-              height={2000}
-              priority
-              className={`object-contain w-full h-[95%] lg:h-full absolute bottom-0 opacity-90 md:opacity-100`}
-            />
-          </div>
-        </div>
+
+      </form>
+      <div className="relative w-full sm:w-[45%] z-[2]  min-h-screen sm:min-h-[20vw] sm:mr-0 sm:h-[50vw] m-auto">
+        <Image
+          src={`/login/character${number}.png`}
+          alt="login-character"
+          fill
+          className="z-[2] object-cover sm:object-contain bottom-0"
+        />
       </div>
     </div>
   )

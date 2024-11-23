@@ -31,7 +31,7 @@ export default function RootLayout({
       </head>
       <VolumeProvider>
         <body
-          className={`${montserrat.className} antialiased rotate-90 sm:rotate-0 overflow-hidden`}
+          className={`${montserrat.className} antialiased overflow-hidden`}
         >
               {/* game shape */}
               <svg className="clippy">
@@ -44,7 +44,7 @@ export default function RootLayout({
                   </clipPath>
                 </defs>
               </svg>
-              <div className="relative sm:w-[100dvw] h-100vh overflow-hidden w-100vw cursor-custom">
+              <div className="relative lg:w-[100dvw] h-100vh overflow-hidden w-100vw cursor-custom">
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-full h-full">
                   {children}
                   <Toaster
