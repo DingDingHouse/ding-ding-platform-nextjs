@@ -45,7 +45,6 @@ export const SocketProvider: React.FC<{
       setSocket(socketInstance);
 
       socketInstance.on("connect", () => {
-        console.log("Connected with socket id:", socketInstance.id);
         setConected(true)
       });
 
@@ -62,7 +61,6 @@ export const SocketProvider: React.FC<{
         if (message == "ForcedExit") {
           router.push("/logout");
         } else if (message === "NewTab") {
-          console.warn("ALERT : ", message);
           toast.custom(
             (t) => (
               <Notification
