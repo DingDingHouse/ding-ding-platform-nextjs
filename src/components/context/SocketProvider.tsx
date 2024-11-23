@@ -30,7 +30,6 @@ export const SocketProvider: React.FC<{
   const [socket, setSocket] = useState<Socket | null>(null);
   const router = useRouter();
   const [connected,setConected] = useState(false)
-
   useEffect(() => {
     if (token) {
       // Use sessionStorage instead of localStorage for unique platformId per tab
@@ -41,7 +40,7 @@ export const SocketProvider: React.FC<{
       }
 
       const socketInstance = io(`${config.server}`, {
-        auth: { token, origin: config.platform, platformId },
+        auth: { token, origin:config.platform, platformId },
       });
       setSocket(socketInstance);
 

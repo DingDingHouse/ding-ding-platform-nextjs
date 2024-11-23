@@ -44,42 +44,46 @@ const GameFrame = ({ data }: any) => {
     return cookieObject[cookieName];
   }
 
+
   useEffect(() => {
-    const handleMessage = (event: MessageEvent) => {
-      const message = event.data;
+    if (data && getToken('token')) {
+      const handleMessage = (event: MessageEvent) => {
+        const message = event.data;
 
-      const iframe = document.getElementById("gameIframe") as HTMLIFrameElement;
-      if (message === "authToken") {
-        if (iframe.contentWindow) {
-          iframe.contentWindow.postMessage(
-            {
-              type: "authToken",
-              cookie: getToken("token"),
-              socketURL: config.server,
-              console: config.nodeEnv === "production" ? false : true,
-              loaderUrl: config.loaderUrl,
-            },
-            `${data?.url}`
-          );
+        const iframe = document.getElementById("gameIframe") as HTMLIFrameElement;
+        if (message === "authToken") {
+          if (iframe.contentWindow) {
+            iframe.contentWindow.postMessage(
+              {
+                type: "authToken",
+                cookie: getToken("token"),
+                socketURL: config.server,
+                console: config.nodeEnv === "production" ? false : true,
+                loaderUrl: config.loaderUrl,
+              },
+              `${data?.url}`
+            );
+          }
         }
-      }
 
-      if (message === "onExit") {
-        setGameLoaded(false);
-        playAudio();
-        router.push("/");
-      }
+        if (message === "onExit") {
+          setGameLoaded(false);
+          playAudio();
+          router.push("/");
+        }
 
-      if (message === "OnEnter") {
-        setGameLoaded(true);
-      }
-    };
-    window.addEventListener("message", handleMessage);
+        if (message === "OnEnter") {
+          setGameLoaded(true);
+        }
+      };
+      window.addEventListener("message", handleMessage);
 
-    return () => {
-      window.removeEventListener("message", handleMessage);
-    };
-  }, [data, gameLoaded]);
+      return () => {
+        window.removeEventListener("message", handleMessage);
+      };
+    }
+
+  }, [data, getToken('token')]);
 
   return (
     <div className="w-full h-full relative">

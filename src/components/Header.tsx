@@ -16,7 +16,6 @@ const Header = async () => {
   }
   const token:any=await getCookie()
   const decodedToken=await Jwt?.decode(token)
-console.log(decodedToken,"decoded") 
   return (
     <div className="w-full bg-gradient-to-b from-[#A97510] via-[#F0E88C] to-[#E9B43F] pb-0-18vw z-[100] relative">
       <div className="w-full bg-gradient-to-b from-[#A97510] to-[#C79017] pb-0-15vw">
