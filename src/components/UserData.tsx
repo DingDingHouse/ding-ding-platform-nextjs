@@ -2,9 +2,6 @@
 import { useAppSelector } from "@/utils/store/hooks";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { Loader2 } from "lucide-react";
-import Loader from "./Loader";
-import Portal from "./Portal";
 import FullScreenLoader from "./FullScreenLoader";
 
 const UserData = ({ data }: any) => {
