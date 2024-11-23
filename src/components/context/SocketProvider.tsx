@@ -7,6 +7,7 @@ import { useEffect, useState, createContext, useContext } from "react";
 import { io, Socket } from "socket.io-client";
 import Notification from "../Notification";
 import toast from "react-hot-toast";
+import Loader from "../Loader";
 
 interface SocketContextType {
   socket: Socket | null;
@@ -28,7 +29,7 @@ export const SocketProvider: React.FC<{
   const dispatch = useAppDispatch();
   const [socket, setSocket] = useState<Socket | null>(null);
   const router = useRouter();
-
+  const [connected,setConected] = useState(false)
   useEffect(() => {
     if (token) {
       // Use sessionStorage instead of localStorage for unique platformId per tab
@@ -39,12 +40,12 @@ export const SocketProvider: React.FC<{
       }
 
       const socketInstance = io(`${config.server}`, {
-        auth: { token, origin: config.platform, platformId },
+        auth: { token, origin:config.platform, platformId },
       });
       setSocket(socketInstance);
 
       socketInstance.on("connect", () => {
-        console.log("Connected with socket id:", socketInstance.id);
+        setConected(true)
       });
 
       socketInstance.on("data", (data: any) => {
@@ -60,7 +61,6 @@ export const SocketProvider: React.FC<{
         if (message == "ForcedExit") {
           router.push("/logout");
         } else if (message === "NewTab") {
-          console.warn("ALERT : ", message);
           toast.custom(
             (t) => (
               <Notification
@@ -82,7 +82,7 @@ export const SocketProvider: React.FC<{
 
   return (
     <SocketContext.Provider value={{ socket }}>
-      {children}
+      {connected?children:<Loader/>}
     </SocketContext.Provider>
   );
 };
