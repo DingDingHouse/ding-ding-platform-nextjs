@@ -31,21 +31,11 @@ const LogoutButton = () => {
   };
 
   const handleLogout = () => {
-    try {
-      Cookies.remove("token");
-      toast.remove();
-      toast.custom((t) => (
-        <Notification visible={t.visible} message="Logout successful" />
-      ));
-      toast.remove();
-      router.push("/logout");
-    } catch (error) {
-      toast.remove();
-      toast.custom((t) => (
-        <Notification visible={t.visible} message="Failed to logout" />
-      ));
-      toast.remove();
-    }
+    router?.push('/logout');
+    toast.custom((t) => (
+      <Notification visible={t.visible} message="Logout successful" />
+    ));
+    toast.remove();
   };
 
   return (
