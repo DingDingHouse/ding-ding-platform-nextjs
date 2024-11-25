@@ -21,7 +21,6 @@ export const login = async (data: any) => {
     const responseData = await response.json();
     return responseData;
   } catch (error) {
-    console.log("error:", error);
   }
 };
 

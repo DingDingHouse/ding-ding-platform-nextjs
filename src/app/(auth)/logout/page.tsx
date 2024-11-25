@@ -8,7 +8,6 @@ const Logout = async () => {
     try {
       cookies().delete("token");
     } catch (error) {
-      console.error("Error deleting cookie:", error);
     }
   }
   return <DeleteUser deleteToken={deleteToken} />;
