@@ -35,7 +35,7 @@ const Navigation = ({ params }: any) => {
                     alt={item.name}
                     height={50}
                     width={50}
-                    className={`h-3vw w-3vw ${
+                    className={`h-[5vw] w-[5vw] sm:h-[3vw] sm:w-[3vw] ${
                       pathname === item.link ? "animate-bounce" : ""
                     }`}
                   />
