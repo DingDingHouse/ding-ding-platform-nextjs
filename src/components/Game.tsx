@@ -155,7 +155,7 @@ const Game = ({ games }: any) => {
 
   return (
     <div
-      className="h-[45dvh]  sm:h-[40dvw] overflow-x-scroll lg:overflow-x-hidden overflow-y-hidden transition-all element w-100vw"
+      className=" lg:overflow-x-hidden  transition-all h-full portrait:w-[100dvh] landscape:w-[100dvw] "
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onTouchStart={handleTouchStart}
@@ -164,12 +164,12 @@ const Game = ({ games }: any) => {
       {!open ? (
         <div
           ref={containerRef}
-          className="flex w-full justify-evenly items-center element overflow-x-scroll lg:overflow-x-hidden lg:overflow-y-hidden transition-all mx-auto relative h-full"
+          className="flex  justify-evenly items-center h-full element overflow-x-scroll lg:overflow-x-hidde lg:overflow-y-hidden transition-all mx-auto"
         >
           {displayedGames?.length > 5 && (
             <button
               onClick={moveLeft}
-              className="lg:block hidden p-1 fixed top-[47%] left-0 rounded-xl bg-opacity-50 scale-[1.3] z-[99]"
+              className="lg:block hidden rotate-0 p-1 fixed top-[47%] left-0 rounded-xl bg-opacity-50 scale-[1.3] z-[99]"
             >
               <Arrows />
             </button>

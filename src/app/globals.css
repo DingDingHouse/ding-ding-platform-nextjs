@@ -24,7 +24,6 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-  overflow: hidden;
 }
 
 @layer utilities {
@@ -32,6 +31,21 @@ body {
     text-wrap: balance;
   }
 }
+@keyframes cardBlast {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.card-blast {
+  animation: cardBlast 0.5s ease-out forwards;
+}
+
 
 .h-100vh {
   height: 100dvh;

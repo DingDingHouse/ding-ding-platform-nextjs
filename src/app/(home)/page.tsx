@@ -27,9 +27,11 @@ const Home = async ({ params }: any) => {
         quality={100}
         className="z-[-1] object-contain blur-md object-center"
       />
-      <Header />
-      <Game games={games} />
-      <Footer />
+      <div className="h-[100vh]  flex flex-col justify-between">
+        <Header />
+        <Game games={games} />
+        <Footer />
+      </div>
     </>
   );
 };
