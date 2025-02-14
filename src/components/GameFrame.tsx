@@ -6,7 +6,7 @@ import Notification from "./Notification";
 import toast from "react-hot-toast";
 import { useVolumeControl } from "./context/VolumeControlContext";
 
-const GameFrame = ({ data }: any) => {
+const GameFrame = ({ data, dimension }: any) => {
   const [iframeKey, setIframeKey] = useState(0);
   const [gameLoaded, setGameLoaded] = useState(false);
   const { playAudio, pauseAudio } = useVolumeControl();
@@ -86,7 +86,7 @@ const GameFrame = ({ data }: any) => {
   }, [data, getToken('token')]);
 
   return (
-    <div className="w-full h-full relative">
+    <div className={`w-full ${dimension==='portrait'?'portrait:h-[100vh] landscape:h-[100vw] landscape:lg:h-full landscape:lg:w-full':'h-full'} relative`}>
       {!gameLoaded && data?.url && (
         <iframe
           src={config?.loaderUrl}

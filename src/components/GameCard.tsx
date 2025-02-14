@@ -3,11 +3,14 @@ import Link from "next/link";
 import React from "react";
 import GameBorder from "./svg/GameBorder";
 
-const GameCard = ({data,displayeGame,middleind}: any) => {
+const GameCard = ({ data, displayeGame, middleind }: any) => {
+  
+  const gameLink = `/game/${data?.slug}${data?.tagName === "SL-FLC" ? "?view=portrait" : ""}`;
+
   return (
     <div className="w-full h-full  transition-all relative flex items-center justify-center   pointer-events-auto">
       <Link
-        href={`/game/${data?.slug}`}
+        href={`${gameLink}`}
         className="scale-[.9] relative"
       >
         <Image
