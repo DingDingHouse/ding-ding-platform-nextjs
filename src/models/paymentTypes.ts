@@ -6,7 +6,7 @@ import mongoose, { Schema, Document, Model } from "mongoose";
 export interface IPaymentTypes extends Document {
     name: string;
     thumbnail: string;
-    Qrs: mongoose.Types.ObjectId[];
+    qrs: mongoose.Types.ObjectId[];
     createdAt: Date;
 }
 
@@ -14,7 +14,7 @@ const PaymentTypesSchema: Schema = new Schema(
     {
         name: { type: String, required: true, unique: true },
         thumbnail: { type: String, required: true },
-        Qrs: [{ type: mongoose.Schema.Types.ObjectId, ref: "Qrs", default: [] }], 
+        qrs: [{ type: mongoose.Schema.Types.ObjectId, ref: "qrs", default: [] }],
     },
     { timestamps: true }
 );

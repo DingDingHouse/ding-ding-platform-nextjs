@@ -5,7 +5,7 @@ import connectdatabase from "@/lib/mongodb";
 
 export async function POST(request: Request) {
     try {
-        await connectdatabase()
+        await connectdatabase();
 
         const formData = await request.formData();
         const name = formData.get("name") as string;
@@ -13,6 +13,14 @@ export async function POST(request: Request) {
 
         if (!name) {
             return NextResponse.json({ message: "Name is required" }, { status: 400 });
+        }
+
+        const existingPlatform = await PaymentTypes.findOne({ name });
+        if (existingPlatform) {
+            return NextResponse.json(
+                { message: "A payment platform with this name already exists." },
+                { status: 400 }
+            );
         }
 
         let thumbnail = "";
@@ -39,7 +47,7 @@ export async function POST(request: Request) {
             });
 
             thumbnail = (uploadResult as any).secure_url;
-            console.log("Upload Success:");
+            console.log("Upload Success:", thumbnail);
         }
 
         const newPlatformType = await PaymentTypes.create({ name, thumbnail, Qrs: [] });
@@ -54,6 +62,7 @@ export async function POST(request: Request) {
     }
 }
 
+
 export async function GET() {
     try {
         await connectdatabase()
@@ -66,7 +75,6 @@ export async function GET() {
     } catch (error) {
         return NextResponse.json({ message: "Fetching failed", error }, { status: 500 });
     }
-
 }
 
 

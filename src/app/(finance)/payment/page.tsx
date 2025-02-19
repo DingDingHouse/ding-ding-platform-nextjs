@@ -75,7 +75,7 @@ const Page = () => {
               selectedPlatform.Qrs.map((qr) => (
                 <div key={qr.name} style={{ textAlign: 'center' }}>
               
-                  <img src={qr.image} alt={qr.image} width="120" />
+                  <img src={qr?qr.image:""} alt={qr.image} width="120" />
                 </div>
               ))
             ) : (

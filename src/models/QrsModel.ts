@@ -1,24 +1,22 @@
-import mongoose, { Schema, Document, Model } from "mongoose";
+import mongoose, { Schema, Document } from 'mongoose';
 
-/**
- * Defines the structure of the Qrs document in MongoDB.
- */
-export interface IQrs extends Document {
+interface IQr extends Document {
     name: string;
     image: string;
     paymentPlatform: string;
+    status: string;
     createdAt: Date;
 }
 
-const QrsSchema: Schema = new Schema(
-    {
-        name: { type: String, required: true, unique: true },
-        image: { type: String, required: true },
-        paymentPlatform: { type: String, required: true },
-    },
-    { timestamps: true }
-);
+const QrSchema: Schema = new Schema({
+    name: { type: String, required: true },
+    image: { type: String, required: true },
+    paymentPlatform: { type: String, required: true },
+    status: { type: String, required: true, default: 'inactive' },
 
-const QrsModel: Model<IQrs> = mongoose.models.Qrs || mongoose.model<IQrs>("Qrs", QrsSchema);
+},
+    { timestamps: true });
+
+const QrsModel = mongoose.models.Qr || mongoose.model<IQr>('Qr', QrSchema);
 
 export default QrsModel;
