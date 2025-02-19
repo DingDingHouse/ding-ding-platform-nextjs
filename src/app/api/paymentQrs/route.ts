@@ -3,9 +3,10 @@ import QrsModel from "@/models/QrsModel";
 import PaymentTypes from "@/models/paymentTypes";
 import cloudinary from "@/utils/cloudinary";
 import mongoose from "mongoose";
-
+import connectdatabase from "@/lib/mongodb";
 export async function POST(request: Request) {
     try {
+        await connectdatabase()
         const formData = await request.formData();
         const name = formData.get("name") as string;
         const paymentPlatform = formData.get("paymentPlatform") as string;
@@ -63,6 +64,8 @@ export async function POST(request: Request) {
 
 export async function GET(request: Request) {
     try {
+        await connectdatabase()
+
         const { searchParams } = new URL(request.url);
         const paymentTypeName = searchParams.get("paymentTypeName");
 
@@ -89,6 +92,8 @@ export async function GET(request: Request) {
 
 export async function PUT(request: Request) {
     try {
+        await connectdatabase()
+
         const { searchParams } = new URL(request.url);
         const qrId = searchParams.get("id");
 
@@ -152,6 +157,8 @@ export async function PUT(request: Request) {
 
 export async function DELETE(request: Request) {
     try {
+        await connectdatabase()
+
         const { searchParams } = new URL(request.url);
         const qrId = searchParams.get("id");
 

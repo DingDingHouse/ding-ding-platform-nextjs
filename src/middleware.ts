@@ -13,28 +13,28 @@ function isTokenExpired(token: string): boolean {
 }
 
 export default function middleware(request: NextRequest) {
-  // const path = request.nextUrl.pathname;
-  // const isPublicPath = path === "/login";
-  // const token = request.cookies.get("token");
+  const path = request.nextUrl.pathname;
+  const isPublicPath = path === "/login";
+  const token = request.cookies.get("token");
 
-  // // Check token expiration
-  // if (token?.value && isTokenExpired(token.value)) {
-  //   console.log("Token expired");
-  //   const response = NextResponse.redirect(new URL("/logout", request.url));
-  //   response.cookies.delete("token");
-  //   return response;
-  // }
+  // Check token expiration
+  if (token?.value && isTokenExpired(token.value)) {
+    console.log("Token expired");
+    const response = NextResponse.redirect(new URL("/logout", request.url));
+    response.cookies.delete("token");
+    return response;
+  }
 
-  // if ((isPublicPath || path === "/login" || path === "/game") && token) {
-  //   const response = NextResponse.redirect(new URL("/", request.url));
-  //   return response;
-  // }
+  if ((isPublicPath || path === "/login" || path === "/game") && token) {
+    const response = NextResponse.redirect(new URL("/", request.url));
+    return response;
+  }
 
-  // if (!isPublicPath && !token) {
-  //   return NextResponse.redirect(new URL("/login", request.nextUrl));
-  // }
+  if (!isPublicPath && !token) {
+    return NextResponse.redirect(new URL("/login", request.nextUrl));
+  }
 
-  // return NextResponse.next();
+  return NextResponse.next();
 }
 
 export const config = {

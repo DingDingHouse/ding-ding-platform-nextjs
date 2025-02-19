@@ -1,8 +1,12 @@
 import { NextResponse } from 'next/server';
 import PaymentTypes from '@/models/paymentTypes';
 import cloudinary from '@/utils/cloudinary';
+import connectdatabase from "@/lib/mongodb";
+
 export async function POST(request: Request) {
     try {
+        await connectdatabase()
+
         const formData = await request.formData();
         const name = formData.get("name") as string;
         const file = formData.get("image") as File | null;
@@ -52,6 +56,8 @@ export async function POST(request: Request) {
 
 export async function GET() {
     try {
+        await connectdatabase()
+
         const platformTypes = await PaymentTypes.find();
         if (platformTypes.length === 0) {
             return NextResponse.json({ message: "No platform types available, please add first" }, { status: 200 });
@@ -77,6 +83,8 @@ export async function PUT(request: Request) {
     }
 
     try {
+        await connectdatabase()
+
         const existingPlatformType = await PaymentTypes.findById(id);
         if (!existingPlatformType) {
             return NextResponse.json({ message: "Platform type not found" }, { status: 404 });
@@ -141,6 +149,8 @@ export async function DELETE(request: Request) {
     }
 
     try {
+        await connectdatabase()
+
         const existingPlatformType = await PaymentTypes.findById(id);
         if (!existingPlatformType) {
             return NextResponse.json({ message: "Platform type not found" }, { status: 404 });
