@@ -4,7 +4,7 @@ import { Montserrat } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import { VolumeProvider } from "@/components/context/VolumeControlContext";
 import AudioPlayer from "@/components/AudioPlayer";
-
+import { connectToDatabase } from "@/lib/mongodb";
 const montserrat = Montserrat({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   title: "Ding Ding",
   description: "Gaming platform",
 };
+connectToDatabase().catch((err) => console.error("❌ MongoDB connection failed:", err));
 
 export default function RootLayout({
   children,
