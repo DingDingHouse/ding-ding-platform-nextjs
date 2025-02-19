@@ -64,23 +64,35 @@ export async function POST(request: Request) {
 
 export async function GET(request: Request) {
     try {
-        await connectdatabase()
+        await connectdatabase();
 
         const { searchParams } = new URL(request.url);
         const paymentTypeName = searchParams.get("paymentTypeName");
 
-        if (!paymentTypeName) {
-            return NextResponse.json({ message: "PaymentType name is required" }, { status: 400 });
+        let paymentTypes;
+
+        if (paymentTypeName) {
+            paymentTypes = await PaymentTypes.findOne({ name: paymentTypeName }).populate("Qrs");
+
+            if (!paymentTypes) {
+                return NextResponse.json({ message: "PaymentType not found" }, { status: 404 });
+            }
+
+            return NextResponse.json(
+                { message: "QR Codes fetched successfully", paymentTypes },
+                { status: 200 }
+            );
         }
 
-        const paymentType = await PaymentTypes.findOne({ name: paymentTypeName }).populate("Qrs");
+        // Fetch all payment types and their QR codes
+        paymentTypes = await PaymentTypes.find().populate("Qrs");
 
-        if (!paymentType) {
-            return NextResponse.json({ message: "PaymentType not found" }, { status: 404 });
+        if (!paymentTypes.length) {
+            return NextResponse.json({ message: "No payment types found, please add first" }, { status: 200 });
         }
 
         return NextResponse.json(
-            { message: "QR Codes fetched successfully", qrCodes: paymentType.Qrs },
+            { message: "All Payment Types with QR Codes fetched successfully", paymentTypes },
             { status: 200 }
         );
     } catch (error) {
@@ -88,6 +100,7 @@ export async function GET(request: Request) {
         return NextResponse.json({ message: "Fetching QR Codes failed", error }, { status: 500 });
     }
 }
+
 
 
 export async function PUT(request: Request) {
