@@ -15,7 +15,6 @@ export const metadata: Metadata = {
   title: "Ding Ding",
   description: "Gaming platform",
 };
-connectToDatabase().catch((err) => console.error("❌ MongoDB connection failed:", err));
 
 export default function RootLayout({
   children,
